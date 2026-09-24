@@ -452,3 +452,54 @@ blockquote{border-left:3px solid var(--green-600);padding-left:32px;font-family:
   .qr-row{flex-wrap:wrap}
   blockquote{font-size:22px}
 }
+
+/* ---------- Mobile: sticky rails become static (they covered content) ---------- */
+@media(max-width:900px){
+  .filter-bar{position:static}
+  .fact-rail{position:static}
+}
+
+/* ---------- Mobile proportion polish ---------- */
+@media(max-width:640px){
+  /* interior page heroes: shorter */
+  .page-hero{padding:120px 0 48px}
+  .page-hero.dark{height:52vh;min-height:380px}
+  .page-hero.dark .container{padding-bottom:48px}
+  .article-top{padding-top:112px!important}
+
+  /* section rhythm */
+  .section-header{margin-bottom:32px;flex-wrap:wrap}
+  .band{padding:64px 0}
+  .cta-band{padding:64px 0}
+  .svc-block{margin-bottom:64px}
+
+  /* images: smaller, desktop-like landscape/side-by-side instead of towering stacks */
+  .tile{min-height:200px}
+  .tile .label{left:20px;right:20px;bottom:16px}
+  .featured img{aspect-ratio:16/10}
+  .gallery-3{grid-template-columns:repeat(3,1fr);gap:8px}
+  .img-pair{gap:12px}
+  .team-grid{grid-template-columns:repeat(2,1fr);gap:24px 14px}
+  .team-card h3{font-size:15px;margin:10px 0 2px}
+  .team-card p{font-size:12px}
+  .process-grid{grid-template-columns:1fr 1fr;gap:24px 16px}
+  .step .num{font-size:28px}
+  .news-card img{aspect-ratio:16/9}
+  .sto-hero{padding:48px 20px}
+  .sto-hero .badge{width:120px;height:120px}
+  .sto-hero .badge img{width:80px;height:80px}
+  .article-hero{margin:32px 0}
+  .job-row{flex-wrap:wrap;row-gap:4px}
+  .service-card{min-height:0;padding:22px}
+  .marquee{padding:24px 0}
+  .marquee .cell{width:170px}
+  .marquee .cell img{max-height:44px;max-width:130px}
+  .hero{min-height:540px}
+}
+@media(max-width:560px){
+  .benefit-grid{grid-template-columns:1fr 1fr}
+  .benefit{padding:22px 18px}
+  .benefit h3{font-size:16px}
+  .benefit p{font-size:12px}
+}
+.article-top{padding-top:176px}
