@@ -133,4 +133,24 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
     blocks.forEach((b) => io3.observe(b));
   }
+
+  /* ---------- EN/TH language toggle ---------- */
+  const langBtns = document.querySelectorAll('.lang-btn');
+  if (langBtns.length) {
+    let note = null;
+    langBtns.forEach((b) => b.addEventListener('click', () => {
+      langBtns.forEach((x) => x.classList.remove('active'));
+      b.classList.add('active');
+      if (b.dataset.lang === 'th') {
+        if (!note) {
+          note = document.createElement('div');
+          note.className = 'lang-note';
+          note.textContent = 'เวอร์ชันภาษาไทยเร็ว ๆ นี้ — Thai version coming soon';
+          document.body.appendChild(note);
+        }
+        note.classList.add('show');
+        setTimeout(() => note.classList.remove('show'), 2400);
+      }
+    }));
+  }
 })();
