@@ -114,7 +114,10 @@
         if (show) visible++;
       });
       const count = document.querySelector('[data-result-count]');
-      if (count) count.textContent = visible + ' project' + (visible === 1 ? '' : 's');
+      if (count) {
+        const th = document.documentElement.lang === 'th';
+        count.textContent = th ? visible + ' โปรเจกต์' : visible + ' project' + (visible === 1 ? '' : 's');
+      }
       const empty = document.querySelector('[data-empty]');
       if (empty) empty.style.display = visible ? 'none' : 'block';
     }));
@@ -134,23 +137,10 @@
     blocks.forEach((b) => io3.observe(b));
   }
 
-  /* ---------- EN/TH language toggle ---------- */
-  const langBtns = document.querySelectorAll('.lang-btn');
-  if (langBtns.length) {
-    let note = null;
-    langBtns.forEach((b) => b.addEventListener('click', () => {
-      langBtns.forEach((x) => x.classList.remove('active'));
-      b.classList.add('active');
-      if (b.dataset.lang === 'th') {
-        if (!note) {
-          note = document.createElement('div');
-          note.className = 'lang-note';
-          note.textContent = 'เวอร์ชันภาษาไทยเร็ว ๆ นี้ — Thai version coming soon';
-          document.body.appendChild(note);
-        }
-        note.classList.add('show');
-        setTimeout(() => note.classList.remove('show'), 2400);
-      }
-    }));
-  }
+  /* ---------- EN/TH language toggle: real links, remember preference ---------- */
+  document.querySelectorAll('.lang-btn[hreflang]').forEach((a) => {
+    a.addEventListener('click', () => {
+      try { localStorage.setItem('happ-lang', a.getAttribute('hreflang')); } catch (e) {}
+    });
+  });
 })();

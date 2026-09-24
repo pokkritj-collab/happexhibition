@@ -106,8 +106,11 @@ h4,.h4{font-size:22px;line-height:1.3;font-weight:500}
 .lang{display:inline-flex;align-items:center;gap:4px}
 .lang-btn{font:inherit;font-size:13px;font-weight:500;color:inherit;opacity:.55;cursor:pointer;padding:2px 2px}
 .lang-btn.active{opacity:1;text-decoration:underline;text-underline-offset:3px}
-.lang-note{position:fixed;top:96px;right:24px;background:var(--grey-900);color:#fff;font-size:13px;padding:10px 16px;z-index:300;box-shadow:0 8px 24px rgba(20,24,26,.25);opacity:0;transition:opacity .3s}
-.lang-note.show{opacity:1}
+/* Thai pages: Anuphan needs looser leading + no negative tracking */
+html[lang="th"] h1,html[lang="th"] h2,html[lang="th"] h3,html[lang="th"] h4,
+html[lang="th"] .display-xl,html[lang="th"] .display-l{letter-spacing:0;line-height:1.22}
+html[lang="th"] .eyebrow{letter-spacing:.06em}
+html[lang="th"] blockquote{line-height:1.4}
 .lang .off{color:var(--grey-500)}
 .icon-btn{color:var(--grey-900);display:inline-flex}
 .burger{display:none}
