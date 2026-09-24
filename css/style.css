@@ -267,7 +267,7 @@ html[lang="th"] blockquote{line-height:1.4}
 .dock .d-line{background:var(--green-500)}
 .dock .d-call{background:var(--grey-800)}
 .dock .d-quote{background:var(--green-600)}
-@media(max-width:640px){.dock{right:16px;bottom:16px}.dock a{width:48px;height:48px}}
+@media(max-width:640px){.dock{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}.dock a{width:48px;height:48px}}
 
 /* ---------- Page hero (interior pages) ---------- */
 .page-hero{padding:176px 0 64px}
@@ -410,4 +410,45 @@ blockquote{border-left:3px solid var(--green-600);padding-left:32px;font-family:
   .hero .slide img{animation:none}
   .marquee-track{animation:none;flex-wrap:wrap;width:auto}
   .reveal{opacity:1;transform:none}
+}
+
+/* ---------- Responsive layout classes (replace former inline grids) ---------- */
+.about-split{display:grid;grid-template-columns:2fr 1fr;gap:64px}
+@media(max-width:900px){.about-split{grid-template-columns:1fr;gap:40px}}
+
+.timeline-grid{grid-template-columns:repeat(7,1fr)}
+@media(max-width:1100px){.timeline-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.timeline-grid{grid-template-columns:1fr 1fr;gap:28px 20px}}
+
+.logo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:2px}
+@media(max-width:1024px){.logo-wall{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:640px){.logo-wall{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.logo-wall{grid-template-columns:repeat(2,1fr)}}
+
+.art-grid{display:grid;grid-template-columns:repeat(var(--cols,2),1fr);gap:16px;margin:32px 0}
+@media(max-width:640px){.art-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* ---------- Mobile header ---------- */
+@media(max-width:640px){
+  .site-header{height:64px}
+  .site-header .logo img{height:22px}
+  .header-actions{gap:10px}
+  .site-header .btn-primary{padding:9px 14px;font-size:13px;white-space:nowrap}
+  .mobile-menu nav a{font-size:30px}
+}
+@media(max-width:360px){
+  .site-header .btn-primary{padding:8px 10px;font-size:12px}
+}
+
+/* ---------- Small-screen polish ---------- */
+@media(max-width:640px){
+  .stats .grid{gap:32px 20px}
+  .stat .num{font-size:40px}
+  .metrics{gap:24px}
+  .display-xl{font-size:clamp(36px,9.5vw,88px)}
+  .display-l{font-size:clamp(30px,8vw,64px)}
+  .filter-bar .container{display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:8px}
+  .filter-bar .chip{flex:0 0 auto}
+  .qr-row{flex-wrap:wrap}
+  blockquote{font-size:22px}
 }
