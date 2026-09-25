@@ -278,7 +278,7 @@ html[lang="th"] blockquote{line-height:1.4}
 .page-hero.dark .container{position:relative;padding-bottom:72px;width:100%}
 
 /* works */
-.filter-bar{position:sticky;top:88px;background:var(--bg-canvas);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);padding:16px 0;z-index:50}
+.filter-bar{background:var(--bg-canvas);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);padding:16px 0}
 .filter-bar .container{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .chip{font-size:14px;font-weight:500;padding:8px 16px;border:1px solid var(--border-strong);border-radius:999px;color:var(--text-secondary);transition:all var(--dur-fast)}
 .chip:hover{background:var(--grey-100);color:var(--text-primary)}
