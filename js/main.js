@@ -44,24 +44,22 @@
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
   }
 
-  /* ---------- Hero slider: crossfade, 3s autoplay, arrows ---------- */
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    const slides = [...hero.querySelectorAll('.slide')];
-    let i = 0, timer = null;
-    const show = (n) => {
-      slides[i].classList.remove('active');
-      i = (n + slides.length) % slides.length;
-      slides[i].classList.add('active');
-    };
-    const next = () => show(i + 1);
-    const restart = () => {
-      if (timer) clearInterval(timer);
-      if (!reduced && slides.length > 1) timer = setInterval(next, 4000);
-    };
-    hero.querySelector('.arr-next')?.addEventListener('click', () => { next(); restart(); });
-    hero.querySelector('.arr-prev')?.addEventListener('click', () => { show(i - 1); restart(); });
-    restart();
+  /* ---------- Hero video: muted background loop (poster under reduced-motion/data-saver) ---------- */
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    const saveData = (navigator.connection && navigator.connection.saveData) === true;
+    if (!reduced && !saveData) {
+      heroVideo.src = window.innerWidth <= 700 ? heroVideo.dataset.srcSmall : heroVideo.dataset.srcLarge;
+      heroVideo.autoplay = true;
+      heroVideo.play().catch(() => {});
+      const vio = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) heroVideo.play().catch(() => {});
+          else heroVideo.pause();
+        });
+      }, { threshold: 0.1 });
+      vio.observe(heroVideo);
+    }
   }
 
   /* ---------- Count-up stats ---------- */

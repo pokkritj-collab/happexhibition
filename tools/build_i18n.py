@@ -610,12 +610,21 @@ def build_all(lang):
     def adate(a): return a["date_th"] if lang=="th" else a["date"]
 
     # ---- index ----
-    slides = "".join(
-        f'<a class="slide{" active" if i==0 else ""}" href="project-{p["slug"]}.html">'
-        f'<img src="{P}assets/img/{p["hero"]}.jpg" alt="{p["title"]}"><div class="scrim"></div>'
-        f'<div class="slide-copy"><span class="eyebrow">{L["cat_retail"].upper()} · {p["venue"].upper()} · {p["year"]}</span>'
-        f'<h1 class="display-xl">{p["title"]}</h1><p>{L["tagline"]}</p></div></a>'
-        for i, p in enumerate(PROJECTS[:6]))
+    hero_eyebrow = ("ผู้ออกแบบและผลิตงานรีเทลครบวงจร · กรุงเทพฯ" if lang == "th"
+                    else "Design-build fabricator · Bangkok")
+    hero = f"""
+  <section class="hero" aria-label="Company film">
+    <video class="hero-video" muted loop playsinline preload="metadata"
+      poster="{P}assets/video/hero-poster.jpg"
+      data-src-large="{P}assets/video/hero-bg-1920.mp4"
+      data-src-small="{P}assets/video/hero-bg-720.mp4"
+      aria-label="{'ภาพยนตร์แนะนำบริษัท Happ Exhibition' if lang=='th' else 'Happ Exhibition company film'}"></video>
+    <div class="scrim"></div>
+    <div class="slide-copy">
+      <span class="eyebrow">{hero_eyebrow.upper() if lang=='en' else hero_eyebrow}</span>
+      <h1 class="display-xl">{L['tagline']}</h1>
+    </div>
+  </section>"""
     SHORT = {
       "design-engineering": ("Brand guidelines and architects' intent, turned into build-ready reality in 3D from day one.",
                              "เปลี่ยนไกด์ไลน์แบรนด์และแนวคิดสถาปนิกให้เป็นแบบพร้อมสร้างจริง ด้วยระบบ 3 มิติตั้งแต่วันแรก"),
@@ -651,11 +660,9 @@ def build_all(lang):
             "Bangkok design-build fabricator for luxury retail fit-out, interior design & contracting, shop & retail solutions, and exhibition & event booths. Trusted by Chanel, Gucci, Burberry — 20+ years, 3 factories, overnight installation.")
     idx_title = ("รับตกแต่งภายใน งานรีเทล และบูธอีเวนต์ | " + L["tagline"]) if lang=="th" else \
                 ("Retail Fit-Out, Interior Contractor & Event Booths, Bangkok")
-    htmlp = head(L, lang, P, "index.html", idx_title, desc) + header_html(L, lang, P, "index.html", transparent=True) + f"""
+    htmlp = head(L, lang, P, "index.html", idx_title, desc, "assets/video/hero-poster.jpg") + header_html(L, lang, P, "index.html", transparent=True) + f"""
 <main>
-  <section class="hero" aria-label="Featured projects">{slides}
-    <div class="hero-arrows"><button class="arr-prev" aria-label="Previous">←</button><button class="arr-next" aria-label="Next">→</button></div>
-  </section>
+{hero}
   <section class="section positioning">
     <div class="bgimg" style="background-image:url({P}assets/img/craft-bench.jpg)"></div>
     <div class="container reveal">
