@@ -1,0 +1,1766 @@
+{
+ "generated": "2026-10-04",
+ "archive_root": "Our Project (Drive folder 1I0XlijebSwQogHldMnOGAw3LOv0BNXpI)",
+ "note": "usable_images_est = jpg/png + heic minus intra-project duplicates (matched by filename+size). AI-suspect sets flagged in notes/reason must be visually verified before publishing.",
+ "folder_ids": {
+  "1 Photo Render": "1SAottta3-QYkiGDlr439fBtgcXrGUv3-",
+  "1 Photo Render/Shiseido Takashimaya": "1uARg3WIC0qVb7quHcxzpA_JMPUJ7MJ-s",
+  "1 Photo Render/EA7 Siam Paragon": "1vmmBWfj0-AbZRAD7ozPDZdYqVVqwQ4-D",
+  "1 Photo Render/Gucci Mega Bangna": "1fT9vCHwPG3mwUIDKuUKrpJuQ8LOJBznf",
+  "1 Photo Render/Shiseido Central World": "1ufZszkLou3rial1q8mmbenG9nk0VL9-P",
+  "1 Photo Render/Paul Smith Central Village": "12210mKMHKlwliQYsQERqZbPRQ4XHnJA0",
+  "1 Photo Render/Bobbi Brown The Mall Bangkae": "1dlhSxcePAt7Z0O7SQxFJIVmI0lBDMCGp",
+  "1 Photo Render/Pop Mart Maya Chiangmai": "13egBmUjEw1cJUb07rjUJ6s_EL7lkQWxl",
+  "1 Photo Render/Gucci Central Dusit": "1g0zn06SOiNk6eTcxmvtHm31GD76TLbSQ",
+  "1 Photo Render/Chanel Central Udon": "1WwLtncHzupTsoZzcpzRnNSHTBatVRTWK",
+  "1 Photo Render/Panpuri One Bangkok": "1FHLtMnv4q5vto2qh3pLwDePBjRj7b2YH",
+  "1 Photo Render/Blue Bottle": "1mQZMknOk-jEQR3b0f740214dspHbd9Dt",
+  "1 Photo Render/Hourglass Central Khonkaen": "13oiKmtU25jOUimjIbiGH-sTk38cmGAvc",
+  "1 Photo Render/CC Work in process": "1Xwd2TVBkW9zW9eBxJg-mhqntm6Y9kiza",
+  "1 Photo Render/Gucci Central Pinklao": "17PWttPae24sdGGHZARroANsB9Hx0dR2l",
+  "1 Photo Render/Chanel Central Cheangwattana": "1JTeVvD2TJF_6-5FkBjmagEjBPN2ROU03",
+  "1 Photo Render/Rouge Coco Hydra gloss": "1l1QJVgx89vCyivj2fhrpkABtJWgJKx8Q",
+  "1 Photo Render/Chanel Siam Paragon": "1Y9qVMTU4E5IYgbSKIfQ_pRVO6HcD6j-V",
+  "1 Photo Render/CPB Central Dusit": "1vkBhHjfbIK_liF9UAXlNzDJJDDQtVrLy",
+  "1 Photo Render/Pralet EmQuartier": "1FKzfHU7jHAADxV502F5Ii4Q8wDYD0h9O",
+  "1 Photo Render/Panpuri SVB Airport": "1fIvAFhjw01UjJNa813VtBgUyKcsf_j3M",
+  "1 Photo Render/Chanel Central Chiangmai": "1qAplWsjTF4TXbONffHz0MFXIC0Cbiokt",
+  "1 Wiriwork": "1fy7sBxDu9DVpJNB_RY6XUzcFzVPLUP-E",
+  "1 Wiriwork/CDS Central Bangna": "1iSYJO26jnHLFGivFUAclk6ejWMHDnRxe",
+  "1 Wiriwork/Aonther Story": "1_6UJy-bNOFMLRzDtNIvVGhcciU3UiM0J",
+  "1 Wiriwork/Sunnies Central Bangna": "1MXJdEq1jjIr610RViSUf9RuanDluKMyY",
+  "1 Wiriwork/Sunnies Central World": "1ULdtfIM9H4rDD_hTjDSFsRnzQezHKfha",
+  "1 Factory Photo": "1Ofp6akhp9eQh5acSsYAMBApsV8cLAi6X",
+  "Chanel emsphere": "1DZsgbx2eLyx2o4oK1YDUbl67nDzmKlEX",
+  "Gucci Mega Bangna": "1TwnrT-_TmPdz90C-Qf-b4G05txA8xi-l",
+  "BURBERRY DUSIT 19/5/2025": "11TXB1FweI_CKL3Xk-VEgtGFJ3RdaZuM7",
+  "PAUL SMITH CENTRAL VILLAGE": "1z-mTBGEt-Mc9wf-OiwgjvoI6dHCh9USu",
+  "SHISEIDO Central World": "1AAiHNdq3EmSgrH5XNmKPEwo9Q9gnAE-7",
+  "Panpuri One Bangkok": "1FMXfOl6H8etQPpLSjyiVYvpNlH_phFP7",
+  "CPB CENTRAL DUSIT": "1ZcumozekKo2RAZ8E3JADGbqBZU8JXHef",
+  "POP MART MAYA CHIANGMAI": "1JBHBz47kE_LCUkfSAO7GwdsaflHOFPVy",
+  "Pralet Emquartier": "13yYgPcRf-qG3Mr3Sw9EBXkVv128iKPr7",
+  "BlueBottle EmQuartier Bts": "1n-P9peqLkvfUVUMuPulWtE4X8pEpGuoV",
+  "3M": "1hFCBeYzjQKCXXtYZQPS9XCqX9LSfESYZ",
+  "Phillips  Pop-up store Central Chidlom": "1Tm0JwKKCmEF4NvgVoTnfglhyvPkOv8Tu",
+  "Prada @ Changi T1 & T2 Progress Photo": "1AbeFmaFjH8tCVj2Bn5aYgum0T4O4tCHN",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo": "1GzBJVqB4X0flUVXMDaSVopnc8EIP_P4i",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo": "18Z3BXzykeue2ic-IdzGcJ2W6mV9sQWRJ",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250705": "1BvHfq3Gz19hheK05Pt14bZF9BaRNAO2a",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250709": "1A88PXtacDfBFoack9m1_8Mdq1eGITTlo",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250723": "1LEVBOfMZz2Q-KxdnMsZWsyoF1D2kIqLL",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250729": "12RonKeY-HyB_97zkD4WdcUJD7bgRIQdL",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250722": "1y8biR3-mC9x-wmS0Tp6Ko5kquDc13cA_",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250724": "1c1Ry8NITSpM_-Ro_0SMMLLwfAgjYTKur",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250713": "1Oqf1qS9EV-RlMSAzNdka9x5wcEQx0sH5",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250726": "1KFCwkOtOWt2LGClJgs_wy_IDQwaI3Env",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250712": "16jx5qJRyBqOMToesScEnyikX45hQNVKb",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250716": "1XJzxc7stAww07K7zDXtZUil1cIyf3twK",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250708": "1SdLrM4Y6speOSVCo09j9wKoLsuAbRPOf",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250720": "1P5oe3viji7gqx5pSy7j5SpeVcqHPbsK0",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250727": "1G8v4zf5sfwtG3Kd4B4vpjAbnfIUCvuxp",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250706": "1DsXCAYFKWV0w0Ymjj-e4_Vxd1XU-guGY",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250801": "1sWzTffBAV6EZvmn9JTkPXfh2TCbnKkU2",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250710": "14ZKq2m9YxYUKTwSGzmuqqBGfuTntjL3U",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250711": "18fU2VaQTMhn9NqW_Ihjhl4WfBin2GR9z",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250719": "1irENGC03LLXUqh-21aE8qjRhAUod3W-o",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250728": "1a6jxM5sNFhSdAiAeQsiT8EDuOo93gE1d",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250730": "19UcMBYN0UCaeC6QuLfr_Ptg7go_2nJpx",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250731": "1txpcWZC7jxie9Uehf5387uOhZgDd8j2h",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250714": "15DHL3KijSXvZgWxw54KmhF4dxN9aUOSu",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250707": "1-7h-UxsJjgUoCtJ3QfWMRJjfF5YfjZK1",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250715": "1pAGCxABvlYYfvfnZ36zbZ6KAMitMwYJD",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250725": "1xef2PWLFxAgXaSjfYCgnwJwtLFxmqudh",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250802": "1-uX_tJ3ddL7hHlW4hsokIHbYrlR_fG7M",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250717": "1H46Vu0DNdU-zyLgv_cbCbGNqQ7p3bkbK",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250718": "17tVCFt75pijUWX0avi7XNdtOPDR7oNUC",
+  "Prada @ Changi T1 & T2 Progress Photo/T1 site daily progress photo/20250721": "1RO9BZYEz20yhHkvB3rW-K6dc9IQsE-V4",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250614": "1HTjnjalVdlisMqYmG02BUu8OnCE9p3qJ",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250515": "1MRTVOv1uMHfVxvxdu75z2NoH6fUUxYx_",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250612": "1_JcfoaG4xhJjLZFylSYmV7VfryCsJegm",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250516": "1M9eQcWjlJUzsY5qf4o-D8XNhqC2TUlNz",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250525": "1OQnkktIv_eEenYzeEmzL2yT3IEYYYCQG",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250528": "1xhd0cZFSYiVj9-QPwyJYM4i-vtPtKDxQ",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250506": "1jDRo_PJA-vodBzlvR5ftILAYL6hDa0pf",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250507": "1miKmqkYHsKMXw4Gqy6xhVa03rfREe0Av",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250512": "1uU9b6rq3MsJn2gurzHiNQDJYugeRek9g",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250509": "1HLDlU7bJVUOGk6jWL6fqppwp9rt6ghve",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250610": "1sdc8rFqUoVmKsjmPLlEBtItfK0Oeeuo3",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250510": "1MMcOSYIuanNz1bst2iX8OcMKzKVP9cEi",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250611": "1RB3yedi1cQBZr5qQPUyFiMSmeQ-g2uwo",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250522": "1CD-i4KmghwjsKYa1sqPplwfajJG9bK2T",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250609": "1oql8WxFCxEJuFP8xOZy9ScSqJlWrV8lk",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250520": "1WISBuw576VqGHem1zNG6cSSkp0I1bsH6",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250519": "1pk51a-5DBVnoRjMskcofGg3UnRe0HLDu",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250605": "1JOXtai4aZPF9S_VY-6EPGvVfcBGSk3Zv",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250508": "130m8cq7wNhHGPTuLWAP1FP549vRbjlHJ",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250521": "1h_ZpEJ4W12LB0kbNizEtKn-LQ_Cu0k1l",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250526": "1ixYLW-Nbq-O5w2CEt4J0UXd9Wpv01YsV",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250606": "1AVdKn_uutfpUDHJRyKAP6Z0r9RMZXRDF",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250608": "1TJDRAeECpOYpcVNafqSZ3eWlkydG0Cma",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250527": "1ajoFD0SfNzaIb9j1rGry2AJL19kaog9p",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250511": "19YzHUaKC3yfZRhVxws76eqHO6nQj5KY8",
+  "Prada @ Changi T1 & T2 Progress Photo/T2 site daily progess photo/20250703": "1oZdsNbIM89qAlRqn3zINYz4jkD7mJ0GN",
+  "Chanel Siamparagon": "1ZlBBW8vBHcYrn8JW1SQS9zp-VJQZCBCT",
+  "CHANEL อุดร2025": "14IydTu6m-8mHzcotiKIwXqSoA9vLbLim",
+  "CHANEL SVB 2026": "1MapbTWHnhmiKlJW6S0itKSJVaF2h4_6R",
+  "CHANEL เเจ้งวัฒนะ 2026": "1txo01xmrOzHEoqCd120LekLA3BUImSnM",
+  "CHANEL CHANGMAI AIRPORT": "11f5clFniq1pZyOgvz97_3t-RFNhdlFeT",
+  "Chanel cabin The emporium 08/04/0204": "1TDLXeazoj4JIg3toPGCCjpr15Z5nwLOo",
+  "VM Chanel N°5 RE-EDITION 2026 Campaign": "1fdTwhWTYiGfToXH9DKUDwh4Ua2t6-cUs",
+  "VM Chanel ROUGE COCO GLOSS 2026 Campaign": "1W0r3AhzoxG_OAutT8etRr8Pe_K2zAj9h",
+  "VM Chanel ROUGE NOIR 2026 Campaign": "1w__-kegG0H_uNMq8hER6hyLgIumGa6DC",
+  "VM Chanel HOLIDAY 2025 Campaign": "1oJPmCuO9B20zuHMk1eOps9qUaKUIHDbk",
+  "GUCCI CENTRAL PINKLAO": "1rUxMI1IDqP5NEZIf2qT3DNcWM4sL-eoZ",
+  "SHISEIDO Siamtakashimaya": "14IZ4mckWpwE0E1eWqrUaXGSz31JTZiZj",
+  "Panpuri SVB Airport": "13PLKSVxx7u935gFpuNa7jwpv0UwfGr_L",
+  "Panpuri Chiangmai Airport": "1EEWiq9Ub7G-RuuVP2CeWR6DEp2-l-xNE",
+  "Hourglass Central Phuket": "16jyH_H0PLDtf_u8ON38ICGUt8ZW31O6l",
+  "Hourglass Central Pinklao": "1My1HJg_BnIrfC700DJ_zFoVmpGLkgtr7",
+  "Hourglass Central Chiangmai": "1vXSuoO6nIStu0796dG-pD33IdkYreKdS",
+  "Hourglass Additional Siam Paragon": "1zulXBU6Bg2PTMo6FHntyDB1wkpBd_qUi",
+  "Hourglass Siam Takashimaya": "1aAqgphdza1xyVi7Cz49iaTTCbj2XEphr",
+  "Hourglass Central World Minor Changes": "12P7ojEaSD2kYRHK5yd9yoIk_h44wVQiH",
+  "Hourglass Central Chidlom": "1lYWD0BKu2naMKujQP4NlNeP4AQGGjotE",
+  "Hourglass The Mall Ngamwongwan": "1DjXChwIZDfg6zCEjsxo48sNYqnx2Wr_W",
+  "CPB SIAM TAKASHIMAYA": "1FrKptpo0K6GXKcUp9JvdpeKh4tJYN7UE",
+  "CPB CENTRAL PINKLAO": "14NrZRQIkH0Me1-BVigOjofoChB462QdB",
+  "CPB CENTRAL CHIDLOM": "1kgCQScm0x5zHNGMyOBQlIXy0UicUhvmh",
+  "VCA Central Chidlom": "1YXsHnh59SviaZR2jPVGZe_AhbOQb_JGP",
+  "VCA Escential Siam Paragon": "1BSiMe8QdOnwhy74U2-n_0LTZNG10m1ID",
+  "VCA Emsphere": "1ghmokyqry32nXcTr5eB-el6CsNHZgY_e",
+  "Elixir Central Pinklao": "1MXL8ZJUFFcWEbqWFK3Cj2eZuyOmNc_F4",
+  "Elixir Central Chaengwattana": "1tmmn4iYggBCUvzCCfb4wxnUYDgOkXw3Z",
+  "Charlotte Central Chiangmai": "1FHah2f3KWwf8V5U_6-nbgd56SwvpP5Qv",
+  "BobbiBrown Central Chaengwattana": "1ldXOmwBbUu1EQjB3gQl6CRMUkrxgQnoo",
+  "BobbiBrown Central Pinklao": "1ZkVQUcAglokmtdDBS4LGaS7XQz9YxdRX",
+  "Sunnies Central World": "1Bfhn5Y1nrIaCVee801F4mRSt1XtWzCOw",
+  "Sunnies central world": "1Ic2ndLFA8WTZpkJ-l7mK6_t3XbxYtPDa",
+  "Sunnies สาขา bangna": "1d5T53RrKhJz4f9B9rQpsZXrmHGKGQjaV",
+  "ANOTHER STORRY EMSPHERE 28/04/2026": "1bnYzJKDxgOjZGNParbHcMfTmk93U32X9"
+ },
+ "projects": [
+  {
+   "name": "Chanel @ Emsphere",
+   "brand": "Chanel",
+   "venue": "Emsphere",
+   "city": "Bangkok",
+   "folders": [
+    "Chanel emsphere"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-emsphere",
+   "on_site": "project-chanel-emsphere.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "Archive folder is EMPTY — no new or better photos available.",
+   "notes": [],
+   "images": {
+    "jpg_png": 0,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 0,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 0
+  },
+  {
+   "name": "Gucci @ Mega Bangna",
+   "brand": "Gucci",
+   "venue": "Mega Bangna",
+   "city": "Bangkok",
+   "folders": [
+    "Gucci Mega Bangna",
+    "1 Photo Render/Gucci Mega Bangna"
+   ],
+   "category": "luxury-retail",
+   "slug": "gucci-mega-bangna",
+   "on_site": "project-gucci-mega-bangna.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "Archive has 12 extra angles (main folder) but Photo Render twin looks AI-stylised — verify before use.",
+   "notes": [
+    "PR sample S__58908696_0.jpg judged AI-render-like (soft surfaces, mushy micro-text)"
+   ],
+   "images": {
+    "jpg_png": 24,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 8731760,
+   "duplicate_files_within_project": 12,
+   "usable_images_est": 12
+  },
+  {
+   "name": "Burberry & Gucci @ Dusit Central Park",
+   "brand": "Burberry & Gucci",
+   "venue": "Dusit Central Park",
+   "city": "Bangkok",
+   "folders": [
+    "BURBERRY DUSIT 19/5/2025",
+    "1 Photo Render/Gucci Central Dusit"
+   ],
+   "category": "luxury-retail",
+   "slug": "burberry-gucci-dusit-central-park",
+   "on_site": "project-burberry-gucci-dusit-central-park.html",
+   "year": "2025",
+   "year_source": "folder name 19/5/2025",
+   "recommendation": "on-site",
+   "reason": "~24 extra photos + 118 MB as-built PDF; PR twin folder empty.",
+   "notes": [],
+   "images": {
+    "jpg_png": 24,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 1,
+    "other": 0
+   },
+   "bytes": 169158579,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 24
+  },
+  {
+   "name": "Paul Smith @ Central Village",
+   "brand": "Paul Smith",
+   "venue": "Central Village",
+   "city": "Bangkok (Suvarnabhumi)",
+   "folders": [
+    "PAUL SMITH CENTRAL VILLAGE",
+    "1 Photo Render/Paul Smith Central Village"
+   ],
+   "category": "luxury-retail",
+   "slug": "paul-smith-central-village",
+   "on_site": "project-paul-smith-central-village.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "35 archive photos vs 3 on page (one of which is a generic stock-sector image) — clear upgrade available.",
+   "notes": [],
+   "images": {
+    "jpg_png": 40,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 12723921,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 40
+  },
+  {
+   "name": "Shiseido @ CentralWorld",
+   "brand": "Shiseido",
+   "venue": "CentralWorld",
+   "city": "Bangkok",
+   "folders": [
+    "SHISEIDO Central World",
+    "1 Photo Render/Shiseido Central World"
+   ],
+   "category": "luxury-retail",
+   "slug": "shiseido-centralworld",
+   "on_site": "project-shiseido-centralworld.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "13 extra photos but small files (~175 KB, LINE-compressed); PR twin flagged AI.",
+   "notes": [],
+   "images": {
+    "jpg_png": 17,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 10915892,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 17
+  },
+  {
+   "name": "Panpuri @ One Bangkok",
+   "brand": "Panpuri",
+   "venue": "One Bangkok",
+   "city": "Bangkok",
+   "folders": [
+    "Panpuri One Bangkok",
+    "1 Photo Render/Panpuri One Bangkok"
+   ],
+   "category": "luxury-retail",
+   "slug": "panpuri-one-bangkok",
+   "on_site": "project-panpuri-one-bangkok.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "33 archive photos vs 2 on page (one generic) — clear upgrade available.",
+   "notes": [],
+   "images": {
+    "jpg_png": 39,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 14152207,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 39
+  },
+  {
+   "name": "Clé de Peau Beauté @ Dusit Central Park",
+   "brand": "Clé de Peau Beauté",
+   "venue": "Dusit Central Park",
+   "city": "Bangkok",
+   "folders": [
+    "CPB CENTRAL DUSIT",
+    "1 Photo Render/CPB Central Dusit"
+   ],
+   "category": "luxury-retail",
+   "slug": "cpb-dusit-central-park",
+   "on_site": "project-cpb-dusit-central-park.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "7+4 extra photos (PR set judged real).",
+   "notes": [],
+   "images": {
+    "jpg_png": 11,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 4621924,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 11
+  },
+  {
+   "name": "Pop Mart @ Maya Chiangmai",
+   "brand": "Pop Mart",
+   "venue": "Maya Chiangmai",
+   "city": "Chiang Mai",
+   "folders": [
+    "POP MART MAYA CHIANGMAI",
+    "1 Photo Render/Pop Mart Maya Chiangmai"
+   ],
+   "category": "luxury-retail",
+   "slug": "popmart-maya-chiangmai",
+   "on_site": "project-popmart-maya-chiangmai.html",
+   "year": null,
+   "year_source": null,
+   "recommendation": "on-site",
+   "reason": "78 archive photos vs 2 on page — biggest upgrade available.",
+   "notes": [],
+   "images": {
+    "jpg_png": 82,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 32177165,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 82
+  },
+  {
+   "name": "Chanel @ Central Udon Thani",
+   "brand": "Chanel",
+   "venue": "Central Udon Thani",
+   "city": "Udon Thani",
+   "folders": [
+    "CHANEL อุดร2025",
+    "1 Photo Render/Chanel Central Udon"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-central-udon",
+   "on_site": null,
+   "year": "2025",
+   "year_source": "folder name อุดร2025",
+   "recommendation": "publish",
+   "reason": "18 real photos (sample verified: finished freestanding fragrance podium); provincial project — good coverage story.",
+   "notes": [
+    "7 PDFs incl. one comment PDF uploaded 5×; ignore for site"
+   ],
+   "images": {
+    "jpg_png": 18,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 7,
+    "other": 0
+   },
+   "bytes": 217483378,
+   "duplicate_files_within_project": 4,
+   "usable_images_est": 14
+  },
+  {
+   "name": "Chanel @ Central Chaengwattana",
+   "brand": "Chanel",
+   "venue": "Central Chaengwattana",
+   "city": "Nonthaburi",
+   "folders": [
+    "CHANEL เเจ้งวัฒนะ 2026",
+    "1 Photo Render/Chanel Central Cheangwattana"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-central-chaengwattana",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name 2026",
+   "recommendation": "publish",
+   "reason": "9 photos + 3 PR images (PR flagged possibly AI — verify at build).",
+   "notes": [],
+   "images": {
+    "jpg_png": 12,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 1,
+    "other": 0
+   },
+   "bytes": 9365734,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 12
+  },
+  {
+   "name": "Chanel @ Suvarnabhumi Airport",
+   "brand": "Chanel",
+   "venue": "Suvarnabhumi Airport",
+   "city": "Samut Prakan (BKK airport)",
+   "folders": [
+    "CHANEL SVB 2026"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-suvarnabhumi",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name 2026",
+   "recommendation": "publish",
+   "reason": "13 photos; airport retail broadens the portfolio.",
+   "notes": [],
+   "images": {
+    "jpg_png": 13,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 3739826,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 13
+  },
+  {
+   "name": "Chanel @ Chiang Mai Airport",
+   "brand": "Chanel",
+   "venue": "Chiang Mai Airport",
+   "city": "Chiang Mai",
+   "folders": [
+    "CHANEL CHANGMAI AIRPORT"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-chiangmai-airport",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "21 photos + 1 PDF.",
+   "notes": [
+    "Folder 'CHANGMAI' = Chiang Mai"
+   ],
+   "images": {
+    "jpg_png": 21,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 1,
+    "other": 0
+   },
+   "bytes": 22778427,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 21
+  },
+  {
+   "name": "Chanel @ Central Chiangmai (PR folder)",
+   "brand": "Chanel",
+   "venue": "Central Chiangmai?",
+   "city": "Chiang Mai",
+   "folders": [
+    "1 Photo Render/Chanel Central Chiangmai"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-central-chiangmai",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "6 images (TikTok-named jpgs). Is this the same job as Chiang Mai Airport or a separate Central Chiangmai store? Please confirm.",
+   "notes": [],
+   "images": {
+    "jpg_png": 6,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 5178773,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 6
+  },
+  {
+   "name": "Chanel cabin @ The Emporium",
+   "brand": "Chanel",
+   "venue": "The Emporium",
+   "city": "Bangkok",
+   "folders": [
+    "Chanel cabin The emporium 08/04/0204"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-cabin-emporium",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Only 3 photos — below the 3–8 target once culled; date in folder name is garbled (08/04/0204).",
+   "notes": [],
+   "images": {
+    "jpg_png": 3,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 731886,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 3
+  },
+  {
+   "name": "Chanel @ Siam Paragon",
+   "brand": "Chanel",
+   "venue": "Siam Paragon",
+   "city": "Bangkok",
+   "folders": [
+    "Chanel Siamparagon",
+    "1 Photo Render/Chanel Siam Paragon"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-siam-paragon",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "No usable photos: main folder holds one 20.7 MB PDF only; PR folder is 6 AI-generated images (one literally named 'ChatGPT Image …'). Publishing AI images as finished work is not advisable — do you have real photos elsewhere?",
+   "notes": [],
+   "images": {
+    "jpg_png": 6,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 1,
+    "other": 0
+   },
+   "bytes": 33673182,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 6
+  },
+  {
+   "name": "Chanel N°5 Re-edition 2026 (VM)",
+   "brand": "Chanel",
+   "venue": "multiple counters",
+   "city": "Bangkok",
+   "folders": [
+    "VM Chanel N°5 RE-EDITION 2026 Campaign"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-vm-no5-2026",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name",
+   "recommendation": "needs-decision",
+   "reason": "Visual-merchandising campaign — site has no VM category. See proposal in audit; your call on presentation.",
+   "notes": [
+    "27 HEIC — convertible"
+   ],
+   "images": {
+    "jpg_png": 0,
+    "heic": 27
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 61101779,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 27
+  },
+  {
+   "name": "Chanel Rouge Coco Gloss 2026 (VM)",
+   "brand": "Chanel",
+   "venue": "multiple counters",
+   "city": "Bangkok",
+   "folders": [
+    "VM Chanel ROUGE COCO GLOSS 2026 Campaign",
+    "1 Photo Render/Rouge Coco Hydra gloss"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-vm-rouge-coco-2026",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name",
+   "recommendation": "needs-decision",
+   "reason": "Visual-merchandising campaign — site has no VM category. See proposal in audit; your call on presentation.",
+   "notes": [
+    "PR twin contains 'By Claude' AI files — exclude those"
+   ],
+   "images": {
+    "jpg_png": 21,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 10040421,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 21
+  },
+  {
+   "name": "Chanel Rouge Noir 2026 (VM)",
+   "brand": "Chanel",
+   "venue": "multiple counters",
+   "city": "Bangkok",
+   "folders": [
+    "VM Chanel ROUGE NOIR 2026 Campaign"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-vm-rouge-noir-2026",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name",
+   "recommendation": "needs-decision",
+   "reason": "Visual-merchandising campaign — site has no VM category. See proposal in audit; your call on presentation.",
+   "notes": [],
+   "images": {
+    "jpg_png": 0,
+    "heic": 11
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 27019773,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 11
+  },
+  {
+   "name": "Chanel Holiday 2025 (VM)",
+   "brand": "Chanel",
+   "venue": "multiple counters",
+   "city": "Bangkok",
+   "folders": [
+    "VM Chanel HOLIDAY 2025 Campaign"
+   ],
+   "category": "luxury-retail",
+   "slug": "chanel-vm-holiday-2025",
+   "on_site": null,
+   "year": "2025",
+   "year_source": "folder name",
+   "recommendation": "needs-decision",
+   "reason": "Visual-merchandising campaign — site has no VM category. See proposal in audit; your call on presentation. Sample verified: finished in-store 'Winter Constellation' display.",
+   "notes": [
+    "11 HEIC + 4 MOV (28–138 MB)"
+   ],
+   "images": {
+    "jpg_png": 0,
+    "heic": 11
+   },
+   "other_files": {
+    "video": 4,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 401535921,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 11
+  },
+  {
+   "name": "Gucci @ Central Pinklao",
+   "brand": "Gucci",
+   "venue": "Central Pinklao",
+   "city": "Bangkok",
+   "folders": [
+    "GUCCI CENTRAL PINKLAO",
+    "1 Photo Render/Gucci Central Pinklao"
+   ],
+   "category": "luxury-retail",
+   "slug": "gucci-central-pinklao",
+   "on_site": null,
+   "year": "2025",
+   "year_source": "previous site data",
+   "recommendation": "publish",
+   "reason": "12 real photos (PR twin flagged AI — verify); was on the site before the Mega Bangna replacement, facts already known (2025, 24 sqm).",
+   "notes": [],
+   "images": {
+    "jpg_png": 16,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 12015258,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 16
+  },
+  {
+   "name": "Shiseido @ Siam Takashimaya",
+   "brand": "Shiseido",
+   "venue": "Siam Takashimaya (Iconsiam)",
+   "city": "Bangkok",
+   "folders": [
+    "SHISEIDO Siamtakashimaya",
+    "1 Photo Render/Shiseido Takashimaya"
+   ],
+   "category": "luxury-retail",
+   "slug": "shiseido-siam-takashimaya",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "7 HEIC photos + 1 MOV (PR twin flagged AI — verify).",
+   "notes": [],
+   "images": {
+    "jpg_png": 7,
+    "heic": 7
+   },
+   "other_files": {
+    "video": 1,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 47809000,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 14
+  },
+  {
+   "name": "Clé de Peau Beauté @ Central Pinklao",
+   "brand": "Clé de Peau Beauté",
+   "venue": "Central Pinklao",
+   "city": "Bangkok",
+   "folders": [
+    "CPB CENTRAL PINKLAO"
+   ],
+   "category": "luxury-retail",
+   "slug": "cpb-central-pinklao",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "11 good camera photos — but see brand-rollout question (4 CPB counters incl. the one on site).",
+   "notes": [],
+   "images": {
+    "jpg_png": 11,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 27621677,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 11
+  },
+  {
+   "name": "Clé de Peau Beauté @ Siam Takashimaya",
+   "brand": "Clé de Peau Beauté",
+   "venue": "Siam Takashimaya",
+   "city": "Bangkok",
+   "folders": [
+    "CPB SIAM TAKASHIMAYA"
+   ],
+   "category": "luxury-retail",
+   "slug": "cpb-siam-takashimaya",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "21 large camera photos (49 MB) — strongest CPB set; see rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 21,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 49536043,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 21
+  },
+  {
+   "name": "Clé de Peau Beauté @ Central Chidlom",
+   "brand": "Clé de Peau Beauté",
+   "venue": "Central Chidlom",
+   "city": "Bangkok",
+   "folders": [
+    "CPB CENTRAL CHIDLOM"
+   ],
+   "category": "luxury-retail",
+   "slug": "cpb-central-chidlom",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "35 photos; this was on the site before (2024, 79 sqm per old data); see rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 35,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 12270084,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 35
+  },
+  {
+   "name": "Panpuri @ Suvarnabhumi Airport",
+   "brand": "Panpuri",
+   "venue": "Suvarnabhumi Airport",
+   "city": "Samut Prakan (BKK airport)",
+   "folders": [
+    "Panpuri SVB Airport",
+    "1 Photo Render/Panpuri SVB Airport"
+   ],
+   "category": "luxury-retail",
+   "slug": "panpuri-suvarnabhumi",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "7 + 8 photos (PR set judged real).",
+   "notes": [],
+   "images": {
+    "jpg_png": 15,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 6059296,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 15
+  },
+  {
+   "name": "Panpuri @ Chiang Mai Airport",
+   "brand": "Panpuri",
+   "venue": "Chiang Mai Airport",
+   "city": "Chiang Mai",
+   "folders": [
+    "Panpuri Chiangmai Airport"
+   ],
+   "category": "luxury-retail",
+   "slug": "panpuri-chiangmai-airport",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "19 photos.",
+   "notes": [],
+   "images": {
+    "jpg_png": 19,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 7605960,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 19
+  },
+  {
+   "name": "Van Cleef & Arpels @ Emsphere",
+   "brand": "Van Cleef & Arpels",
+   "venue": "Emsphere",
+   "city": "Bangkok",
+   "folders": [
+    "VCA Emsphere"
+   ],
+   "category": "luxury-retail",
+   "slug": "vca-emsphere",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "24 photos; brand confirmed visually from Collection Extraordinaire fixture.",
+   "notes": [
+    "VCA resolved = Van Cleef & Arpels (fragrance fixture)"
+   ],
+   "images": {
+    "jpg_png": 24,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 4395043,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 24
+  },
+  {
+   "name": "Van Cleef & Arpels @ Central Chidlom",
+   "brand": "Van Cleef & Arpels",
+   "venue": "Central Chidlom",
+   "city": "Bangkok",
+   "folders": [
+    "VCA Central Chidlom"
+   ],
+   "category": "luxury-retail",
+   "slug": "vca-central-chidlom",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "10 photos; see rollout question (3 VCA fixtures).",
+   "notes": [],
+   "images": {
+    "jpg_png": 10,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1054229,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 10
+  },
+  {
+   "name": "Van Cleef & Arpels Escential @ Siam Paragon",
+   "brand": "Van Cleef & Arpels",
+   "venue": "Siam Paragon",
+   "city": "Bangkok",
+   "folders": [
+    "VCA Escential Siam Paragon"
+   ],
+   "category": "luxury-retail",
+   "slug": "vca-escential-siam-paragon",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Only 2 images — too thin for a page on its own.",
+   "notes": [],
+   "images": {
+    "jpg_png": 2,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 257879,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 2
+  },
+  {
+   "name": "Elixir @ Central Chaengwattana",
+   "brand": "Elixir (confirm brand)",
+   "venue": "Central Chaengwattana",
+   "city": "Nonthaburi",
+   "folders": [
+    "Elixir Central Chaengwattana"
+   ],
+   "category": "luxury-retail",
+   "slug": "elixir-central-chaengwattana",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "11 photos, but brand unresolved — Elixir is most likely Shiseido's ELIXIR skincare line; please confirm before naming it publicly.",
+   "notes": [],
+   "images": {
+    "jpg_png": 11,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 3523299,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 11
+  },
+  {
+   "name": "Elixir @ Central Pinklao",
+   "brand": "Elixir (confirm brand)",
+   "venue": "Central Pinklao",
+   "city": "Bangkok",
+   "folders": [
+    "Elixir Central Pinklao"
+   ],
+   "category": "luxury-retail",
+   "slug": "elixir-central-pinklao",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "5 photos + brand unresolved; see above.",
+   "notes": [],
+   "images": {
+    "jpg_png": 5,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1731601,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 5
+  },
+  {
+   "name": "Charlotte Tilbury @ Central Chiangmai",
+   "brand": "Charlotte Tilbury",
+   "venue": "Central Chiangmai",
+   "city": "Chiang Mai",
+   "folders": [
+    "Charlotte Central Chiangmai"
+   ],
+   "category": "luxury-retail",
+   "slug": "charlotte-tilbury-central-chiangmai",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Brand confirmed visually (counter photo), but only 4 photos — borderline thin.",
+   "notes": [],
+   "images": {
+    "jpg_png": 4,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1601225,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 4
+  },
+  {
+   "name": "Bobbi Brown @ Central Chaengwattana",
+   "brand": "Bobbi Brown",
+   "venue": "Central Chaengwattana",
+   "city": "Nonthaburi",
+   "folders": [
+    "BobbiBrown Central Chaengwattana"
+   ],
+   "category": "luxury-retail",
+   "slug": "bobbi-brown-central-chaengwattana",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "4 photos; see rollout question (3 Bobbi Brown counters).",
+   "notes": [],
+   "images": {
+    "jpg_png": 4,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1309237,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 4
+  },
+  {
+   "name": "Bobbi Brown @ Central Pinklao",
+   "brand": "Bobbi Brown",
+   "venue": "Central Pinklao",
+   "city": "Bangkok",
+   "folders": [
+    "BobbiBrown Central Pinklao"
+   ],
+   "category": "luxury-retail",
+   "slug": "bobbi-brown-central-pinklao",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "8 photos + 1 walkthrough mp4; see rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 8,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 1,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 11548229,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 8
+  },
+  {
+   "name": "Bobbi Brown @ The Mall Bangkae",
+   "brand": "Bobbi Brown",
+   "venue": "The Mall Bangkae",
+   "city": "Bangkok",
+   "folders": [
+    "1 Photo Render/Bobbi Brown The Mall Bangkae"
+   ],
+   "category": "luxury-retail",
+   "slug": "bobbi-brown-the-mall-bangkae",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Only 2 images, in the AI-suspect PR tree; almost certainly too thin.",
+   "notes": [],
+   "images": {
+    "jpg_png": 2,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 4769681,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 2
+  },
+  {
+   "name": "Hourglass @ Central Phuket",
+   "brand": "Hourglass",
+   "venue": "Central Phuket",
+   "city": "Phuket",
+   "folders": [
+    "Hourglass Central Phuket"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-central-phuket",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "15 photos (largest Hourglass set) — see rollout question (9 locations).",
+   "notes": [],
+   "images": {
+    "jpg_png": 15,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 2591028,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 15
+  },
+  {
+   "name": "Hourglass @ Central Chiangmai",
+   "brand": "Hourglass",
+   "venue": "Central Chiangmai",
+   "city": "Chiang Mai",
+   "folders": [
+    "Hourglass Central Chiangmai"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-central-chiangmai",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "12 photos; rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 12,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1901840,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 12
+  },
+  {
+   "name": "Hourglass @ Siam Takashimaya",
+   "brand": "Hourglass",
+   "venue": "Siam Takashimaya",
+   "city": "Bangkok",
+   "folders": [
+    "Hourglass Siam Takashimaya"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-siam-takashimaya",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "12 photos; rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 12,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 2016278,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 12
+  },
+  {
+   "name": "Hourglass @ Central Chidlom",
+   "brand": "Hourglass",
+   "venue": "Central Chidlom",
+   "city": "Bangkok",
+   "folders": [
+    "Hourglass Central Chidlom"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-central-chidlom",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "7 photos; rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 7,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 802104,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 7
+  },
+  {
+   "name": "Hourglass @ The Mall Ngamwongwan",
+   "brand": "Hourglass",
+   "venue": "The Mall Ngamwongwan",
+   "city": "Nonthaburi",
+   "folders": [
+    "Hourglass The Mall Ngamwongwan"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-the-mall-ngamwongwan",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "8 photos; rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 8,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1360523,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 8
+  },
+  {
+   "name": "Hourglass @ Central Khonkaen",
+   "brand": "Hourglass",
+   "venue": "Central Khonkaen",
+   "city": "Khon Kaen",
+   "folders": [
+    "1 Photo Render/Hourglass Central Khonkaen"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-central-khonkaen",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "4 photos (verified REAL photos despite living in the PR tree); provincial location adds coverage; rollout question.",
+   "notes": [],
+   "images": {
+    "jpg_png": 4,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 2921197,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 4
+  },
+  {
+   "name": "Hourglass @ Central Pinklao",
+   "brand": "Hourglass",
+   "venue": "Central Pinklao",
+   "city": "Bangkok",
+   "folders": [
+    "Hourglass Central Pinklao"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-central-pinklao",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "skip",
+   "reason": "Folder is EMPTY.",
+   "notes": [],
+   "images": {
+    "jpg_png": 0,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 0,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 0
+  },
+  {
+   "name": "Hourglass Additional @ Siam Paragon",
+   "brand": "Hourglass",
+   "venue": "Siam Paragon",
+   "city": "Bangkok",
+   "folders": [
+    "Hourglass Additional Siam Paragon"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-siam-paragon-additional",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Amendment to an existing counter, not a job of its own (your call: fold into a rollout page or omit).",
+   "notes": [],
+   "images": {
+    "jpg_png": 13,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 2087690,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 13
+  },
+  {
+   "name": "Hourglass Minor Changes @ CentralWorld",
+   "brand": "Hourglass",
+   "venue": "CentralWorld",
+   "city": "Bangkok",
+   "folders": [
+    "Hourglass Central World Minor Changes"
+   ],
+   "category": "luxury-retail",
+   "slug": "hourglass-centralworld-minor",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Amendment, not a job of its own; same question as above.",
+   "notes": [],
+   "images": {
+    "jpg_png": 7,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1007036,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 7
+  },
+  {
+   "name": "Sunnies @ CentralWorld",
+   "brand": "Sunnies",
+   "venue": "CentralWorld",
+   "city": "Bangkok",
+   "folders": [
+    "Sunnies Central World",
+    "Sunnies central world",
+    "1 Wiriwork/Sunnies Central World"
+   ],
+   "category": "luxury-retail",
+   "slug": "sunnies-centralworld",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "7 photos (lowercase twin folder is empty; Wiriwork copy is the same 7 by size).",
+   "notes": [],
+   "images": {
+    "jpg_png": 14,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1727746,
+   "duplicate_files_within_project": 7,
+   "usable_images_est": 7
+  },
+  {
+   "name": "Sunnies @ Central Bangna",
+   "brand": "Sunnies",
+   "venue": "Central Bangna",
+   "city": "Bangkok",
+   "folders": [
+    "Sunnies สาขา bangna",
+    "1 Wiriwork/Sunnies Central Bangna"
+   ],
+   "category": "luxury-retail",
+   "slug": "sunnies-central-bangna",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "previous site data",
+   "recommendation": "publish",
+   "reason": "22 photos (Wiriwork copy duplicates them by size); this project was on the site before (2026, 105 sqm per old data).",
+   "notes": [],
+   "images": {
+    "jpg_png": 44,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 12006316,
+   "duplicate_files_within_project": 22,
+   "usable_images_est": 22
+  },
+  {
+   "name": "Another Story @ Emsphere",
+   "brand": "Another Story",
+   "venue": "Emsphere",
+   "city": "Bangkok",
+   "folders": [
+    "ANOTHER STORRY EMSPHERE 28/04/2026",
+    "1 Wiriwork/Aonther Story"
+   ],
+   "category": "luxury-retail",
+   "slug": "another-story-emsphere",
+   "on_site": null,
+   "year": "2026",
+   "year_source": "folder name 28/04/2026",
+   "recommendation": "publish",
+   "reason": "19 + 4 photos across the two misspelt folders.",
+   "notes": [],
+   "images": {
+    "jpg_png": 23,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 4495402,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 23
+  },
+  {
+   "name": "Philips pop-up @ Central Chidlom",
+   "brand": "Philips",
+   "venue": "Central Chidlom",
+   "city": "Bangkok",
+   "folders": [
+    "Phillips  Pop-up store Central Chidlom"
+   ],
+   "category": "corporate",
+   "slug": "philips-popup-central-chidlom",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "7 photos; first non-beauty pop-up — proposed category Corporate & Commercial (confirm).",
+   "notes": [],
+   "images": {
+    "jpg_png": 7,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1900534,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 7
+  },
+  {
+   "name": "Blue Bottle @ EmQuartier",
+   "brand": "Blue Bottle Coffee",
+   "venue": "EmQuartier",
+   "city": "Bangkok",
+   "folders": [
+    "BlueBottle EmQuartier Bts",
+    "1 Photo Render/Blue Bottle"
+   ],
+   "category": "fnb",
+   "slug": "blue-bottle-emquartier",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "publish",
+   "reason": "22 photos (+3 technical PDFs; PR twin is 1 'By Claude' AI file — exclude). First real F&B project: category F&B & Lifestyle goes live.",
+   "notes": [],
+   "images": {
+    "jpg_png": 23,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 3,
+    "other": 0
+   },
+   "bytes": 10280556,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 23
+  },
+  {
+   "name": "Pralet @ EmQuartier",
+   "brand": "Pralet",
+   "venue": "EmQuartier",
+   "city": "Bangkok",
+   "folders": [
+    "Pralet Emquartier",
+    "1 Photo Render/Pralet EmQuartier"
+   ],
+   "category": "fnb",
+   "slug": "pralet-emquartier",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Only 3 photos + 1 mp4; thin. Also confirm the brand (Pralet = dessert/café brand?).",
+   "notes": [],
+   "images": {
+    "jpg_png": 3,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 1,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 14146663,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 3
+  },
+  {
+   "name": "EA7 @ Siam Paragon",
+   "brand": "EA7 Emporio Armani (confirm)",
+   "venue": "Siam Paragon",
+   "city": "Bangkok",
+   "folders": [
+    "1 Photo Render/EA7 Siam Paragon"
+   ],
+   "category": "luxury-retail",
+   "slug": "ea7-siam-paragon",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "4 images, only in the PR tree (photo-vs-AI not yet verified); EA7 is presumably Emporio Armani 7 — confirm brand and whether we may publish.",
+   "notes": [],
+   "images": {
+    "jpg_png": 4,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 2969816,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 4
+  },
+  {
+   "name": "CDS @ Central Bangna",
+   "brand": "CDS (confirm meaning)",
+   "venue": "Central Bangna",
+   "city": "Bangkok",
+   "folders": [
+    "1 Wiriwork/CDS Central Bangna"
+   ],
+   "category": "needs-decision-category",
+   "slug": "cds-central-bangna",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "3 photos of light-wood retail fixture tables inside a Central department store. 'CDS' likely = Central Department Store — confirm what this job was and how to credit it.",
+   "notes": [],
+   "images": {
+    "jpg_png": 3,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 1190649,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 3
+  },
+  {
+   "name": "3M (unknown venue)",
+   "brand": "3M",
+   "venue": "unknown",
+   "city": "unknown",
+   "folders": [
+    "3M"
+   ],
+   "category": "corporate",
+   "slug": "3m",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "Only 3 photos and no venue info — too thin unless you supply facts and more images.",
+   "notes": [],
+   "images": {
+    "jpg_png": 3,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 0
+   },
+   "bytes": 618830,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 3
+  },
+  {
+   "name": "Prada @ Changi Airport T1 & T2",
+   "brand": "Prada",
+   "venue": "Changi Airport T1 & T2",
+   "city": "Singapore",
+   "folders": [
+    "Prada @ Changi T1 & T2 Progress Photo"
+   ],
+   "category": "luxury-retail",
+   "slug": "prada-changi",
+   "on_site": null,
+   "year": null,
+   "year_source": null,
+   "recommendation": "needs-decision",
+   "reason": "1,838 images but they are DAILY CONSTRUCTION PROGRESS photos (WhatsApp dumps over ~3 months) + an installation manual — not finished-work photography. An overseas Prada job is a great story, but publishing progress shots needs your explicit choice (or finished photos from elsewhere).",
+   "notes": [],
+   "images": {
+    "jpg_png": 1838,
+    "heic": 0
+   },
+   "other_files": {
+    "video": 0,
+    "pdf": 0,
+    "other": 1
+   },
+   "bytes": 510948677,
+   "duplicate_files_within_project": 0,
+   "usable_images_est": 1838
+  }
+ ],
+ "non_project_folders": [
+  {
+   "path": "VDO Clip",
+   "note": "4 videos: company profile master (1.10 GB) + 3 machine films. Used in Part 2."
+  },
+  {
+   "path": "1 Factory Photo",
+   "note": "55 files: 52 real factory photos (LINE-compressed), 2 misc, 1 Gemini AI image. Not a project; could refresh about/factory imagery later."
+  },
+  {
+   "path": "1 Photo Render",
+   "note": "21 project subfolders — a MIX of real photos and AI-generated images (ChatGPT/Gemini/'By Claude' files). Merged into projects above; AI flags noted per project."
+  },
+  {
+   "path": "1 Wiriwork",
+   "note": "4 subfolders of genuine site/fixture photography (CDS, Another Story, Sunnies ×2). Meaning of 'Wiriwork' unknown — it may be an internal team or sister-brand name (cf. your Wiribed project); please confirm."
+  },
+  {
+   "path": "1 Photo Render/CC Work in process",
+   "note": "4 files, explicitly work-in-process — excluded per your instruction."
+  }
+ ]
+}

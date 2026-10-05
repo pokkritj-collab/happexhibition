@@ -1,2 +1,7 @@
 .DS_Store
 Thumbs.db
+
+# works-archive working copies (originals stay out of the repo)
+archive-staging/
+*.zip
+~$*

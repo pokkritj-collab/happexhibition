@@ -1,0 +1,445 @@
+# -*- coding: utf-8 -*-
+"""Works-archive import data (Oct 2026): image picks + NEWP/GROUPS for build_i18n.py.
+PICKS: slug -> list of (staged_dir, index_in_sorted_file_list, out_basename, alt_en, alt_th).
+Facts policy per owner: no sqm; scope end-to-end; year only from folder names/owner."""
+
+S = "/private/tmp/claude-501/-Users-pokkritjeerapat-Desktop-happexhibition-company-profile/08293ddc-f3f3-4af9-b522-2b1d869dfc23/scratchpad/archive-staging"
+
+PICKS = {
+"chanel-central-udon": [
+ ("CHANEL อุดร2025",1,"podium-front","Chanel beauty podium at Central Udon Thani — black lacquer canopy with illuminated logo","เคาน์เตอร์บิวตี้ Chanel ที่เซ็นทรัล อุดร — หลังคาแล็กเกอร์ดำพร้อมโลโก้เรืองแสง"),
+ ("CHANEL อุดร2025",10,"no1-counter","White N°1 de Chanel display counter with backlit shelving","เคาน์เตอร์ N°1 de Chanel สีขาวพร้อมชั้นวางไฟแบ็คไลท์"),
+ ("CHANEL อุดร2025",5,"makeup-bay","Makeup bay with campaign screens and tester units","โซนเมคอัพพร้อมจอแคมเปญและจุดเทสเตอร์"),
+ ("CHANEL อุดร2025",16,"atrium-view","The freestanding podium in the mall atrium","พอเดียมกลางเอเทรียมของศูนย์การค้า"),
+ ("CHANEL อุดร2025",7,"fragrance-front","Fragrance display with CHANCE lightbox pillar","ดิสเพลย์น้ำหอมพร้อมเสาไลท์บ็อกซ์ CHANCE"),
+],
+"chanel-central-chaengwattana": [
+ ("CHANEL เเจ้งวัฒนะ 2026",1,"counter-front","Chanel counter at Central Chaengwattana — black canopy over white casework","เคาน์เตอร์ Chanel ที่เซ็นทรัล แจ้งวัฒนะ — หลังคาดำเหนืองานตู้สีขาว"),
+ ("CHANEL เเจ้งวัฒนะ 2026",3,"chance-pillar","CHANCE fragrance campaign lightbox","ไลท์บ็อกซ์แคมเปญน้ำหอม CHANCE"),
+ ("CHANEL เเจ้งวัฒนะ 2026",7,"arcade-view","Counter row seen from the mall walkway","แนวเคาน์เตอร์มองจากทางเดินห้าง"),
+ ("CHANEL เเจ้งวัฒนะ 2026",0,"interior-bay","Interior bay with white counters and testers","โซนด้านในพร้อมเคาน์เตอร์ขาวและเทสเตอร์"),
+],
+"chanel-suvarnabhumi": [
+ ("CHANEL SVB 2026",10,"boutique-front","Chanel fragrance boutique at Suvarnabhumi Airport","บูติกน้ำหอม Chanel ที่ท่าอากาศยานสุวรรณภูมิ"),
+ ("CHANEL SVB 2026",5,"exclusifs-table","Les Exclusifs de Chanel display table","โต๊ะดิสเพลย์ Les Exclusifs de Chanel"),
+ ("CHANEL SVB 2026",8,"fragrance-wall","Backlit fragrance wall with lacquer frame","ผนังน้ำหอมไฟแบ็คไลท์กรอบแล็กเกอร์"),
+ ("CHANEL SVB 2026",6,"centre-axis","Centre axis with feature display plinth","แกนกลางร้านพร้อมแท่นดิสเพลย์"),
+ ("CHANEL SVB 2026",12,"entrance","Entrance portal with campaign screens","ทางเข้าพร้อมจอแคมเปญ"),
+],
+"chanel-chiangmai-airport": [
+ ("CHANEL CHANGMAI AIRPORT",14,"counter-run","Chanel beauty counter run under the coffered ceiling","แนวเคาน์เตอร์บิวตี้ Chanel ใต้ฝ้าเพดานลายรังผึ้ง"),
+ ("CHANEL CHANGMAI AIRPORT",8,"signage-bay","Black lacquer bay with illuminated CHANEL signage","ตู้แล็กเกอร์ดำพร้อมป้าย CHANEL เรืองแสง"),
+ ("CHANEL CHANGMAI AIRPORT",12,"island-units","Island counters in the beauty hall","เคาน์เตอร์กลางในฮอลล์บิวตี้"),
+ ("CHANEL CHANGMAI AIRPORT",1,"makeup-gradient","Makeup display with full colour gradient","ดิสเพลย์เมคอัพไล่เฉดสีครบ"),
+ ("CHANEL CHANGMAI AIRPORT",17,"rouge-display","Rouge Coco campaign display wheel","ดิสเพลย์แคมเปญ Rouge Coco"),
+],
+"chanel-central-chiangmai": [
+ ("1 Photo Render__Chanel Central Chiangmai",3,"counter-campaign","Chanel counter with seasonal campaign display at Central Chiangmai","เคาน์เตอร์ Chanel พร้อมดิสเพลย์แคมเปญที่เซ็นทรัล เชียงใหม่"),
+ ("1 Photo Render__Chanel Central Chiangmai",1,"fragrance-makeup","Fragrance and makeup counter with backlit shelving","เคาน์เตอร์น้ำหอมและเมคอัพพร้อมชั้นไฟแบ็คไลท์"),
+ ("1 Photo Render__Chanel Central Chiangmai",5,"white-counter","White counter with gift boxes and low displays","เคาน์เตอร์ขาวพร้อมกล่องของขวัญ"),
+],
+"chanel-cabin-emporium": [
+ ("Chanel cabin The emporium 08__04__0204",1,"cabin-centre","Chanel treatment cabin at The Emporium — treatment bed within gold-panelled walls","ห้องทรีตเมนต์ Chanel ที่ดิ เอ็มโพเรียม — เตียงทรีตเมนต์ในผนังโทนทอง"),
+ ("Chanel cabin The emporium 08__04__0204",0,"cabin-view","Cabin axis with cloud ceiling lights","แกนห้องพร้อมไฟเพดานทรงเมฆ"),
+ ("Chanel cabin The emporium 08__04__0204",2,"cabin-vanity","Vanity wall and cabinetry at the cabin end","ผนังแต่งหน้าและตู้เก็บของท้ายห้อง"),
+],
+"chanel-siam-paragon": [
+ ("1 Photo Render__Chanel Siam Paragon",0,"counter-screen","Chanel beauty hall at Siam Paragon — black counter and campaign screen","ฮอลล์บิวตี้ Chanel ที่สยามพารากอน — เคาน์เตอร์ดำและจอแคมเปญ"),
+ ("1 Photo Render__Chanel Siam Paragon",4,"gallery-run","Gold-toned gallery run with display niches","แนวผนังโทนทองพร้อมช่องดิสเพลย์"),
+ ("1 Photo Render__Chanel Siam Paragon",2,"no5-wall","N°5 display wall","ผนังดิสเพลย์ N°5"),
+ ("1 Photo Render__Chanel Siam Paragon",3,"dark-bay","Dark feature bay with lit shelving","ตู้โทนเข้มพร้อมชั้นวางไฟ"),
+ ("1 Photo Render__Chanel Siam Paragon",5,"gold-corner","Gold corner with product displays","มุมโทนทองพร้อมดิสเพลย์สินค้า"),
+],
+"gucci-central-pinklao": [
+ ("GUCCI CENTRAL PINKLAO",11,"counter-front","Gucci Beauty counter at Central Pinklao in pale yellow","เคาน์เตอร์ Gucci Beauty ที่เซ็นทรัล ปิ่นเกล้า โทนเหลืองอ่อน"),
+ ("GUCCI CENTRAL PINKLAO",6,"backwall","Backwall with illuminated display niches","ผนังหลังพร้อมช่องดิสเพลย์เรืองแสง"),
+ ("GUCCI CENTRAL PINKLAO",9,"lipstick-run","Lipstick tester run on the island counter","แนวเทสเตอร์ลิปสติกบนเคาน์เตอร์กลาง"),
+ ("GUCCI CENTRAL PINKLAO",3,"campaign-tables","Display tables with campaign visuals","โต๊ะดิสเพลย์พร้อมภาพแคมเปญ"),
+ ("GUCCI CENTRAL PINKLAO",10,"corner-wide","Corner view of the full counter zone","มุมกว้างของโซนเคาน์เตอร์"),
+],
+"shiseido-siam-takashimaya": [
+ ("SHISEIDO Siamtakashimaya",0,"counter-red","Shiseido counter at Siam Takashimaya with red accent band","เคาน์เตอร์ Shiseido ที่สยาม ทาคาชิมายะ พร้อมแถบแดง"),
+ ("SHISEIDO Siamtakashimaya",5,"product-wall","Red-and-white product display wall","ผนังดิสเพลย์สินค้าแดง-ขาว"),
+ ("SHISEIDO Siamtakashimaya",6,"camellia-relief","Shiseido camellia emblem in relief","สัญลักษณ์ดอกคาเมลเลียแบบนูนต่ำ"),
+ ("SHISEIDO Siamtakashimaya",4,"future-solution","Future Solution LX display zone","โซนดิสเพลย์ Future Solution LX"),
+],
+"panpuri-suvarnabhumi": [
+ ("1 Photo Render__Panpuri SVB Airport",4,"boutique-front","Pañpuri boutique at Suvarnabhumi Airport — dark timber with backlit shelving","บูติก Pañpuri ที่สุวรรณภูมิ — งานไม้เข้มพร้อมชั้นไฟแบ็คไลท์"),
+ ("1 Photo Render__Panpuri SVB Airport",2,"shelf-wall","Illuminated product shelf wall","ผนังชั้นวางสินค้าเรืองแสง"),
+ ("Panpuri SVB Airport",3,"island-table","Round island table with testers","โต๊ะกลางพร้อมเทสเตอร์"),
+ ("1 Photo Render__Panpuri SVB Airport",7,"shelf-detail","Shelf wall detail with warm lighting","ดีเทลชั้นวางพร้อมแสงอุ่น"),
+ ("1 Photo Render__Panpuri SVB Airport",6,"concourse-view","The boutique seen along the concourse","บูติกมองตามแนวทางเดินอาคารผู้โดยสาร"),
+],
+"panpuri-chiangmai-airport": [
+ ("Panpuri Chiangmai Airport",12,"pavilion-front","Pañpuri pavilion at Chiang Mai Airport — arched dark-timber frame","พาวิลเลียน Pañpuri ที่ท่าอากาศยานเชียงใหม่ — โครงไม้เข้มทรงโค้ง"),
+ ("Panpuri Chiangmai Airport",0,"arch-view","Arched portal with shelving wall","ซุ้มโค้งพร้อมผนังชั้นวาง"),
+ ("Panpuri Chiangmai Airport",5,"signage","PAÑPURI signage on the curved fascia","ป้าย PAÑPURI บนหน้าบันโค้ง"),
+ ("Panpuri Chiangmai Airport",17,"merchandised","Merchandised displays with customers browsing","ดิสเพลย์สินค้าพร้อมลูกค้าเลือกชม"),
+ ("Panpuri Chiangmai Airport",14,"island-detail","Timber island table with product spots","โต๊ะไม้กลางพร้อมจุดวางสินค้า"),
+],
+"sunnies-centralworld": [
+ ("1 Wiriwork__Sunnies Central World",4,"island-front","Sunnies island at CentralWorld — curved gold-lit canopy over blue counters","เกาะร้าน Sunnies ที่เซ็นทรัลเวิลด์ — หลังคาโค้งไฟทองเหนือเคาน์เตอร์น้ำเงิน"),
+ ("1 Wiriwork__Sunnies Central World",2,"entrance","Entrance view with illuminated Sunnies sign","มุมทางเข้าพร้อมป้าย Sunnies เรืองแสง"),
+ ("1 Wiriwork__Sunnies Central World",6,"zone-wide","The full island zone on the mall floor","โซนเกาะร้านเต็มพื้นที่"),
+],
+"sunnies-central-bangna": [
+ ("1 Wiriwork__Sunnies Central Bangna",0,"storefront","Sunnies store at Central Bangna — timber facade and sculptural blue counter","ร้าน Sunnies ที่เซ็นทรัล บางนา — หน้าร้านไม้และเคาน์เตอร์น้ำเงิน"),
+ ("1 Wiriwork__Sunnies Central Bangna",13,"colour-counter","Colour-blocked eyewear counter","เคาน์เตอร์แว่นตาไล่สี"),
+ ("1 Wiriwork__Sunnies Central Bangna",1,"facade-interior","Facade with view through to the interior","หน้าร้านมองทะลุสู่ด้านใน"),
+ ("1 Wiriwork__Sunnies Central Bangna",18,"cream-tables","Cream display tables with cosmetics","โต๊ะดิสเพลย์ครีมพร้อมเครื่องสำอาง"),
+ ("1 Wiriwork__Sunnies Central Bangna",10,"makeup-zone","Makeup zone with promo graphics","โซนเมคอัพพร้อมกราฟิกโปรโมชัน"),
+],
+"another-story-emsphere": [
+ ("1 Wiriwork__Aonther Story",6,"storefront","Another Story at Emsphere — plywood sloped architecture and signage","Another Story ที่เอ็มสเฟียร์ — สถาปัตยกรรมไม้อัดลาดเอียงพร้อมป้ายร้าน"),
+ ("1 Wiriwork__Aonther Story",10,"display-tables","Display tables and mannequins inside the store","โต๊ะดิสเพลย์และหุ่นภายในร้าน"),
+ ("1 Wiriwork__Aonther Story",14,"sign-detail","ANOTHER STORY sign over the entrance ramp","ป้าย ANOTHER STORY เหนือทางลาดเข้า"),
+ ("1 Wiriwork__Aonther Story",12,"interior-gondola","Clothing gondolas under the pendant light","ราวเสื้อผ้าใต้โคมแขวน"),
+ ("1 Wiriwork__Aonther Story",18,"mall-view","The storefront seen across the mall floor","หน้าร้านมองจากโถงห้าง"),
+],
+"philips-popup-central-chidlom": [
+ ("Phillips  Pop-up store Central Chidlom",4,"popup-counter","Philips pop-up at Central Chidlom — giant hair-dryer sculpture beside the counter","ป๊อปอัพ Philips ที่เซ็นทรัล ชิดลม — ประติมากรรมไดร์เป่าผมยักษ์ข้างเคาน์เตอร์"),
+ ("Phillips  Pop-up store Central Chidlom",5,"product-lineup","Product lineup table with Philips branding","โต๊ะเรียงสินค้าพร้อมแบรนด์ Philips"),
+ ("Phillips  Pop-up store Central Chidlom",6,"zone-view","The pop-up zone on the beauty floor","โซนป๊อปอัพบนชั้นบิวตี้"),
+ ("Phillips  Pop-up store Central Chidlom",0,"dryer-sculpture","Oversized dryer model on its lit plinth","โมเดลไดร์ขนาดใหญ่บนแท่นไฟ"),
+],
+"blue-bottle-emquartier": [
+ ("BlueBottle EmQuartier Bts",0,"plaza-view","Blue Bottle Coffee installation on the EmQuartier plaza","งานติดตั้ง Blue Bottle Coffee บนลานเอ็มควอเทียร์"),
+ ("BlueBottle EmQuartier Bts",12,"bangkok-graphic","The giant cup beside the BANGKOK floor graphic","ถ้วยยักษ์ข้างกราฟิกพื้น BANGKOK"),
+ ("BlueBottle EmQuartier Bts",4,"cup-detail","Blue Bottle cup sculpture up close","ประติมากรรมถ้วยกาแฟระยะใกล้"),
+ ("BlueBottle EmQuartier Bts",19,"walkway-view","The illuminated cup along the covered walkway","ถ้วยเรืองแสงตามแนวทางเดินมีหลังคา"),
+ ("BlueBottle EmQuartier Bts",2,"axial-view","Axial view under the EmQuartier soffit","มุมมองแนวแกนใต้ชายคาเอ็มควอเทียร์"),
+],
+"pralet-emquartier": [
+ ("Pralet Emquartier",0,"kiosk-front","Pralet kiosk at EmQuartier — red gloss frame with illuminated lettering","คีออส Pralet ที่เอ็มควอเทียร์ — โครงแดงเงาพร้อมตัวอักษรเรืองแสง"),
+ ("Pralet Emquartier",2,"counter-service","Service counter with display case","เคาน์เตอร์บริการพร้อมตู้โชว์"),
+],
+"ea7-siam-paragon": [
+ ("1 Photo Render__EA7 Siam Paragon",0,"zone-view","EA7 Emporio Armani pop-up zone at Siam Paragon on blue track flooring","โซนป๊อปอัพ EA7 Emporio Armani ที่สยามพารากอนบนพื้นลู่สีน้ำเงิน"),
+ ("1 Photo Render__EA7 Siam Paragon",1,"racks","Clothing racks on the sports-track floor","ราวเสื้อผ้าบนพื้นลายลู่วิ่ง"),
+ ("1 Photo Render__EA7 Siam Paragon",3,"counter-easel","Cash counter and campaign easel","เคาน์เตอร์ชำระเงินและขาตั้งแคมเปญ"),
+],
+"cds-central-bangna": [
+ ("1 Wiriwork__CDS Central Bangna",1,"fixture-tables","Retail fixture tables fabricated for Central Bangna's department store floor","โต๊ะเฟอร์นิเจอร์ร้านค้าที่ผลิตให้พื้นที่ห้างเซ็นทรัล บางนา"),
+ ("1 Wiriwork__CDS Central Bangna",2,"tables-floor","Tiered display tables in place on the sales floor","โต๊ะดิสเพลย์หลายระดับติดตั้งบนพื้นขาย"),
+],
+"3m": [
+ ("3M",0,"display-stand","3M point-of-sale display stand, white powder-coated frame","สแตนด์ดิสเพลย์ ณ จุดขายของ 3M โครงพ่นสีขาว"),
+ ("3M",1,"stand-side","Curved-profile display stand with product hooks","สแตนด์โปรไฟล์โค้งพร้อมตะขอสินค้า"),
+ ("3M",2,"stand-detail","Display stand detail before delivery","ดีเทลสแตนด์ก่อนส่งมอบ"),
+],
+}
+
+# groups: slug -> {loc_key: [(dir,idx,outname,alt_en,alt_th),...]}
+GPICKS = {
+"chanel-vm-campaigns": {
+ "no5": [
+  ("VM Chanel N°5 RE-EDITION 2026 Campaign",0,"no5-counter","N°5 Re-edition counter display in red and gold","ดิสเพลย์เคาน์เตอร์ N°5 Re-edition โทนแดง-ทอง"),
+  ("VM Chanel N°5 RE-EDITION 2026 Campaign",15,"no5-window","N°5 window display with campaign visual","หน้าต่างดิสเพลย์ N°5 พร้อมภาพแคมเปญ"),
+  ("VM Chanel N°5 RE-EDITION 2026 Campaign",7,"no5-lightbox","Backlit N°5 bottle lightbox over the red display","ไลท์บ็อกซ์ขวด N°5 เหนือดิสเพลย์แดง"),
+ ],
+ "holiday": [
+  ("VM Chanel HOLIDAY 2025 Campaign",9,"holiday-window","Winter Constellation holiday window in navy and gold","หน้าต่างเทศกาล Winter Constellation โทนน้ำเงิน-ทอง"),
+  ("VM Chanel HOLIDAY 2025 Campaign",6,"holiday-counter","Holiday counter-top display with gift sets","ดิสเพลย์บนเคาน์เตอร์พร้อมชุดของขวัญ"),
+  ("VM Chanel HOLIDAY 2025 Campaign",4,"holiday-table","Starry display base styled in store","ฐานดิสเพลย์ลายดาวจัดวางในร้าน"),
+ ],
+ "rougecoco": [
+  ("VM Chanel ROUGE COCO GLOSS 2026 Campaign",4,"rcg-window","Rouge Coco Hydra Gloss window pillar in pink","เสาหน้าต่าง Rouge Coco Hydra Gloss โทนชมพู"),
+  ("VM Chanel ROUGE COCO GLOSS 2026 Campaign",9,"rcg-case","Glass display case with campaign screen","ตู้กระจกพร้อมจอแคมเปญ"),
+  ("VM Chanel ROUGE COCO GLOSS 2026 Campaign",11,"rcg-counter","Counter display unit with gloss testers","ยูนิตดิสเพลย์พร้อมเทสเตอร์กลอส"),
+ ],
+ "rougenoir": [
+  ("VM Chanel ROUGE NOIR 2026 Campaign",5,"rn-window","Rouge Noir boutique window display","หน้าต่างบูติกแคมเปญ Rouge Noir"),
+  ("VM Chanel ROUGE NOIR 2026 Campaign",8,"rn-makeup","Rouge Noir tower against the makeup wall","ทาวเวอร์ Rouge Noir หน้าผนังเมคอัพ"),
+  ("VM Chanel ROUGE NOIR 2026 Campaign",2,"rn-table","Campaign table with limited-edition set","โต๊ะแคมเปญพร้อมเซ็ตลิมิเต็ด"),
+ ],
+},
+"hourglass-thailand": {
+ "khonkaen": [
+  ("1 Photo Render__Hourglass Central Khonkaen",0,"khonkaen-hall","Hourglass counters at Central Khonkaen under the gold ring ceiling","เคาน์เตอร์ Hourglass ที่เซ็นทรัล ขอนแก่น ใต้ฝ้าวงแหวนทอง"),
+  ("1 Photo Render__Hourglass Central Khonkaen",2,"khonkaen-zone","The black counter zone with campaign towers","โซนเคาน์เตอร์ดำพร้อมทาวเวอร์แคมเปญ"),
+ ],
+ "phuket": [
+  ("Hourglass Central Phuket",2,"phuket-row","Hourglass counter row at Central Phuket","แนวเคาน์เตอร์ Hourglass ที่เซ็นทรัล ภูเก็ต"),
+  ("Hourglass Central Phuket",13,"phuket-counter","Merchandised counter with lipstick testers","เคาน์เตอร์พร้อมเทสเตอร์ลิปสติก"),
+ ],
+ "chiangmai": [
+  ("Hourglass Central Chiangmai",2,"chiangmai-counter","Backlit Hourglass counter at Central Chiangmai","เคาน์เตอร์ Hourglass ไฟแบ็คไลท์ที่เซ็นทรัล เชียงใหม่"),
+  ("Hourglass Central Chiangmai",6,"chiangmai-canopy","Counter canopy with campaign visuals","หลังคาเคาน์เตอร์พร้อมภาพแคมเปญ"),
+ ],
+ "takashimaya": [
+  ("Hourglass Siam Takashimaya",1,"takashimaya-tables","Hourglass display tables at Siam Takashimaya","โต๊ะดิสเพลย์ Hourglass ที่สยาม ทาคาชิมายะ"),
+  ("Hourglass Siam Takashimaya",9,"takashimaya-floral","Fixtures under the floral ceiling installation","เฟอร์นิเจอร์ใต้งานดอกไม้เพดาน"),
+ ],
+ "chidlom": [
+  ("Hourglass Central Chidlom",6,"chidlom-counter","Hourglass counter at Central Chidlom","เคาน์เตอร์ Hourglass ที่เซ็นทรัล ชิดลม"),
+  ("Hourglass Central Chidlom",4,"chidlom-tower","Campaign tower with lit base","ทาวเวอร์แคมเปญพร้อมฐานไฟ"),
+ ],
+ "ngamwongwan": [
+  ("Hourglass The Mall Ngamwongwan",6,"ngamwongwan-counter","Hourglass counter at The Mall Ngamwongwan","เคาน์เตอร์ Hourglass ที่เดอะมอลล์ งามวงศ์วาน"),
+  ("Hourglass The Mall Ngamwongwan",7,"ngamwongwan-zone","Counter zone at the beauty hall entrance","โซนเคาน์เตอร์หน้าทางเข้าฮอลล์บิวตี้"),
+ ],
+},
+"cpb-counters": {
+ "chidlom": [
+  ("CPB CENTRAL CHIDLOM",0,"chidlom-hall","Clé de Peau Beauté at Central Chidlom — chandelier ring over the island counter","Clé de Peau Beauté ที่เซ็นทรัล ชิดลม — แชนเดอเลียร์วงแหวนเหนือเคาน์เตอร์กลาง"),
+  ("CPB CENTRAL CHIDLOM",13,"chidlom-portal","Bronze entrance portal","ซุ้มทางเข้าโทนบรอนซ์"),
+  ("CPB CENTRAL CHIDLOM",10,"chidlom-vanity","Vanity stations with oval mirrors","สถานีแต่งหน้าพร้อมกระจกวงรี"),
+  ("CPB CENTRAL CHIDLOM",22,"chidlom-lounge","Client lounge with curved sofa","เลานจ์ลูกค้าพร้อมโซฟาโค้ง"),
+  ("CPB CENTRAL CHIDLOM",28,"chidlom-cabin","Treatment cabin in soft panelling","ห้องทรีตเมนต์ผนังบุนุ่ม"),
+ ],
+ "takashimaya": [
+  ("CPB SIAM TAKASHIMAYA",9,"takashimaya-front","Clé de Peau Beauté boutique front at Siam Takashimaya","หน้าบูติก Clé de Peau Beauté ที่สยาม ทาคาชิมายะ"),
+  ("CPB SIAM TAKASHIMAYA",12,"takashimaya-cabin","Treatment cabin with brand bed linen","ห้องทรีตเมนต์พร้อมผ้าปูแบรนด์"),
+  ("CPB SIAM TAKASHIMAYA",2,"takashimaya-screen","Gold slatted privacy screen","ฉากกั้นระแนงทอง"),
+ ],
+ "pinklao": [
+  ("CPB CENTRAL PINKLAO",3,"pinklao-counters","Counter row at Central Pinklao","แนวเคาน์เตอร์ที่เซ็นทรัล ปิ่นเกล้า"),
+  ("CPB CENTRAL PINKLAO",0,"pinklao-tower","Gold campaign tower","ทาวเวอร์แคมเปญสีทอง"),
+  ("CPB CENTRAL PINKLAO",9,"pinklao-panel","Backlit brand panel over the counter","แผงแบรนด์ไฟแบ็คไลท์เหนือเคาน์เตอร์"),
+ ],
+},
+"vca-fixtures": {
+ "emsphere": [
+  ("VCA Emsphere",7,"emsphere-collection","Van Cleef & Arpels Collection Extraordinaire counter at Emsphere","เคาน์เตอร์ Collection Extraordinaire ของ Van Cleef & Arpels ที่เอ็มสเฟียร์"),
+  ("VCA Emsphere",1,"emsphere-bay","Fragrance bay against the fluted pink wall","ตู้น้ำหอมหน้าผนังชมพูเซาะร่อง"),
+  ("VCA Emsphere",14,"emsphere-screen","Campaign screen over the lacquer counter","จอแคมเปญเหนือเคาน์เตอร์แล็กเกอร์"),
+  ("VCA Emsphere",13,"emsphere-lounge","Consultation seating within the zone","มุมที่นั่งให้คำปรึกษาในโซน"),
+ ],
+ "chidlom": [
+  ("VCA Central Chidlom",0,"chidlom-lightbox","Backlit fragrance lightbox at Central Chidlom","ไลท์บ็อกซ์น้ำหอมที่เซ็นทรัล ชิดลม"),
+  ("VCA Central Chidlom",6,"chidlom-shelf","Lit display shelf with perfume plateau","ชั้นดิสเพลย์ไฟพร้อมแท่นน้ำหอม"),
+ ],
+ "paragon": [
+  ("VCA Escential Siam Paragon",0,"paragon-fixture","Escential display fixture at Siam Paragon","เฟอร์นิเจอร์ดิสเพลย์ Escential ที่สยามพารากอน"),
+ ],
+},
+"bobbi-brown-counters": {
+ "pinklao": [
+  ("BobbiBrown Central Pinklao",4,"pinklao-canopy","Bobbi Brown counter at Central Pinklao under the black canopy","เคาน์เตอร์ Bobbi Brown ที่เซ็นทรัล ปิ่นเกล้า ใต้หลังคาดำ"),
+  ("BobbiBrown Central Pinklao",0,"pinklao-island","Island counter with lightbox tower","เคาน์เตอร์กลางพร้อมทาวเวอร์ไลท์บ็อกซ์"),
+  ("BobbiBrown Central Pinklao",5,"pinklao-studio","Bobbi Brown Studio corner","มุม Bobbi Brown Studio"),
+ ],
+ "chaengwattana": [
+  ("BobbiBrown Central Chaengwattana",0,"chaengwattana-island","Island counter at Central Chaengwattana","เคาน์เตอร์กลางที่เซ็นทรัล แจ้งวัฒนะ"),
+  ("BobbiBrown Central Chaengwattana",2,"chaengwattana-zone","Counter zone with campaign posters","โซนเคาน์เตอร์พร้อมโปสเตอร์แคมเปญ"),
+ ],
+ "bangkae": [
+  ("1 Photo Render__Bobbi Brown The Mall Bangkae",0,"bangkae-zone","Counter zone at The Mall Bangkae","โซนเคาน์เตอร์ที่เดอะมอลล์ บางแค"),
+  ("1 Photo Render__Bobbi Brown The Mall Bangkae",1,"bangkae-counter","Marble-top counters with brand tower","เคาน์เตอร์ท็อปหินอ่อนพร้อมทาวเวอร์แบรนด์"),
+ ],
+},
+"elixir-counters": {
+ "chaengwattana": [
+  ("Elixir Central Chaengwattana",3,"chaengwattana-zone","Elixir counter zone at Central Chaengwattana","โซนเคาน์เตอร์ Elixir ที่เซ็นทรัล แจ้งวัฒนะ"),
+  ("Elixir Central Chaengwattana",0,"chaengwattana-tower","Campaign tower with brown gradient base","ทาวเวอร์แคมเปญฐานไล่สีน้ำตาล"),
+  ("Elixir Central Chaengwattana",5,"chaengwattana-counter","Counter run with skincare displays","แนวเคาน์เตอร์พร้อมดิสเพลย์สกินแคร์"),
+ ],
+ "pinklao": [
+  ("Elixir Central Pinklao",3,"pinklao-island","Elixir island counter at Central Pinklao","เคาน์เตอร์กลาง Elixir ที่เซ็นทรัล ปิ่นเกล้า"),
+  ("Elixir Central Pinklao",0,"pinklao-table","Gold display table with product trays","โต๊ะดิสเพลย์ทองพร้อมถาดสินค้า"),
+ ],
+},
+}
+
+# upgrades to the 8 existing pages: slug -> picks exported into works/<slug>/
+UPGRADES = {
+"paul-smith-central-village": [
+ ("PAUL SMITH CENTRAL VILLAGE",27,"thai-gable-exterior","Paul Smith at Central Village — Thai-gable exterior with signature-stripe window","Paul Smith ที่เซ็นทรัล วิลเลจ — อาคารหลังคาทรงไทยพร้อมหน้าต่างลายแถบ"),
+],
+"panpuri-one-bangkok": [
+ ("Panpuri One Bangkok",15,"storefront","Pañpuri store at One Bangkok — celadon glass facade","ร้าน Pañpuri ที่วัน แบงค็อก — หน้าร้านกระจกสีเซลาดอน"),
+ ("Panpuri One Bangkok",22,"oculus-interior","Circular shelf wall under the oculus skylight","ผนังชั้นโค้งใต้ช่องแสงวงกลม"),
+],
+"shiseido-centralworld": [
+ ("SHISEIDO Central World",4,"counter-hall","Shiseido counters at CentralWorld under the gold ceiling feature","เคาน์เตอร์ Shiseido ที่เซ็นทรัลเวิลด์ใต้ฝ้าทอง"),
+],
+"cpb-dusit-central-park": [
+ ("1 Photo Render__CPB Central Dusit",0,"facade","Clé de Peau Beauté boutique facade at Dusit Central Park","หน้าบูติก Clé de Peau Beauté ที่ดุสิต เซ็นทรัล พาร์ค"),
+],
+"popmart-maya-chiangmai": [
+ ("POP MART MAYA CHIANGMAI",18,"crybaby-interior","Pop Mart interior with the Crybaby feature statue","ภายใน Pop Mart พร้อมรูปปั้น Crybaby"),
+ ("POP MART MAYA CHIANGMAI",47,"badge-wall","Collectable badge wall display","ผนังดิสเพลย์เข็มกลัดสะสม"),
+],
+}
+
+# ---------------- page data ----------------
+def _imgs(slug):
+    return [(o, ae, at) for _,_,o,ae,at in PICKS[slug]]
+
+NEWP = [
+ dict(slug="chanel-central-udon", title="Chanel @ Central Udon", client="Chanel",
+      venue="Central Udon", venue_th="เซ็นทรัล อุดร", city_en="Udon Thani, Thailand", city_th="อุดรธานี ประเทศไทย",
+      year="2025", cat="luxury-retail", imgs=_imgs("chanel-central-udon"),
+      narr_en="A freestanding Chanel beauty podium in Central Udon's atrium: black lacquer canopy with an illuminated double-C, backlit CHANCE fragrance wall, tiered lit shelving and white drawer counters — the full luxury-house standard, delivered in the Northeast. Fabricated in Pathumthani, shipped and installed by our own crews.",
+      narr_th="พอเดียมบิวตี้ Chanel แบบลอยตัวกลางเอเทรียมเซ็นทรัล อุดร: หลังคาแล็กเกอร์ดำพร้อมโลโก้เรืองแสง ผนังน้ำหอม CHANCE ไฟแบ็คไลท์ ชั้นวางไฟหลายระดับ และเคาน์เตอร์ลิ้นชักสีขาว — มาตรฐานลักชัวรีเฮาส์ครบถ้วน ส่งมอบถึงภาคอีสาน ผลิตที่ปทุมธานี ขนส่งและติดตั้งโดยทีมของเราเอง"),
+ dict(slug="chanel-central-chaengwattana", title="Chanel @ Central Chaengwattana", client="Chanel",
+      venue="Central Chaengwattana", venue_th="เซ็นทรัล แจ้งวัฒนะ", city_en="Nonthaburi, Thailand", city_th="นนทบุรี ประเทศไทย",
+      year="2026", cat="luxury-retail", imgs=_imgs("chanel-central-chaengwattana"),
+      narr_en="An open Chanel counter on Central Chaengwattana's beauty floor — black canopy over white millimetre-tolerance casework, CHANCE campaign lightboxes and integrated testers, built to the house's global fixture standard and installed overnight in the operating mall.",
+      narr_th="เคาน์เตอร์ Chanel แบบเปิดบนชั้นบิวตี้เซ็นทรัล แจ้งวัฒนะ — หลังคาดำเหนืองานตู้ขาวความละเอียดระดับมิลลิเมตร ไลท์บ็อกซ์แคมเปญ CHANCE และเทสเตอร์ในตัว สร้างตามมาตรฐานเฟอร์นิเจอร์สากลของแบรนด์ ติดตั้งข้ามคืนในห้างที่เปิดบริการ"),
+ dict(slug="chanel-suvarnabhumi", title="Chanel @ Suvarnabhumi Airport", client="Chanel",
+      venue="Suvarnabhumi Airport", venue_th="ท่าอากาศยานสุวรรณภูมิ", city_en="Bangkok (BKK), Thailand", city_th="กรุงเทพฯ (สนามบินสุวรรณภูมิ)",
+      year="2026", cat="luxury-retail", imgs=_imgs("chanel-suvarnabhumi"),
+      narr_en="Travel retail under the lattice roof of Suvarnabhumi: a black-and-white Chanel fragrance boutique with a Les Exclusifs display table, backlit bottle walls and campaign screens — airport-spec materials and fire-rated finishes, installed inside a live terminal.",
+      narr_th="ทราเวลรีเทลใต้โครงหลังคาสุวรรณภูมิ: บูติกน้ำหอม Chanel โทนขาว-ดำ พร้อมโต๊ะ Les Exclusifs ผนังขวดไฟแบ็คไลท์ และจอแคมเปญ — วัสดุมาตรฐานสนามบินและงานเคลือบกันไฟ ติดตั้งภายในอาคารผู้โดยสารที่เปิดใช้งาน"),
+ dict(slug="chanel-chiangmai-airport", title="Chanel @ Chiang Mai Airport", client="Chanel",
+      venue="Chiang Mai Airport", venue_th="ท่าอากาศยานเชียงใหม่", city_en="Chiang Mai, Thailand", city_th="เชียงใหม่ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("chanel-chiangmai-airport"),
+      narr_en="Chanel beauty counters in Chiang Mai Airport's duty-free hall: black lacquer bays with illuminated signage, a full makeup gradient run and campaign display wheels, fitted beneath the hall's honeycomb ceiling without interrupting terminal operations.",
+      narr_th="เคาน์เตอร์บิวตี้ Chanel ในฮอลล์ดิวตี้ฟรีท่าอากาศยานเชียงใหม่: ตู้แล็กเกอร์ดำพร้อมป้ายเรืองแสง แนวเมคอัพไล่เฉดสีครบ และดิสเพลย์แคมเปญ ติดตั้งใต้ฝ้ารังผึ้งของฮอลล์โดยไม่กระทบการให้บริการ"),
+ dict(slug="chanel-central-chiangmai", title="Chanel @ Central Chiangmai", client="Chanel",
+      venue="Central Chiangmai", venue_th="เซ็นทรัล เชียงใหม่", city_en="Chiang Mai, Thailand", city_th="เชียงใหม่ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("chanel-central-chiangmai"),
+      narr_en="Chanel counters for Central Chiangmai's department store: black-framed white casework with backlit fragrance shelving, seasonal campaign displays and gift-wrap counters — the same fixture standard we deliver in Bangkok, installed in the North.",
+      narr_th="เคาน์เตอร์ Chanel สำหรับห้างเซ็นทรัล เชียงใหม่: งานตู้ขาวกรอบดำพร้อมชั้นน้ำหอมไฟแบ็คไลท์ ดิสเพลย์แคมเปญตามฤดูกาล และเคาน์เตอร์ห่อของขวัญ — มาตรฐานเดียวกับที่เราส่งมอบในกรุงเทพฯ ติดตั้งถึงภาคเหนือ"),
+ dict(slug="chanel-cabin-emporium", title="Chanel Cabin @ The Emporium", client="Chanel",
+      venue="The Emporium", venue_th="ดิ เอ็มโพเรียม", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("chanel-cabin-emporium"),
+      narr_en="A private Chanel treatment cabin at The Emporium: gold-panelled walls, a sculpted cloud-light ceiling and built-in vanity cabinetry around the treatment bed — millwork tolerances tight enough for a room measured in centimetres, not metres.",
+      narr_th="ห้องทรีตเมนต์ส่วนตัวของ Chanel ที่ดิ เอ็มโพเรียม: ผนังบุแผงโทนทอง ฝ้าไฟทรงเมฆ และตู้บิลท์อินรอบเตียงทรีตเมนต์ — งานไม้ความละเอียดสูงสำหรับห้องที่วัดกันเป็นเซนติเมตร"),
+ dict(slug="chanel-siam-paragon", title="Chanel @ Siam Paragon", client="Chanel",
+      venue="Siam Paragon", venue_th="สยามพารากอน", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("chanel-siam-paragon"),
+      narr_en="Chanel's beauty hall at Siam Paragon in black and gold: a makeup counter with bar seating, an N°5 display wall and gallery runs of backlit niches — delivered and maintained to the house's flagship standard on Bangkok's busiest luxury floor.",
+      narr_th="ฮอลล์บิวตี้ Chanel ที่สยามพารากอนในโทนดำ-ทอง: เคาน์เตอร์เมคอัพพร้อมที่นั่งบาร์ ผนังดิสเพลย์ N°5 และแนวช่องไฟแบ็คไลท์ — ส่งมอบและดูแลตามมาตรฐานแฟล็กชิปบนชั้นลักชัวรีที่พลุกพล่านที่สุดของกรุงเทพฯ"),
+ dict(slug="gucci-central-pinklao", title="Gucci @ Central Pinklao", client="Gucci",
+      venue="Central Pinklao", venue_th="เซ็นทรัล ปิ่นเกล้า", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      year="2025", cat="luxury-retail", imgs=_imgs("gucci-central-pinklao"),
+      narr_en="Gucci Beauty at Central Pinklao in the house's pale-yellow palette: an illuminated backwall of display niches, a lipstick tester run along the island counter and campaign tables — compact luxury retail, fabricated and installed as one overnight package.",
+      narr_th="Gucci Beauty ที่เซ็นทรัล ปิ่นเกล้า ในโทนเหลืองอ่อนประจำแบรนด์: ผนังหลังช่องดิสเพลย์เรืองแสง แนวเทสเตอร์ลิปสติกบนเคาน์เตอร์กลาง และโต๊ะแคมเปญ — งานรีเทลลักชัวรีขนาดกะทัดรัด ผลิตและติดตั้งเป็นแพ็กเกจเดียวข้ามคืน"),
+ dict(slug="shiseido-siam-takashimaya", title="Shiseido @ Siam Takashimaya", client="Shiseido",
+      venue="Siam Takashimaya (Iconsiam)", venue_th="สยาม ทาคาชิมายะ (ไอคอนสยาม)", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("shiseido-siam-takashimaya"),
+      narr_en="Shiseido at Siam Takashimaya: white counters with the brand's red accent band, a relief-carved camellia emblem wall and a Future Solution LX display zone — Japanese-retail precision, matched by our factory's shut-lines.",
+      narr_th="Shiseido ที่สยาม ทาคาชิมายะ: เคาน์เตอร์ขาวพร้อมแถบแดงประจำแบรนด์ ผนังสัญลักษณ์ดอกคาเมลเลียแกะนูนต่ำ และโซน Future Solution LX — ความเนี้ยบแบบรีเทลญี่ปุ่น ที่งานรอยต่อจากโรงงานเราตอบโจทย์ได้"),
+ dict(slug="panpuri-suvarnabhumi", title="Panpuri @ Suvarnabhumi Airport", client="Panpuri",
+      venue="Suvarnabhumi Airport", venue_th="ท่าอากาศยานสุวรรณภูมิ", city_en="Bangkok (BKK), Thailand", city_th="กรุงเทพฯ (สนามบินสุวรรณภูมิ)",
+      cat="luxury-retail", imgs=_imgs("panpuri-suvarnabhumi"),
+      narr_en="Pañpuri's travel-retail boutique at Suvarnabhumi: dark stained-oak shelving walls washed in warm backlight, a suspended brass rack detail and a freestanding tester island — Thai luxury wellness built airport-tight and installed between flights.",
+      narr_th="บูติกทราเวลรีเทลของ Pañpuri ที่สุวรรณภูมิ: ผนังชั้นไม้โอ๊กย้อมเข้มอาบแสงอุ่น รางทองเหลืองแขวน และเกาะเทสเตอร์ลอยตัว — เวลเนสลักชัวรีไทย สร้างตามเกณฑ์สนามบินและติดตั้งระหว่างรอบเที่ยวบิน"),
+ dict(slug="panpuri-chiangmai-airport", title="Panpuri @ Chiang Mai Airport", client="Panpuri",
+      venue="Chiang Mai Airport", venue_th="ท่าอากาศยานเชียงใหม่", city_en="Chiang Mai, Thailand", city_th="เชียงใหม่ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("panpuri-chiangmai-airport"),
+      narr_en="An arched dark-timber pavilion for Pañpuri at Chiang Mai Airport: a halo-lit portal frame, full-height product shelving and a central display table — prefabricated at the factory so the airside install could be measured in nights, not weeks.",
+      narr_th="พาวิลเลียนไม้เข้มทรงโค้งของ Pañpuri ที่ท่าอากาศยานเชียงใหม่: ซุ้มไฟรอบวง โครงชั้นวางสูงเต็มผนัง และโต๊ะดิสเพลย์กลาง — ประกอบล่วงหน้าที่โรงงาน ทำให้งานติดตั้งฝั่งแอร์ไซด์นับเป็นคืน ไม่ใช่สัปดาห์"),
+ dict(slug="sunnies-centralworld", title="Sunnies @ CentralWorld", client="Sunnies",
+      venue="CentralWorld", venue_th="เซ็นทรัลเวิลด์", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("sunnies-centralworld"),
+      narr_en="A Sunnies island on CentralWorld's fashion floor: a curved, halo-lit canopy floating over colour-blocked blue counters and eyewear bays — playful retail geometry that only works when the radii are cut right.",
+      narr_th="เกาะร้าน Sunnies บนชั้นแฟชั่นเซ็นทรัลเวิลด์: หลังคาโค้งไฟรอบวงลอยเหนือเคาน์เตอร์น้ำเงินและตู้แว่นตา — เรขาคณิตรีเทลสายสนุกที่จะสวยได้ก็ต่อเมื่อตัดรัศมีโค้งแม่นจริง"),
+ dict(slug="sunnies-central-bangna", title="Sunnies @ Central Bangna", client="Sunnies",
+      venue="Central Bangna", venue_th="เซ็นทรัล บางนา", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      year="2026", cat="luxury-retail", imgs=_imgs("sunnies-central-bangna"),
+      narr_en="Sunnies' full store at Central Bangna: a timber-framed facade with starry soffit, a sculptural blue centre counter and cream display walls carrying the full colour-blocked eyewear and beauty range — saturated, joyful and built with the same 5-step QC as our luxury-house work.",
+      narr_th="ร้านเต็มรูปแบบของ Sunnies ที่เซ็นทรัล บางนา: หน้าร้านกรอบไม้พร้อมฝ้าลายดาว เคาน์เตอร์กลางสีน้ำเงินทรงประติมากรรม และผนังดิสเพลย์ครีมพร้อมสินค้าแว่นตาและบิวตี้ครบไลน์ — สดใส สนุก และสร้างด้วย QC 5 ขั้นตอนเดียวกับงานลักชัวรีเฮาส์"),
+ dict(slug="another-story-emsphere", title="Another Story @ Emsphere", client="Another Story",
+      venue="Emsphere", venue_th="เอ็มสเฟียร์", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      year="2026", cat="luxury-retail", imgs=_imgs("another-story-emsphere"),
+      narr_en="The Another Story concept store at Emsphere: sloped plywood architecture that ramps up over the entrance, porthole details, an orange pendant centrepiece and freestanding fixture tables — a carpentry-led build where the structure itself is the brand statement.",
+      narr_th="คอนเซ็ปต์สโตร์ Another Story ที่เอ็มสเฟียร์: สถาปัตยกรรมไม้อัดลาดเอียงเหนือทางเข้า ดีเทลช่องหน้าต่างกลม โคมส้มกลางร้าน และโต๊ะเฟอร์นิเจอร์ลอยตัว — งานที่โครงสร้างไม้คือตัวตนของแบรนด์เอง"),
+ dict(slug="philips-popup-central-chidlom", title="Philips Pop-up @ Central Chidlom", client="Philips",
+      venue="Central Chidlom", venue_th="เซ็นทรัล ชิดลม", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="corporate", imgs=_imgs("philips-popup-central-chidlom"),
+      narr_en="A beauty-tech pop-up for Philips at Central Chidlom, anchored by a giant replica of the brand's hair dryer on a lit plinth, with demo counters and a product lineup table — proof that our prop-making and retail joinery come from the same workshop.",
+      narr_th="ป๊อปอัพบิวตี้เทคของ Philips ที่เซ็นทรัล ชิดลม นำสายตาด้วยโมเดลไดร์เป่าผมขนาดยักษ์บนแท่นไฟ พร้อมเคาน์เตอร์เดโมและโต๊ะเรียงสินค้า — ข้อพิสูจน์ว่างานพร็อพและงานเฟอร์นิเจอร์รีเทลของเรามาจากเวิร์กช็อปเดียวกัน"),
+ dict(slug="blue-bottle-emquartier", title="Blue Bottle @ EmQuartier", client="Blue Bottle Coffee",
+      venue="EmQuartier", venue_th="เอ็มควอเทียร์", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="fnb", imgs=_imgs("blue-bottle-emquartier"),
+      narr_en="A storey-high Blue Bottle coffee cup landed on EmQuartier's plaza: an illuminated sculptural installation for the brand's Bangkok moment, engineered for outdoor loads, fabricated in sections and assembled overnight on the public walkway.",
+      narr_th="ถ้วยกาแฟ Blue Bottle สูงเท่าชั้นอาคารกลางลานเอ็มควอเทียร์: งานติดตั้งเชิงประติมากรรมเรืองแสงสำหรับโมเมนต์เปิดตัวในกรุงเทพฯ ออกแบบรับแรงภายนอกอาคาร ผลิตเป็นส่วน ๆ และประกอบข้ามคืนบนทางเดินสาธารณะ"),
+ dict(slug="pralet-emquartier", title="Pralet @ EmQuartier", client="Pralet",
+      venue="EmQuartier", venue_th="เอ็มควอเทียร์", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="fnb", imgs=_imgs("pralet-emquartier"),
+      narr_en="A high-gloss red kiosk for dessert brand Pralet on EmQuartier's dining floor: illuminated channel lettering, glass display cases and a service counter sized for a two-person crew — small footprint, full fabrication discipline.",
+      narr_th="คีออสแดงเงาของแบรนด์ขนม Pralet บนชั้นร้านอาหารเอ็มควอเทียร์: ตัวอักษรไฟ ตู้โชว์กระจก และเคาน์เตอร์บริการขนาดทีมสองคน — พื้นที่เล็ก แต่วินัยงานผลิตเต็มรูปแบบ"),
+ dict(slug="ea7-siam-paragon", title="EA7 @ Siam Paragon", client="EA7 Emporio Armani",
+      venue="Siam Paragon", venue_th="สยามพารากอน", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="luxury-retail", imgs=_imgs("ea7-siam-paragon"),
+      narr_en="A sportswear pop-up zone for EA7 Emporio Armani at Siam Paragon: a running-track floor in brand blue, stone-textured display plinths, garment rails and a cash desk — installed as a complete kit on the fashion floor.",
+      narr_th="โซนป๊อปอัพสปอร์ตแวร์ EA7 Emporio Armani ที่สยามพารากอน: พื้นลายลู่วิ่งสีน้ำเงินแบรนด์ แท่นดิสเพลย์ผิวหิน ราวเสื้อผ้า และเคาน์เตอร์ชำระเงิน — ติดตั้งเป็นชุดสำเร็จบนชั้นแฟชั่น"),
+ dict(slug="cds-central-bangna", title="CDS @ Central Bangna", client="Central Department Store",
+      venue="Central Bangna", venue_th="เซ็นทรัล บางนา", city_en="Bangkok, Thailand", city_th="กรุงเทพฯ ประเทศไทย",
+      cat="corporate", imgs=_imgs("cds-central-bangna"),
+      narr_en="Sales-floor fixture packages for Central Bangna's department store: tiered light-oak display tables fabricated in series, delivered flat and assembled in place across the homeware floor overnight.",
+      narr_th="แพ็กเกจเฟอร์นิเจอร์พื้นที่ขายสำหรับห้างเซ็นทรัล บางนา: โต๊ะดิสเพลย์ไม้โอ๊กอ่อนหลายระดับ ผลิตเป็นซีรีส์ ส่งแบบแยกชิ้นและประกอบหน้างานทั่วชั้นของใช้ในบ้านข้ามคืน"),
+ dict(slug="3m", title="3M Display Program", client="3M",
+      venue=None, venue_th=None, city_en=None, city_th=None,
+      cat="corporate", imgs=_imgs("3m"),
+      narr_en="Point-of-sale display stands for 3M: powder-coated steel frames with product hooks and branded headers, built in series at the factory — the same jigs and QC steps we use for luxury fixtures, applied to industrial retail.",
+      narr_th="สแตนด์ดิสเพลย์ ณ จุดขายสำหรับ 3M: โครงเหล็กพ่นสีฝุ่นพร้อมตะขอสินค้าและป้ายหัวแบรนด์ ผลิตเป็นซีรีส์ที่โรงงาน — จิ๊กและขั้นตอน QC เดียวกับงานลักชัวรี นำมาใช้กับรีเทลอุตสาหกรรม"),
+]
+
+def _g(slug, key):
+    return [(o,ae,at) for _,_,o,ae,at in GPICKS[slug][key]]
+
+GROUPS = [
+ dict(slug="chanel-vm-campaigns", title="Chanel Visual Merchandising", client="Chanel",
+      cat="luxury-retail", kind="vm", hero="no5-counter",
+      scope=("Visual merchandising: fabrication & installation","Visual Merchandising: ผลิตและติดตั้ง"),
+      meta_en="Chanel · 4 campaigns · 2025–2026", meta_th="Chanel · 4 แคมเปญ · 2025–2026",
+      narr_en="Season after season we fabricate and install Chanel's visual-merchandising campaigns across its Thai counters: window pillars, counter-top theatres, lightboxes and limited-edition displays, each built to the maison's artwork and swapped in overnight so the floor never misses a trading day.",
+      narr_th="ซีซันแล้วซีซันเล่า เราผลิตและติดตั้งแคมเปญ Visual Merchandising ของ Chanel ทั่วเคาน์เตอร์ในไทย: เสาหน้าต่าง ดิสเพลย์บนเคาน์เตอร์ ไลท์บ็อกซ์ และดิสเพลย์ลิมิเต็ดอิดิชัน ทุกชิ้นสร้างตามอาร์ตเวิร์กของเมซงและสับเปลี่ยนข้ามคืนโดยไม่เสียวันขาย",
+      locs=[
+        dict(name_en="N°5 Re-edition", name_th="N°5 Re-edition", year="2026", imgs=_g("chanel-vm-campaigns","no5")),
+        dict(name_en="Holiday — Winter Constellation", name_th="Holiday — Winter Constellation", year="2025", imgs=_g("chanel-vm-campaigns","holiday")),
+        dict(name_en="Rouge Coco Hydra Gloss", name_th="Rouge Coco Hydra Gloss", year="2026", imgs=_g("chanel-vm-campaigns","rougecoco")),
+        dict(name_en="Rouge Noir", name_th="Rouge Noir", year="2026", imgs=_g("chanel-vm-campaigns","rougenoir")),
+      ]),
+ dict(slug="hourglass-thailand", title="Hourglass — Nationwide Rollout", client="Hourglass",
+      cat="luxury-retail", kind="rollout", hero="khonkaen-hall",
+      scope=("End-to-end: design · fabrication · installation","ครบวงจร: ออกแบบ · ผลิต · ติดตั้ง"),
+      meta_en="Hourglass · 6 locations nationwide", meta_th="Hourglass · 6 สาขาทั่วประเทศ",
+      narr_en="One brand, one standard, six cities' worth of floors: Hourglass's black-glass counter identity rolled out across Thailand — Bangkok, Nonthaburi, Chiang Mai, Phuket and Khon Kaen — each counter fabricated in Pathumthani and installed overnight, plus ongoing amendment work at Siam Paragon and CentralWorld that keeps earlier counters current.",
+      narr_th="หนึ่งแบรนด์ หนึ่งมาตรฐาน หกเมือง: อัตลักษณ์เคาน์เตอร์กระจกดำของ Hourglass กระจายทั่วประเทศ — กรุงเทพฯ นนทบุรี เชียงใหม่ ภูเก็ต และขอนแก่น — ทุกเคาน์เตอร์ผลิตที่ปทุมธานีและติดตั้งข้ามคืน พร้อมงานปรับปรุงต่อเนื่องที่สยามพารากอนและเซ็นทรัลเวิลด์เพื่อให้เคาน์เตอร์รุ่นก่อนทันสมัยเสมอ",
+      locs=[
+        dict(name_en="Central Khonkaen", name_th="เซ็นทรัล ขอนแก่น", city_en="Khon Kaen", city_th="ขอนแก่น", imgs=_g("hourglass-thailand","khonkaen")),
+        dict(name_en="Central Phuket", name_th="เซ็นทรัล ภูเก็ต", city_en="Phuket", city_th="ภูเก็ต", imgs=_g("hourglass-thailand","phuket")),
+        dict(name_en="Central Chiangmai", name_th="เซ็นทรัล เชียงใหม่", city_en="Chiang Mai", city_th="เชียงใหม่", imgs=_g("hourglass-thailand","chiangmai")),
+        dict(name_en="Siam Takashimaya", name_th="สยาม ทาคาชิมายะ", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("hourglass-thailand","takashimaya")),
+        dict(name_en="Central Chidlom", name_th="เซ็นทรัล ชิดลม", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("hourglass-thailand","chidlom")),
+        dict(name_en="The Mall Ngamwongwan", name_th="เดอะมอลล์ งามวงศ์วาน", city_en="Nonthaburi", city_th="นนทบุรี", imgs=_g("hourglass-thailand","ngamwongwan")),
+      ]),
+ dict(slug="cpb-counters", title="Clé de Peau Beauté — Counter Rollout", client="Clé de Peau Beauté",
+      cat="luxury-retail", kind="rollout", hero="chidlom-hall",
+      scope=("End-to-end: design · fabrication · installation","ครบวงจร: ออกแบบ · ผลิต · ติดตั้ง"),
+      meta_en="Clé de Peau Beauté · 3 locations + Dusit Central Park", meta_th="Clé de Peau Beauté · 3 สาขา + ดุสิต เซ็นทรัล พาร์ค",
+      narr_en="Beyond the boutique at Dusit Central Park, we build and maintain Clé de Peau Beauté's counters across Bangkok: crystal-chandelier ceilings, bronze fluted columns, vanity stations and private treatment cabins — a maison of skin, kept flawless on every floor it trades.",
+      narr_th="นอกเหนือจากบูติกที่ดุสิต เซ็นทรัล พาร์ค เรายังสร้างและดูแลเคาน์เตอร์ Clé de Peau Beauté ทั่วกรุงเทพฯ: ฝ้าแชนเดอเลียร์คริสตัล เสาบรอนซ์เซาะร่อง สถานีแต่งหน้า และห้องทรีตเมนต์ส่วนตัว — เมซงแห่งผิวพรรณที่ต้องสมบูรณ์แบบทุกชั้นที่เปิดขาย",
+      locs=[
+        dict(name_en="Central Chidlom", name_th="เซ็นทรัล ชิดลม", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("cpb-counters","chidlom")),
+        dict(name_en="Siam Takashimaya", name_th="สยาม ทาคาชิมายะ", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("cpb-counters","takashimaya")),
+        dict(name_en="Central Pinklao", name_th="เซ็นทรัล ปิ่นเกล้า", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("cpb-counters","pinklao")),
+      ]),
+ dict(slug="vca-fixtures", title="Van Cleef & Arpels — Fragrance Fixtures", client="Van Cleef & Arpels",
+      cat="luxury-retail", kind="rollout", hero="emsphere-collection",
+      scope=("End-to-end: design · fabrication · installation","ครบวงจร: ออกแบบ · ผลิต · ติดตั้ง"),
+      meta_en="Van Cleef & Arpels · 3 locations", meta_th="Van Cleef & Arpels · 3 สาขา",
+      narr_en="Collection Extraordinaire fixtures for Van Cleef & Arpels across Bangkok's luxury floors: black-and-white lacquer counters, LED-lit glass shelving and engraved detailing at Emsphere, Central Chidlom and Siam Paragon — jewellery-house tolerances applied to fragrance retail.",
+      narr_th="เฟอร์นิเจอร์ Collection Extraordinaire ของ Van Cleef & Arpels บนชั้นลักชัวรีทั่วกรุงเทพฯ: เคาน์เตอร์แล็กเกอร์ขาว-ดำ ชั้นกระจกไฟ LED และงานแกะสลักที่เอ็มสเฟียร์ เซ็นทรัล ชิดลม และสยามพารากอน — ความละเอียดระดับเมซงจิวเวลรี นำมาใช้กับรีเทลน้ำหอม",
+      locs=[
+        dict(name_en="Emsphere", name_th="เอ็มสเฟียร์", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("vca-fixtures","emsphere")),
+        dict(name_en="Central Chidlom", name_th="เซ็นทรัล ชิดลม", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("vca-fixtures","chidlom")),
+        dict(name_en="Siam Paragon — Escential", name_th="สยามพารากอน — Escential", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("vca-fixtures","paragon")),
+      ]),
+ dict(slug="bobbi-brown-counters", title="Bobbi Brown — Counter Rollout", client="Bobbi Brown",
+      cat="luxury-retail", kind="rollout", hero="pinklao-canopy",
+      scope=("End-to-end: design · fabrication · installation","ครบวงจร: ออกแบบ · ผลิต · ติดตั้ง"),
+      meta_en="Bobbi Brown · 3 locations", meta_th="Bobbi Brown · 3 สาขา",
+      narr_en="Bobbi Brown's black-and-light counter identity delivered across three malls: island counters with light-framed towers, studio corners and tester-ready casework at Central Pinklao, Central Chaengwattana and The Mall Bangkae.",
+      narr_th="อัตลักษณ์เคาน์เตอร์ดำ-ไฟของ Bobbi Brown ส่งมอบในสามศูนย์การค้า: เคาน์เตอร์กลางพร้อมทาวเวอร์กรอบไฟ มุมสตูดิโอ และงานตู้พร้อมเทสเตอร์ที่เซ็นทรัล ปิ่นเกล้า เซ็นทรัล แจ้งวัฒนะ และเดอะมอลล์ บางแค",
+      locs=[
+        dict(name_en="Central Pinklao", name_th="เซ็นทรัล ปิ่นเกล้า", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("bobbi-brown-counters","pinklao")),
+        dict(name_en="Central Chaengwattana", name_th="เซ็นทรัล แจ้งวัฒนะ", city_en="Nonthaburi", city_th="นนทบุรี", imgs=_g("bobbi-brown-counters","chaengwattana")),
+        dict(name_en="The Mall Bangkae", name_th="เดอะมอลล์ บางแค", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("bobbi-brown-counters","bangkae")),
+      ]),
+ dict(slug="elixir-counters", title="Elixir — Counter Rollout", client="Elixir (Shiseido Group)",
+      cat="luxury-retail", kind="rollout", hero="chaengwattana-zone",
+      scope=("End-to-end: design · fabrication · installation","ครบวงจร: ออกแบบ · ผลิต · ติดตั้ง"),
+      meta_en="Elixir · 2 locations", meta_th="Elixir · 2 สาขา",
+      narr_en="Skincare counters for Elixir in two Central malls: brown-gradient counter bodies, gold display tables and campaign towers with integrated screens — compact fixtures produced as a repeatable kit, installed store by store.",
+      narr_th="เคาน์เตอร์สกินแคร์ Elixir ในห้างเซ็นทรัลสองสาขา: ตัวเคาน์เตอร์ไล่สีน้ำตาล โต๊ะดิสเพลย์ทอง และทาวเวอร์แคมเปญพร้อมจอในตัว — เฟอร์นิเจอร์กะทัดรัดผลิตเป็นชุดมาตรฐาน ติดตั้งทีละสาขา",
+      locs=[
+        dict(name_en="Central Chaengwattana", name_th="เซ็นทรัล แจ้งวัฒนะ", city_en="Nonthaburi", city_th="นนทบุรี", imgs=_g("elixir-counters","chaengwattana")),
+        dict(name_en="Central Pinklao", name_th="เซ็นทรัล ปิ่นเกล้า", city_en="Bangkok", city_th="กรุงเทพฯ", imgs=_g("elixir-counters","pinklao")),
+      ]),
+]
