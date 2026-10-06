@@ -515,7 +515,7 @@ def header_html(L, lang, P, page, transparent=False):
     <nav class="main-nav" aria-label="Main">
       <a href="about.html">{L['nav_about']}</a>
       <a href="services.html">{L['nav_services']}</a>
-      <button class="nav-works" aria-haspopup="true">{L['nav_works']} <span aria-hidden="true">⌄</span></button>
+      <a class="nav-works" href="works.html" aria-haspopup="true">{L['nav_works']} <span aria-hidden="true">⌄</span></a>
       <a href="news.html">{L['nav_news']}</a>
       <a href="careers.html">{L['nav_careers']}</a>
       <a href="contact.html">{L['nav_contact']}</a>
@@ -752,7 +752,7 @@ def build_all(lang):
     <div class="container">
       <div class="section-header reveal"><div><span class="eyebrow">{L['how_we_work']}</span><h2>{L['process_h']}</h2></div>
       <a class="link-brand" href="services.html">{L['our_process']} →</a></div>
-      <div class="process-photos"><img src="{P}assets/img/worker-portrait.jpg" alt=""><img src="{P}assets/img/services-floorplan.jpg" alt=""><img src="{P}assets/img/machine-worker.jpg" alt=""><img src="{P}assets/img/workshop-wide.jpg" alt=""><img src="{P}assets/img/hands-detail.jpg" alt=""></div>
+      <div class="process-photos"><img src="{P}assets/img/worker-portrait.jpg" alt=""><img src="{P}assets/img/services-floorplan-h.jpg" alt=""><img src="{P}assets/img/machine-worker.jpg" alt=""><img src="{P}assets/img/workshop-wide.jpg" alt=""><img src="{P}assets/img/hands-detail.jpg" alt=""></div>
       <div class="process-grid">{steps_html}</div>
     </div>
   </section>

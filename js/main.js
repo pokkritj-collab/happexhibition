@@ -26,13 +26,13 @@
   const worksBtn = document.querySelector('.nav-works');
   const mega = document.querySelector('.mega');
   if (worksBtn && mega) {
-    worksBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      mega.classList.toggle('open');
-    });
-    document.addEventListener('click', (e) => {
-      if (!mega.contains(e.target)) mega.classList.remove('open');
-    });
+    let hideTimer = null;
+    const show = () => { clearTimeout(hideTimer); mega.classList.add('open'); };
+    const hide = () => { hideTimer = setTimeout(() => mega.classList.remove('open'), 220); };
+    worksBtn.addEventListener('mouseenter', show);
+    worksBtn.addEventListener('mouseleave', hide);
+    mega.addEventListener('mouseenter', show);
+    mega.addEventListener('mouseleave', hide);
   }
 
   /* ---------- Mobile menu ---------- */
