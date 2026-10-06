@@ -3,7 +3,9 @@
 import os, html, json
 
 OUT = "/Users/pokkritjeerapat/Desktop/happexhibition company profile/happexhibition-website"
-BASE = "https://happexhibition.com"   # change if hosted elsewhere (e.g. https://user.github.io/repo)
+BASE = "https://happexhibition.com"
+import datetime as _dt
+LASTMOD = _dt.date.today().isoformat()   # change if hosted elsewhere (e.g. https://user.github.io/repo)
 
 LINE = "https://line.me/R/ti/p/@happexhibition"
 FB = "https://www.facebook.com/profile.php?id=61593124306637&mibextid=wwXIfr"
@@ -95,7 +97,7 @@ UI = {
   nav_about="เกี่ยวกับเรา", nav_services="บริการ", nav_works="ผลงาน", nav_news="ข่าวสาร",
   nav_careers="ร่วมงานกับเรา", nav_contact="ติดต่อเรา", nav_home="หน้าแรก",
   quote="ขอใบเสนอราคา", quote_line="ขอใบเสนอราคา — เพิ่มเพื่อนใน LINE",
-  tagline="เปลี่ยนงานสถาปัตยกรรมรีเทลให้เป็นจริง",
+  tagline="ออกแบบ ผลิต ติดตั้ง ดูแล — ครบจบในที่เดียว",
   all_works="ผลงานทั้งหมด", view_index="ดูผลงานทั้งหมด",
   cat_retail="รีเทลหรูและบิวตี้", cat_hosp="โรงแรมและฮอสพิทัลลิตี้", cat_corp="สำนักงานและองค์กร",
   cat_fnb="ร้านอาหารและไลฟ์สไตล์", cat_gal="แกลเลอรี พิพิธภัณฑ์ และนิทรรศการ",
@@ -465,7 +467,7 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+Thai:wght@300;400;500&family=Inter:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Serif+Thai:wght@300;400;500&family=Inter:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{P}css/style.css">
 <link rel="icon" href="{P}assets/img/logo.png">
 {org}{jsonld}
@@ -605,6 +607,7 @@ def T(p, lang):  # project narrative
 # ==================== PAGES ====================
 def build_all(lang):
     L = UI[lang]; P = "../" if lang=="th" else ""
+    META = all_meta(lang)
     def A(a,k): return a[k+"_th"] if lang=="th" and (k+"_th") in a else a[k+"_en"] if (k+"_en") in a else a[k]
     def acat(a): return a["cat_th"] if lang=="th" else a["cat"]
     def adate(a): return a["date_th"] if lang=="th" else a["date"]
@@ -637,16 +640,31 @@ def build_all(lang):
       "care-maintenance": ("Maintenance, fixture stock and refurbishment — perfect on year five.",
                            "บำรุงรักษา สต๊อกเฟอร์นิเจอร์ และงานปรับปรุง — สมบูรณ์แบบแม้ปีที่ห้า"),
     }
+    svc_imgs = {"design-engineering":"services-floorplan","fabrication-millwork":"machine-worker",
+                "interior-fitout":"sector-white-retail","installation":"workshop-wide","care-maintenance":"hands-detail"}
+    explore = "ดูรายละเอียด" if lang == "th" else "Explore"
     svc_cards = "".join(
-        f'<a class="service-card" href="services.html#{sid}"><span class="num">{str(i+1).zfill(2)}</span>'
-        f'<div><h3>{(nth if lang=="th" else nen)}</h3><p>{SHORT[sid][1] if lang=="th" else SHORT[sid][0]}</p><div class="arrow">→</div></div></a>'
+        f'<a class="service-card" href="services.html#{sid}">'
+        f'<div class="sc-img"><img src="{P}assets/img/{svc_imgs[sid]}.jpg" alt="{(nth if lang=="th" else nen)}" loading="lazy"></div>'
+        f'<span class="num">{str(i+1).zfill(2)}</span>'
+        f'<h3>{(nth if lang=="th" else nen)}</h3><p>{SHORT[sid][1] if lang=="th" else SHORT[sid][0]}</p>'
+        f'<span class="sc-link">{explore} →</span></a>'
         for i,(sid,nen,nth,_img,den,dth,_de,_dt) in enumerate(SERVICES))
     tiles_data = [("luxury-retail","cat_retail","chanel-window","tile-a"),("hospitality","cat_hosp","sector-hospitality","tile-b"),
                   ("corporate","cat_corp","sector-corporate","tile-c"),("fnb","cat_fnb","office-lounge","tile-d"),
                   ("galleries","cat_gal","sector-gallery","tile-e")]
+    cat_counts = {}
+    for m in META: cat_counts[m["cat"]] = cat_counts.get(m["cat"], 0) + 1
+    def tile_sub(i, slug):
+        n = cat_counts.get(slug, 0)
+        if not n: return f'{str(i+1).zfill(2)}'
+        word = "โปรเจกต์" if lang == "th" else ("project" if n == 1 else "projects")
+        return f'{str(i+1).zfill(2)} · {n} {word}'
     tiles = "".join(
         f'<a class="tile {cls}" href="works.html#{slug}"><img src="{P}assets/img/{img}.jpg" alt="{L[key]}">'
-        f'<div class="wash"></div><div class="label">{L[key]}</div></a>' for slug,key,img,cls in tiles_data)
+        f'<div class="wash"></div><div class="label"><span class="t-sub">{tile_sub(i,slug)}</span>'
+        f'<span class="t-name">{L[key]}</span></div></a>'
+        for i,(slug,key,img,cls) in enumerate(tiles_data))
     marquee_cells = "".join(f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{c}" loading="lazy"></div>' for c in CLIENT_LOGOS) \
         + "".join(f'<div class="cell"><span>{t}</span></div>' for t in CLIENT_TEXT)
     steps_html = "".join(f'<div class="step reveal"><div class="num">{n}</div><hr><h3>{(tth if lang=="th" else ten)}</h3><p>{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in STEPS)
@@ -673,10 +691,10 @@ def build_all(lang):
   <section class="stats section">
     <div class="bgimg" style="background-image:url({P}assets/img/factory-aerial.jpg)"></div>
     <div class="container grid">
-      <div class="stat"><div class="num"><span data-count="20" data-suffix="+">0</span></div><div class="lbl">{L['stat1']}</div><div class="sub">{L['stat1s']}</div></div>
-      <div class="stat"><div class="num"><span data-count="180" data-suffix="+">0</span></div><div class="lbl">{L['stat2']}</div><div class="sub">{L['stat2s']}</div></div>
-      <div class="stat"><div class="num"><span data-count="11300">0</span></div><div class="lbl">{L['stat3']}</div><div class="sub">{L['stat3s']}</div></div>
-      <div class="stat"><div class="num"><span data-count="20" data-suffix="+">0</span></div><div class="lbl">{L['stat4']}</div><div class="sub">{L['stat4s']}</div></div>
+      <div class="stat"><div class="num"><span data-count="20" data-suffix="+">20+</span></div><div class="lbl">{L['stat1']}</div><div class="sub">{L['stat1s']}</div></div>
+      <div class="stat"><div class="num"><span data-count="180" data-suffix="+">180+</span></div><div class="lbl">{L['stat2']}</div><div class="sub">{L['stat2s']}</div></div>
+      <div class="stat"><div class="num"><span data-count="11300">11,300</span></div><div class="lbl">{L['stat3']}</div><div class="sub">{L['stat3s']}</div></div>
+      <div class="stat"><div class="num"><span data-count="20" data-suffix="+">20+</span></div><div class="lbl">{L['stat4']}</div><div class="sub">{L['stat4s']}</div></div>
     </div>
   </section>
   <section class="section">
@@ -752,7 +770,8 @@ def build_all(lang):
         + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
     desc = ("บริษัทเงียบ ๆ เบื้องหลังแบรนด์ที่ดังที่สุด ก่อตั้งปี 2547 ที่กรุงเทพฯ — บุคลากร 180 คน โรงงาน 3 แห่ง ผ่านการตรวจสอบระดับ LVMH" if lang=="th" else
             "The quiet company behind the loudest brands. Founded 2004 in Bangkok — 180 people, 3 factories, LVMH-tier audited.")
-    htmlp = head(L, lang, P, "about.html", L['nav_about'], desc, "assets/img/team-dark.jpg") + header_html(L, lang, P, "about.html", transparent=True) + f"""
+    about_title = ("เกี่ยวกับเรา — ผู้ผลิตงานรีเทลลักชัวรีและผู้รับเหมาตกแต่งภายใน" if lang=="th" else "About Us — Luxury Retail Fabricator & Interior Contractor, Thailand")
+    htmlp = head(L, lang, P, "about.html", about_title, desc, "assets/img/team-dark.jpg") + header_html(L, lang, P, "about.html", transparent=True) + f"""
 <main>
   <section class="page-hero dark">
     <img class="bg" src="{P}assets/img/team-dark.jpg" alt="Happexhibition team">
@@ -827,7 +846,8 @@ def build_all(lang):
         ensure_ascii=False) + '</script>'
     desc = ("บริการรับตกแต่งภายในครบวงจร: ออกแบบและวิศวกรรม งานผลิตความละเอียดสูง ตกแต่งร้านค้าและภายใน รับทำบูธอีเวนต์และบูธแสดงสินค้า ติดตั้งข้ามคืน และดูแลรักษา — หนึ่งโรงงาน หนึ่งมาตรฐาน" if lang=="th" else
             "Full-service interior contractor: design & engineering, precision fabrication, shop & interior fit-out, exhibition and event booth making, overnight installation and aftercare — one factory, one standard, one accountable team.")
-    htmlp = head(L, lang, P, "services.html", L['nav_services'], desc, "assets/img/machine-worker.jpg", faq_ld) + header_html(L, lang, P, "services.html") + f"""
+    svc_title = ("บริการ — รับทำร้านค้า งานผลิต บูธอีเวนต์ และติดตั้ง" if lang=="th" else "Services — Retail Fit-Out, Fabrication, Event Booths & Installation")
+    htmlp = head(L, lang, P, "services.html", svc_title, desc, "assets/img/machine-worker.jpg", faq_ld) + header_html(L, lang, P, "services.html") + f"""
 <main>
   <section class="page-hero">
     <div class="container">
@@ -864,7 +884,8 @@ def build_all(lang):
     nproj = len(META)
     desc = ("Chanel, Gucci, Van Cleef & Arpels, Burberry, Hourglass, Blue Bottle และอีกมากมาย — ผลงานรีเทล บิวตี้เคาน์เตอร์ และร้านค้าของเราทั่วประเทศ" if lang=="th" else
             "Chanel, Gucci, Van Cleef & Arpels, Burberry, Hourglass, Blue Bottle and more — the company we keep and what they trusted us to build.")
-    htmlp = head(L, lang, P, "works.html", L['nav_works'], desc) + header_html(L, lang, P, "works.html") + f"""
+    works_title = ("ผลงาน — รับทำร้านค้า เคาน์เตอร์แบรนด์ และป๊อปอัพ" if lang=="th" else "Works — Luxury Retail Stores, Brand Counters & Pop-ups")
+    htmlp = head(L, lang, P, "works.html", works_title, desc) + header_html(L, lang, P, "works.html") + f"""
 <main>
   <section class="page-hero">
     <div class="container">
@@ -914,6 +935,21 @@ def build_all(lang):
     <a href="project-{nxt['slug']}.html" style="text-align:right"><div class="dir">{L['next']} →</div><div class="name">{nxt['title']}</div></a>
   </nav>"""
 
+
+    def proj_title(t):
+        return t if lang == "en" else f"{t} — ผลงานรับทำร้านค้าและเคาน์เตอร์"
+    def proj_ld(title, hero, year, city, page):
+        crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":("ผลงาน" if lang=="th" else "Works"),"item":f"{BASE}/works.html"},
+            {"@type":"ListItem","position":2,"name":title,"item":f"{BASE}/{('th/' if lang=='th' else '')}{page}"}]}
+        cw = {"@context":"https://schema.org","@type":"CreativeWork","name":title,
+              "image":f"{BASE}/assets/img/{hero}.jpg",
+              "creator":{"@type":"Organization","name":"Happ Exhibition Co., Ltd."}}
+        if year: cw["dateCreated"] = str(year)
+        if city: cw["locationCreated"] = {"@type":"Place","name":city}
+        return ('<script type="application/ld+json">'+json.dumps(cw,ensure_ascii=False)+'</script>'
+               +'<script type="application/ld+json">'+json.dumps(crumbs,ensure_ascii=False)+'</script>')
+
     for idx, p in enumerate(PROJECTS):
         rel_html = rel_cards(p["slug"], "luxury-retail")
         pair = ""
@@ -921,7 +957,9 @@ def build_all(lang):
             second = f'<img src="{P}assets/img/{p["d2"]}.jpg" alt="">' if p["d2"] else ""
             pair = f'<div class="img-pair"><img src="{P}assets/img/{p["d1"]}.jpg" alt="">{second}</div>'
         plan = f'<img style="width:100%;margin:16px 0 32px" src="{P}assets/img/{p["plan"]}.jpg" alt="Technical drawing">' if p["plan"] else ""
-        htmlp = head(L, lang, P, f"project-{p['slug']}.html", p["title"], T(p,lang)[:150], f"assets/img/{p['hero']}.jpg") + header_html(L, lang, P, f"project-{p['slug']}.html", transparent=True) + f"""
+        pcity = p.get('city_th' if lang=='th' else 'city_en') or L['bangkok']
+        pld = proj_ld(p["title"], p["hero"], p["year"], pcity, f"project-{p['slug']}.html")
+        htmlp = head(L, lang, P, f"project-{p['slug']}.html", proj_title(p["title"]), T(p,lang)[:150], f"assets/img/{p['hero']}.jpg", pld) + header_html(L, lang, P, f"project-{p['slug']}.html", transparent=True) + f"""
 <main>
   <section class="page-hero dark">
     <img class="bg" src="{P}assets/img/{p['hero']}.jpg" alt="{p['title']}">
@@ -991,7 +1029,8 @@ def build_all(lang):
         rail = fact_rail([
             (L['client'], p["client"]), (L['venue'], ven), (L['city'], city),
             (L['year'], p.get("year")), (L['scope'], scope)])
-        htmlp = head(L, lang, P, f"project-{slug}.html", p["title"], narr[:150], f"assets/img/{hero}.jpg") \
+        pld = proj_ld(p["title"], hero, p.get("year"), city, f"project-{slug}.html")
+        htmlp = head(L, lang, P, f"project-{slug}.html", proj_title(p["title"]), narr[:150], f"assets/img/{hero}.jpg", pld) \
               + header_html(L, lang, P, f"project-{slug}.html", transparent=True) + f"""
 <main>
   <section class="page-hero dark">
@@ -1044,7 +1083,8 @@ def build_all(lang):
         rail = fact_rail([
             (L['client'], g["client"]), (loc_lbl, f'{len(g["locs"])} — {loc_names}'),
             (L['scope'], scope)])
-        htmlp = head(L, lang, P, f"project-{slug}.html", g["title"], narr[:150], f"assets/img/{hero}.jpg") \
+        pld = proj_ld(g["title"], hero, None, None, f"project-{slug}.html")
+        htmlp = head(L, lang, P, f"project-{slug}.html", proj_title(g["title"]), narr[:150], f"assets/img/{hero}.jpg", pld) \
               + header_html(L, lang, P, f"project-{slug}.html", transparent=True) + f"""
 <main>
   <section class="page-hero dark">
@@ -1082,7 +1122,8 @@ def build_all(lang):
         + f'<div class="meta">{acat(a)} · {adate(a)}</div><h3>{A(a,"t")}</h3></a>' for a in ARTICLES[1:])
     desc = ("ข่าวสารและกิจกรรมจาก Happexhibition — โปรเจกต์ โรงงาน ทีมงาน ความยั่งยืน" if lang=="th" else
             "News and activity from Happexhibition — projects, factory, people, sustainability.")
-    htmlp = head(L, lang, P, "news.html", L['nav_news'], desc) + header_html(L, lang, P, "news.html") + f"""
+    news_title = ("ข่าวสาร — โปรเจกต์ โรงงาน และความยั่งยืน" if lang=="th" else "News — Projects, Factory & Sustainability")
+    htmlp = head(L, lang, P, "news.html", news_title, desc) + header_html(L, lang, P, "news.html") + f"""
 <main>
   <section class="page-hero">
     <div class="container"><span class="eyebrow">{L['news_eyebrow']}</span><h1 class="display-l">{L['news_h']}</h1></div>
@@ -1219,7 +1260,8 @@ def build_all(lang):
     lb = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happ Exhibition Co., Ltd.","image":"{BASE}/assets/img/factory-exterior.jpg","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"openingHours":"Mo-Sa 08:30-17:30","url":"{BASE}/contact.html","sameAs":["{FB}","{IG}"]}}</script>"""
     desc = ("ติดต่อ บริษัท แฮพ เอ็กซิบิชั่น จำกัด — ปทุมธานี ประเทศไทย โทร +66 81-488-0475" if lang=="th" else
             "Contact Happ Exhibition Co., Ltd. — Pathumthani, Thailand. Call +66 81-488-0475 or add us on LINE @happexhibition.")
-    htmlp = head(L, lang, P, "contact.html", L['nav_contact'], desc, "assets/img/factory-exterior.jpg", lb) + header_html(L, lang, P, "contact.html") + f"""
+    contact_title = ("ติดต่อเรา — ขอใบเสนอราคาตกแต่งร้านและบูธ" if lang=="th" else "Contact — Get a Fit-Out or Booth Quote")
+    htmlp = head(L, lang, P, "contact.html", contact_title, desc, "assets/img/factory-exterior.jpg", lb) + header_html(L, lang, P, "contact.html") + f"""
 <main>
   <section class="page-hero">
     <div class="container"><span class="eyebrow">{L['contact_eyebrow']}</span><h1 class="display-l">{L['contact_h']}</h1></div>
@@ -1279,17 +1321,38 @@ def build_seo():
         + [f"article-{a['slug']}.html" for a in ARTICLES]
     urls = []
     for pg in pages:
-        urls.append(f"""  <url><loc>{BASE}/{pg}</loc>
+        urls.append(f"""  <url><loc>{BASE}/{pg}</loc><lastmod>{LASTMOD}</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="{BASE}/{pg}"/>
     <xhtml:link rel="alternate" hreflang="th" href="{BASE}/th/{pg}"/>
   </url>
-  <url><loc>{BASE}/th/{pg}</loc>
+  <url><loc>{BASE}/th/{pg}</loc><lastmod>{LASTMOD}</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="{BASE}/{pg}"/>
     <xhtml:link rel="alternate" hreflang="th" href="{BASE}/th/{pg}"/>
   </url>""")
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n"
     open(os.path.join(OUT,"sitemap.xml"),"w").write(sm)
     open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
+    llms = f"""# Happ Exhibition Co., Ltd.
+
+Design-build fabricator in Pathumthani, Thailand (Bangkok metro), founded 2004.
+We design, fabricate and install: luxury retail stores and beauty counters,
+interior fit-out, exhibition and event booths, pop-up stores, visual
+merchandising campaigns and bespoke retail furniture — end to end, with our
+own three factories (11,300 sqm) and overnight installation crews. Clients
+include Chanel (10+ year partner), Gucci, Burberry, Van Cleef & Arpels,
+Shiseido, Clé de Peau Beauté, Hourglass, Paul Smith and Pop Mart. Projects
+delivered across Thailand (Bangkok, Chiang Mai, Udon Thani, Phuket, Khon Kaen)
+and at airports (Suvarnabhumi, Chiang Mai).
+
+- Services: {BASE}/services.html
+- Works (34 case studies): {BASE}/works.html
+- About: {BASE}/about.html
+- Contact: {BASE}/contact.html — tel +66 81-488-0475, LINE @happexhibition
+- Thai version: {BASE}/th/
+
+Languages: English ({BASE}/) and Thai ({BASE}/th/).
+"""
+    open(os.path.join(OUT,"llms.txt"),"w").write(llms)
     print("sitemap.xml + robots.txt")
 
 build_all("en")
