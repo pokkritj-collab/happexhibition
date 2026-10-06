@@ -20,19 +20,26 @@ CONTACT_MAILTO = f"mailto:{MAIL}?subject=Website%20Enquiry%20%E2%80%94%20Happ%20
 ARROW = '<span class="arrow">→</span>'
 
 CLIENT_LOGOS = ["chanel","clinique","dolce","gucci","hourglass","issey","lamerr","narciso","olay",
-                "origins","pandora","shieshedo","sk2","tomforrd","bobbibrown","cleaclea","eliesaab","harnn"]
+                "origins","pandora","shieshedo","sk2","tomforrd","bobbibrown","cleaclea","eliesaab","harnn",
+                "paulsmith","panpuri","sunnies","samsung","burberry","polo","vancleef","charlottetilbury",
+                "bluebottle","anotherstory","philips","popmart"]
 # per-logo display height (px) so every mark carries equal visual weight,
 # and real brand names for alt text
 LOGO_H = {"chanel":26,"clinique":29,"dolce":20,"gucci":25,"hourglass":23,"issey":18,
           "lamerr":28,"narciso":18,"olay":35,"origins":22,"pandora":29,"shieshedo":26,
-          "sk2":42,"tomforrd":25,"bobbibrown":22,"cleaclea":31,"eliesaab":21,"harnn":18}
+          "sk2":42,"tomforrd":25,"bobbibrown":22,"cleaclea":31,"eliesaab":21,"harnn":18,
+          "paulsmith":27,"panpuri":28,"sunnies":20,"samsung":32,"burberry":26,"polo":17,
+          "vancleef":22,"charlottetilbury":25,"bluebottle":54,"anotherstory":19,"philips":26,"popmart":24}
 LOGO_NAME = {"chanel":"Chanel","clinique":"Clinique","dolce":"Dolce & Gabbana","gucci":"Gucci",
              "hourglass":"Hourglass","issey":"Issey Miyake","lamerr":"La Mer","narciso":"Narciso Rodriguez",
              "olay":"Olay","origins":"Origins","pandora":"Pandora","shieshedo":"Shiseido","sk2":"SK-II",
              "tomforrd":"Tom Ford","bobbibrown":"Bobbi Brown","cleaclea":"Clé de Peau Beauté",
-             "eliesaab":"Elie Saab","harnn":"HARNN"}
-CLIENT_TEXT = ["PAUL SMITH","PANPURI","SUNNIES","SAMSUNG","BURBERRY","POLO RALPH LAUREN",
-               "VAN CLEEF & ARPELS","CHARLOTTE TILBURY","BLUE BOTTLE","ANOTHER STORY","PHILIPS","POP MART"]
+             "eliesaab":"Elie Saab","harnn":"HARNN",
+             "paulsmith":"Paul Smith","panpuri":"Pañpuri","sunnies":"Sunnies Studios","samsung":"Samsung",
+             "burberry":"Burberry","polo":"Ralph Lauren","vancleef":"Van Cleef & Arpels",
+             "charlottetilbury":"Charlotte Tilbury","bluebottle":"Blue Bottle Coffee",
+             "anotherstory":"Another Story","philips":"Philips","popmart":"Pop Mart"}
+CLIENT_TEXT = []  # every referenced client now has its original logo file
 
 # ==================== UI STRINGS ====================
 UI = {
