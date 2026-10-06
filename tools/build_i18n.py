@@ -4,8 +4,9 @@ import os, html, json
 
 OUT = "/Users/pokkritjeerapat/Desktop/happexhibition company profile/happexhibition-website"
 BASE = "https://happexhibition.com"
-import datetime as _dt
-LASTMOD = _dt.date.today().isoformat()   # change if hosted elsewhere (e.g. https://user.github.io/repo)
+import datetime as _dt, time as _time
+LASTMOD = _dt.date.today().isoformat()
+ASSETV = str(int(_time.time()))   # change if hosted elsewhere (e.g. https://user.github.io/repo)
 
 LINE = "https://line.me/R/ti/p/@happexhibition"
 FB = "https://www.facebook.com/profile.php?id=61593124306637&mibextid=wwXIfr"
@@ -485,7 +486,7 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Serif+Thai:wght@300;400;500&family=Inter:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{P}css/style.css">
+<link rel="stylesheet" href="{P}css/style.css?v={ASSETV}">
 <link rel="icon" href="{P}assets/img/logo.png">
 {org}{jsonld}
 </head>
@@ -610,7 +611,7 @@ def footer(L, lang, P):
     </div>
   </div>
 </footer>
-<script src="{P}js/main.js"></script>
+<script src="{P}js/main.js?v={ASSETV}"></script>
 </body></html>"""
 
 def write(lang, name, htmlstr):
@@ -683,7 +684,7 @@ def build_all(lang):
         f'<span class="t-name">{L[key]}</span></div></a>'
         for i,(slug,key,img,cls) in enumerate(tiles_data))
     marquee_cells = "".join(
-        f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" style="--lh:{round(LOGO_H[c]*0.78)}px" loading="lazy"></div>'
+        f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" style="--lh:{round(LOGO_H[c]*0.5)}px" loading="lazy"></div>'
         for c in CLIENT_LOGOS) \
         + "".join(f'<div class="cell"><span>{t}</span></div>' for t in CLIENT_TEXT)
     steps_html = "".join(f'<div class="step reveal"><div class="num">{n}</div><hr><h3>{(tth if lang=="th" else ten)}</h3><p>{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in STEPS)
@@ -785,7 +786,7 @@ def build_all(lang):
     diffs_html = "".join(f'<div class="step reveal"><div class="num" style="color:var(--green-300)">{n}</div><hr style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">{(tth if lang=="th" else ten)}</h3><p style="color:var(--grey-300)">{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in DIFFS)
     team = "".join(f'<div class="team-card reveal"><img src="{P}assets/img/{img}.jpg" alt="{name}"><h3>{name}</h3><p>{(rth if lang=="th" else ren)}</p></div>' for img,name,ren,rth in LEADERS)
     tl = "".join(f'<div class="step reveal"><div class="num" style="font-size:24px;color:var(--text-brand)">{y}</div><hr><p>{(dth if lang=="th" else den)}</p></div>' for y,den,dth in TIMELINE)
-    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" loading="lazy" style="height:{round(LOGO_H[c]*0.78)}px;max-width:160px;width:auto;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
+    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" loading="lazy" style="height:{round(LOGO_H[c]*0.5)}px;max-width:110px;width:auto;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
         + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
     desc = ("บริษัทเงียบ ๆ เบื้องหลังแบรนด์ที่ดังที่สุด ก่อตั้งปี 2547 ที่กรุงเทพฯ — บุคลากร 180 คน โรงงาน 3 แห่ง ผ่านการตรวจสอบระดับ LVMH" if lang=="th" else
             "The quiet company behind the loudest brands. Founded 2004 in Bangkok — 180 people, 3 factories, LVMH-tier audited.")
