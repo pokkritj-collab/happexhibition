@@ -21,6 +21,16 @@ ARROW = '<span class="arrow">→</span>'
 
 CLIENT_LOGOS = ["chanel","clinique","dolce","gucci","hourglass","issey","lamerr","narciso","olay",
                 "origins","pandora","shieshedo","sk2","tomforrd","bobbibrown","cleaclea","eliesaab","harnn"]
+# per-logo display height (px) so every mark carries equal visual weight,
+# and real brand names for alt text
+LOGO_H = {"chanel":26,"clinique":29,"dolce":20,"gucci":25,"hourglass":23,"issey":18,
+          "lamerr":28,"narciso":18,"olay":35,"origins":22,"pandora":29,"shieshedo":26,
+          "sk2":42,"tomforrd":25,"bobbibrown":22,"cleaclea":31,"eliesaab":21,"harnn":18}
+LOGO_NAME = {"chanel":"Chanel","clinique":"Clinique","dolce":"Dolce & Gabbana","gucci":"Gucci",
+             "hourglass":"Hourglass","issey":"Issey Miyake","lamerr":"La Mer","narciso":"Narciso Rodriguez",
+             "olay":"Olay","origins":"Origins","pandora":"Pandora","shieshedo":"Shiseido","sk2":"SK-II",
+             "tomforrd":"Tom Ford","bobbibrown":"Bobbi Brown","cleaclea":"Clé de Peau Beauté",
+             "eliesaab":"Elie Saab","harnn":"HARNN"}
 CLIENT_TEXT = ["PAUL SMITH","PANPURI","SUNNIES","SAMSUNG","BURBERRY","POLO RALPH LAUREN",
                "VAN CLEEF & ARPELS","CHARLOTTE TILBURY","BLUE BOTTLE","ANOTHER STORY","PHILIPS","POP MART"]
 
@@ -665,7 +675,9 @@ def build_all(lang):
         f'<div class="wash"></div><div class="label"><span class="t-sub">{tile_sub(i,slug)}</span>'
         f'<span class="t-name">{L[key]}</span></div></a>'
         for i,(slug,key,img,cls) in enumerate(tiles_data))
-    marquee_cells = "".join(f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{c}" loading="lazy"></div>' for c in CLIENT_LOGOS) \
+    marquee_cells = "".join(
+        f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" style="--lh:{LOGO_H[c]}px" loading="lazy"></div>'
+        for c in CLIENT_LOGOS) \
         + "".join(f'<div class="cell"><span>{t}</span></div>' for t in CLIENT_TEXT)
     steps_html = "".join(f'<div class="step reveal"><div class="num">{n}</div><hr><h3>{(tth if lang=="th" else ten)}</h3><p>{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in STEPS)
     news3 = "".join(
@@ -766,7 +778,7 @@ def build_all(lang):
     diffs_html = "".join(f'<div class="step reveal"><div class="num" style="color:var(--green-300)">{n}</div><hr style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">{(tth if lang=="th" else ten)}</h3><p style="color:var(--grey-300)">{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in DIFFS)
     team = "".join(f'<div class="team-card reveal"><img src="{P}assets/img/{img}.jpg" alt="{name}"><h3>{name}</h3><p>{(rth if lang=="th" else ren)}</p></div>' for img,name,ren,rth in LEADERS)
     tl = "".join(f'<div class="step reveal"><div class="num" style="font-size:24px;color:var(--text-brand)">{y}</div><hr><p>{(dth if lang=="th" else den)}</p></div>' for y,den,dth in TIMELINE)
-    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{c}" loading="lazy" style="max-height:60px;max-width:140px;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
+    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" loading="lazy" style="height:{LOGO_H[c]}px;max-width:210px;width:auto;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
         + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
     desc = ("บริษัทเงียบ ๆ เบื้องหลังแบรนด์ที่ดังที่สุด ก่อตั้งปี 2547 ที่กรุงเทพฯ — บุคลากร 180 คน โรงงาน 3 แห่ง ผ่านการตรวจสอบระดับ LVMH" if lang=="th" else
             "The quiet company behind the loudest brands. Founded 2004 in Bangkok — 180 people, 3 factories, LVMH-tier audited.")
