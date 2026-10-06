@@ -465,7 +465,7 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Inter:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+Thai:wght@300;400;500&family=Inter:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{P}css/style.css">
 <link rel="icon" href="{P}assets/img/logo.png">
 {org}{jsonld}
@@ -698,7 +698,7 @@ def build_all(lang):
       <img src="{P}assets/img/chanel-front.jpg" alt="Chanel @ Emsphere">
       <div>
         <span class="eyebrow">{L['featured']}</span>
-        <h2 style="font-size:clamp(32px,3.4vw,48px);margin:12px 0 20px">Chanel @ Emsphere</h2>
+        <h2 style="margin:12px 0 20px">Chanel @ Emsphere</h2>
         <p class="body-l" style="color:var(--text-secondary)">{L['featured_body']}</p>
         <div class="metrics">
           <div><div class="num">10+</div><div class="lbl">{L['years_partner']}</div></div>
@@ -749,7 +749,7 @@ def build_all(lang):
     team = "".join(f'<div class="team-card reveal"><img src="{P}assets/img/{img}.jpg" alt="{name}"><h3>{name}</h3><p>{(rth if lang=="th" else ren)}</p></div>' for img,name,ren,rth in LEADERS)
     tl = "".join(f'<div class="step reveal"><div class="num" style="font-size:24px;color:var(--text-brand)">{y}</div><hr><p>{(dth if lang=="th" else den)}</p></div>' for y,den,dth in TIMELINE)
     wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{c}" loading="lazy" style="max-height:60px;max-width:140px;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
-        + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
+        + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
     desc = ("บริษัทเงียบ ๆ เบื้องหลังแบรนด์ที่ดังที่สุด ก่อตั้งปี 2547 ที่กรุงเทพฯ — บุคลากร 180 คน โรงงาน 3 แห่ง ผ่านการตรวจสอบระดับ LVMH" if lang=="th" else
             "The quiet company behind the loudest brands. Founded 2004 in Bangkok — 180 people, 3 factories, LVMH-tier audited.")
     htmlp = head(L, lang, P, "about.html", L['nav_about'], desc, "assets/img/team-dark.jpg") + header_html(L, lang, P, "about.html", transparent=True) + f"""
@@ -946,9 +946,9 @@ def build_all(lang):
         <p>{T(p,lang)}</p>
         {pair}{plan}
         <div style="display:flex;gap:48px;flex-wrap:wrap">
-          <div><div style="font-family:var(--font-display);font-weight:600;font-size:36px;color:var(--text-brand)">0</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['disruption']}</div></div>
-          <div><div style="font-family:var(--font-display);font-weight:600;font-size:36px;color:var(--text-brand)">5</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['qc_shipped']}</div></div>
-          <div><div style="font-family:var(--font-display);font-weight:600;font-size:36px;color:var(--text-brand)">{p['sqm']}</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['sqm_delivered']}</div></div>
+          <div><div style="font-family:var(--font-display);font-weight:400;font-size:36px;color:var(--text-brand)">0</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['disruption']}</div></div>
+          <div><div style="font-family:var(--font-display);font-weight:400;font-size:36px;color:var(--text-brand)">5</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['qc_shipped']}</div></div>
+          <div><div style="font-family:var(--font-display);font-weight:400;font-size:36px;color:var(--text-brand)">{p['sqm']}</div><div style="font-size:11px;letter-spacing:.08em;color:var(--text-muted);font-weight:500">{L['sqm_delivered']}</div></div>
         </div>
       </div>
     </div>
