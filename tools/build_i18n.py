@@ -683,7 +683,7 @@ def build_all(lang):
         f'<span class="t-name">{L[key]}</span></div></a>'
         for i,(slug,key,img,cls) in enumerate(tiles_data))
     marquee_cells = "".join(
-        f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" style="--lh:{LOGO_H[c]}px" loading="lazy"></div>'
+        f'<div class="cell"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" style="--lh:{round(LOGO_H[c]*0.78)}px" loading="lazy"></div>'
         for c in CLIENT_LOGOS) \
         + "".join(f'<div class="cell"><span>{t}</span></div>' for t in CLIENT_TEXT)
     steps_html = "".join(f'<div class="step reveal"><div class="num">{n}</div><hr><h3>{(tth if lang=="th" else ten)}</h3><p>{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in STEPS)
@@ -785,7 +785,7 @@ def build_all(lang):
     diffs_html = "".join(f'<div class="step reveal"><div class="num" style="color:var(--green-300)">{n}</div><hr style="border-color:rgba(255,255,255,.15)"><h3 style="color:#fff">{(tth if lang=="th" else ten)}</h3><p style="color:var(--grey-300)">{(dth if lang=="th" else den)}</p></div>' for n,ten,tth,den,dth in DIFFS)
     team = "".join(f'<div class="team-card reveal"><img src="{P}assets/img/{img}.jpg" alt="{name}"><h3>{name}</h3><p>{(rth if lang=="th" else ren)}</p></div>' for img,name,ren,rth in LEADERS)
     tl = "".join(f'<div class="step reveal"><div class="num" style="font-size:24px;color:var(--text-brand)">{y}</div><hr><p>{(dth if lang=="th" else den)}</p></div>' for y,den,dth in TIMELINE)
-    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" loading="lazy" style="height:{LOGO_H[c]}px;max-width:210px;width:auto;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
+    wall = "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><img src="{P}assets/img/clients/{c}.png" alt="{LOGO_NAME[c]}" loading="lazy" style="height:{round(LOGO_H[c]*0.78)}px;max-width:160px;width:auto;object-fit:contain"></div>' for c in CLIENT_LOGOS) \
         + "".join(f'<div style="border:1px solid var(--border-subtle);height:104px;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--text-secondary)">{t}</span></div>' for t in CLIENT_TEXT)
     desc = ("บริษัทเงียบ ๆ เบื้องหลังแบรนด์ที่ดังที่สุด ก่อตั้งปี 2547 ที่กรุงเทพฯ — บุคลากร 180 คน โรงงาน 3 แห่ง ผ่านการตรวจสอบระดับ LVMH" if lang=="th" else
             "The quiet company behind the loudest brands. Founded 2004 in Bangkok — 180 people, 3 factories, LVMH-tier audited.")

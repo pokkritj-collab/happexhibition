@@ -224,7 +224,7 @@ html[lang="th"] blockquote{line-height:1.4}
 .marquee:hover .marquee-track{animation-play-state:paused}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee .cell{width:250px;display:flex;justify-content:center;align-items:center;flex:none}
-.marquee .cell img{height:var(--lh,28px);width:auto;max-width:200px;object-fit:contain;opacity:.85;filter:grayscale(30%);transition:filter var(--dur-base),opacity var(--dur-base)}
+.marquee .cell img{height:var(--lh,22px);width:auto;max-width:170px;object-fit:contain;opacity:.85;filter:grayscale(30%);transition:filter var(--dur-base),opacity var(--dur-base)}
 .marquee .cell:hover img{filter:none;opacity:1}
 .marquee .cell span{font-family:var(--font-display);font-weight:400;font-size:19px;color:var(--text-muted)}
 
