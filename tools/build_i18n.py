@@ -459,9 +459,9 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
     th_url = f"{BASE}/th/{page}"
     canon = th_url if lang=="th" else en_url
     site = "Happexhibition"
-    kw = ("รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
+    kw = ("รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
           if lang=="th" else
-          "retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
+          "cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
     org = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Happ Exhibition Co., Ltd.","alternateName":"Happexhibition","description":"Design-build fabricator in Bangkok: luxury retail fit-out, interior design and contracting, shop and retail solutions, exhibition and event booth making, pop-up stores and bespoke furniture manufacturing.","url":"{BASE}/","logo":"{BASE}/assets/img/logo.png","foundingDate":"2004-03","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"sameAs":["{FB}","{IG}","{LINE}"],"knowsAbout":["Retail fit-out","Interior design","Interior contracting","Shop fitting","Retail solutions","Exhibition booth fabrication","Event booth design","Trade show stands","Brand activations","Pop-up stores","Furniture manufacturing","Museum and exhibition environments"]}}</script>"""
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -587,7 +587,8 @@ def footer(L, lang, P):
       <div><h5>{L['f_explore']}</h5><ul>
         <li><a href="index.html">{L['nav_home']}</a></li><li><a href="about.html">{L['nav_about']}</a></li>
         <li><a href="services.html">{L['nav_services']}</a></li><li><a href="works.html">{L['nav_works']}</a></li>
-        <li><a href="news.html">{L['nav_news']}</a></li></ul></div>
+        <li><a href="news.html">{L['nav_news']}</a></li>
+        <li><a href="cosmetic-counters.html">{'เคาน์เตอร์เครื่องสำอาง' if lang=='th' else 'Cosmetic Counters'}</a></li></ul></div>
       <div><h5>{L['f_company']}</h5><ul>
         <li><a href="careers.html">{L['nav_careers']}</a></li><li><a href="contact.html">{L['nav_contact']}</a></li>
         <li><a href="{LINE}" target="_blank" rel="noopener">{L['quote']}</a></li></ul></div>
@@ -1133,6 +1134,89 @@ def build_all(lang):
 {cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
         write(lang, f"project-{slug}.html", htmlp)
 
+    # ---- cosmetic counters landing page ----
+    BEAUTY_SLUGS = ["chanel-emsphere","cpb-dusit-central-park","gucci-mega-bangna","shiseido-centralworld",
+                    "chanel-central-udon","chanel-siam-paragon","shiseido-siam-takashimaya","gucci-central-pinklao",
+                    "hourglass-thailand","cpb-counters","vca-fixtures","bobbi-brown-counters","elixir-counters",
+                    "chanel-vm-campaigns","chanel-chiangmai-airport","chanel-central-chaengwattana",
+                    "chanel-suvarnabhumi","burberry-gucci-dusit-central-park","charlotte-tilbury-central-chiangmai"]
+    bmeta = [m for s in BEAUTY_SLUGS for m in META if m["slug"] == s]
+    bcards = "".join(
+        f'<a class="work-card reveal" href="project-{m["slug"]}.html">'
+        f'<div class="imgwrap"><img src="{P}assets/img/{m["hero"]}.jpg" alt="{m["title"]}" loading="lazy"></div>'
+        f'<h3>{m["title"]}</h3><div class="meta">{m["meta"]}</div></a>' for m in bmeta)
+    if lang == "en":
+        cc_title = "Cosmetic Counter Manufacturer & Beauty Retail Contractor, Thailand"
+        cc_desc = "Happ Exhibition designs, manufactures and installs cosmetic counters and beauty retail environments for Chanel, Gucci, Shiseido, Clé de Peau Beauté, Hourglass and more — 20+ years, 3 factories in Thailand, overnight installation nationwide."
+        cc_h1 = "Thailand's beauty-counter builder of choice."
+        cc_eyebrow = "COSMETIC COUNTERS & BEAUTY RETAIL"
+        cc_sec_eyebrow = "BEAUTY COUNTER PROJECTS"
+        cc_sec_h = "Counters we manufactured and installed."
+        cc_intro1 = "For over twenty years, the world's most demanding beauty houses have trusted Happ Exhibition to manufacture and install their cosmetic counters in Thailand. Chanel has been a partner for more than a decade; Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef &amp; Arpels Parfums and Charlotte Tilbury counters across the country were fabricated in our Pathumthani factories."
+        cc_intro2 = "A beauty counter is the hardest discipline in retail fabrication: millimetre casework, chemical-resistant finishes that survive alcohol-based product and ten thousand hands, integrated testers and lighting, approvals to each maison's global standard — and installation overnight in an operating mall. That is our home ground, from a single flagship counter to nationwide multi-branch rollouts from Chiang Mai to Khon Kaen to Phuket."
+        cc_faq = [
+          ("Who manufactures cosmetic counters in Thailand?",
+           "Happ Exhibition Co., Ltd. is a design-build fabricator founded in 2004, operating three factories (11,300 sqm) in Pathumthani near Bangkok. We manufacture and install cosmetic counters, beauty retail zones and boutiques for international luxury brands, with Chanel as a partner of more than ten years."),
+          ("Which beauty brands has Happ Exhibition built for?",
+           "Chanel, Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums, Elixir and Charlotte Tilbury, among others — see the project gallery on this page."),
+          ("Can you roll out counters to multiple branches nationwide?",
+           "Yes. We deliver multi-branch rollouts across Thailand — recent programmes span Bangkok, Nonthaburi, Chiang Mai, Khon Kaen and Phuket — fabricated as repeatable kits in our factory and installed overnight branch by branch."),
+          ("Do you build to international brand guidelines?",
+           "Yes. Most of our work is built directly to each maison's global fixture standard, from approved shop drawings through five-step documented QC, and our factory passes the audit regimes of LVMH-tier houses."),
+        ]
+    else:
+        cc_title = "โรงงานผลิตเคาน์เตอร์เครื่องสำอาง และผู้รับเหมาบิวตี้รีเทล"
+        cc_desc = "Happ Exhibition ออกแบบ ผลิต และติดตั้งเคาน์เตอร์เครื่องสำอางและพื้นที่บิวตี้รีเทลให้ Chanel, Gucci, Shiseido, Clé de Peau Beauté, Hourglass — ประสบการณ์ 20+ ปี โรงงาน 3 แห่ง ติดตั้งข้ามคืนทั่วประเทศ"
+        cc_h1 = "ผู้ผลิตเคาน์เตอร์บิวตี้ที่แบรนด์ระดับโลกเลือก"
+        cc_eyebrow = "เคาน์เตอร์เครื่องสำอางและบิวตี้รีเทล"
+        cc_sec_eyebrow = "ผลงานเคาน์เตอร์บิวตี้"
+        cc_sec_h = "ผลงานที่เราผลิตและติดตั้ง"
+        cc_intro1 = "กว่ายี่สิบปีที่บิวตี้เฮาส์ที่เข้มงวดที่สุดในโลกไว้วางใจให้ Happ Exhibition ผลิตและติดตั้งเคาน์เตอร์เครื่องสำอางในประเทศไทย — Chanel เป็นพาร์ทเนอร์มานานกว่าทศวรรษ ขณะที่เคาน์เตอร์ Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef &amp; Arpels และ Charlotte Tilbury ทั่วประเทศล้วนผลิตจากโรงงานของเราที่ปทุมธานี"
+        cc_intro2 = "เคาน์เตอร์บิวตี้คืองานที่ยากที่สุดของการผลิตงานรีเทล: งานตู้ระดับมิลลิเมตร ผิวเคลือบทนสารเคมีที่ต้องรับทั้งผลิตภัณฑ์แอลกอฮอล์และมือนับหมื่น เทสเตอร์และระบบไฟในตัว การอนุมัติตามมาตรฐานสากลของแต่ละเมซง — และการติดตั้งข้ามคืนในห้างที่เปิดบริการ นี่คือสนามของเรา ตั้งแต่เคาน์เตอร์แฟล็กชิปจุดเดียวไปจนถึงการติดตั้งหลายสาขาทั่วประเทศ จากเชียงใหม่ ขอนแก่น ถึงภูเก็ต"
+        cc_faq = [
+          ("ใครรับผลิตเคาน์เตอร์เครื่องสำอางในประเทศไทย?",
+           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี ผลิตและติดตั้งเคาน์เตอร์เครื่องสำอาง โซนบิวตี้ และบูติกให้แบรนด์ลักชัวรีระดับโลก โดยมี Chanel เป็นพาร์ทเนอร์กว่าสิบปี"),
+          ("เคยผลิตให้แบรนด์บิวตี้ใดบ้าง?",
+           "Chanel, Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums, Elixir และ Charlotte Tilbury — ดูแกลเลอรีผลงานในหน้านี้"),
+          ("รับผลิตหลายสาขาพร้อมกันทั่วประเทศได้หรือไม่?",
+           "ได้ เราส่งมอบงานหลายสาขาทั่วไทย — โปรแกรมล่าสุดครอบคลุมกรุงเทพฯ นนทบุรี เชียงใหม่ ขอนแก่น และภูเก็ต — ผลิตเป็นชุดมาตรฐานจากโรงงานและติดตั้งข้ามคืนทีละสาขา"),
+          ("ผลิตตามไกด์ไลน์แบรนด์ต่างประเทศได้หรือไม่?",
+           "ได้ งานส่วนใหญ่ของเราสร้างตรงตามมาตรฐานเฟอร์นิเจอร์สากลของแต่ละเมซง ตั้งแต่ shop drawing ที่อนุมัติจนถึง QC 5 ขั้นตอนพร้อมเอกสาร และโรงงานของเราผ่านการตรวจสอบของเฮาส์ระดับ LVMH"),
+        ]
+    cc_faq_html = "".join(f"<details{' open' if i==0 else ''}><summary>{q}</summary><p>{a}</p></details>" for i,(q,a) in enumerate(cc_faq))
+    cc_ld = '<script type="application/ld+json">' + json.dumps(
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a.replace("&amp;","&")}} for q,a in cc_faq]},
+        ensure_ascii=False) + '</script>'
+    htmlp = head(L, lang, P, "cosmetic-counters.html", cc_title, cc_desc, "assets/img/chanel-hero.jpg", cc_ld) \
+          + header_html(L, lang, P, "cosmetic-counters.html") + f"""
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{cc_eyebrow}</span>
+      <h1 class="display-l">{cc_h1}</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:24px">
+    <div class="container article-col" style="margin:0">
+      <p class="body-l" style="color:var(--text-secondary);margin-bottom:20px">{cc_intro1}</p>
+      <p class="body-l" style="color:var(--text-secondary)">{cc_intro2}</p>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-subtle)">
+    <div class="container">
+      <div class="section-header reveal"><div><span class="eyebrow">{cc_sec_eyebrow}</span><h2>{cc_sec_h}</h2></div>
+      <a class="link-brand" href="works.html">{L['all_works']} →</a></div>
+      <div class="news-grid">{bcards}</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-col"><h2 style="margin-bottom:40px">{L['faq_h']}</h2><div class="accordion">{cc_faq_html}</div></div>
+  </section>
+</main>
+{cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
+    write(lang, "cosmetic-counters.html", htmlp)
+
     # ---- news ----
     feat = ARTICLES[0]
     cards = "".join(
@@ -1334,7 +1418,7 @@ def build_all(lang):
 
 # ==================== SEO FILES ====================
 def build_seo():
-    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html"] \
+    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html","cosmetic-counters.html"] \
         + [f"project-{p['slug']}.html" for p in PROJECTS] \
         + [f"project-{p['slug']}.html" for p in NEWP] \
         + [f"project-{g['slug']}.html" for g in GROUPS] \
@@ -1351,8 +1435,15 @@ def build_seo():
   </url>""")
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n"
     open(os.path.join(OUT,"sitemap.xml"),"w").write(sm)
-    open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
+    open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     llms = f"""# Happ Exhibition Co., Ltd.
+
+Thailand's specialist manufacturer and contractor for COSMETIC COUNTERS and
+luxury BEAUTY RETAIL: we have designed, fabricated and installed beauty
+counters and boutiques for Chanel (10+ year partner), Gucci Beauty, Shiseido,
+Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums,
+Elixir and Charlotte Tilbury, including nationwide multi-branch rollouts.
+Dedicated page: {BASE}/cosmetic-counters.html
 
 Design-build fabricator in Pathumthani, Thailand (Bangkok metro), founded 2004.
 We design, fabricate and install: luxury retail stores and beauty counters,
