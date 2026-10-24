@@ -459,9 +459,9 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
     th_url = f"{BASE}/th/{page}"
     canon = th_url if lang=="th" else en_url
     site = "Happexhibition"
-    kw = ("รับทำร้านในห้าง, รับสร้างร้านค้าถาวรในห้างสรรพสินค้า, ตกแต่งร้านในศูนย์การค้า, เปิดร้านในห้าง, รับเหมาตกแต่งร้านค้า, รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
+    kw = ("รับทำร้าน pop up, รับสร้างป๊อปอัพสโตร์, รับทำร้านในห้าง, รับสร้างร้านค้าถาวรในห้างสรรพสินค้า, ตกแต่งร้านในศูนย์การค้า, เปิดร้านในห้าง, รับเหมาตกแต่งร้านค้า, รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
           if lang=="th" else
-          "permanent mall shop builder Thailand, mall shop contractor, shop fit-out in shopping mall, permanent retail store construction, department store shop builder, cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
+          "pop-up store builder Thailand, pop up shop contractor Bangkok, permanent mall shop builder Thailand, mall shop contractor, shop fit-out in shopping mall, permanent retail store construction, department store shop builder, cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
     org = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Happ Exhibition Co., Ltd.","alternateName":"Happexhibition","description":"Design-build fabricator in Bangkok: luxury retail fit-out, interior design and contracting, shop and retail solutions, exhibition and event booth making, pop-up stores and bespoke furniture manufacturing.","url":"{BASE}/","logo":"{BASE}/assets/img/logo.png","foundingDate":"2004-03","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"sameAs":["{FB}","{IG}","{LINE}"],"knowsAbout":["Retail fit-out","Interior design","Interior contracting","Shop fitting","Retail solutions","Exhibition booth fabrication","Event booth design","Trade show stands","Brand activations","Pop-up stores","Furniture manufacturing","Museum and exhibition environments"]}}</script>"""
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -589,7 +589,8 @@ def footer(L, lang, P):
         <li><a href="services.html">{L['nav_services']}</a></li><li><a href="works.html">{L['nav_works']}</a></li>
         <li><a href="news.html">{L['nav_news']}</a></li>
         <li><a href="cosmetic-counters.html">{'เคาน์เตอร์เครื่องสำอาง' if lang=='th' else 'Cosmetic Counters'}</a></li>
-        <li><a href="mall-shops.html">{'ร้านค้าถาวรในห้าง' if lang=='th' else 'Permanent Mall Shops'}</a></li></ul></div>
+        <li><a href="mall-shops.html">{'ร้านค้าถาวรในห้าง' if lang=='th' else 'Permanent Mall Shops'}</a></li>
+        <li><a href="popup-stores.html">{'ร้าน Pop-up' if lang=='th' else 'Pop-Up Stores'}</a></li></ul></div>
       <div><h5>{L['f_company']}</h5><ul>
         <li><a href="careers.html">{L['nav_careers']}</a></li><li><a href="contact.html">{L['nav_contact']}</a></li>
         <li><a href="{LINE}" target="_blank" rel="noopener">{L['quote']}</a></li></ul></div>
@@ -1319,6 +1320,89 @@ def build_all(lang):
 {cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
     write(lang, "mall-shops.html", htmlp)
 
+    # ---- pop-up stores landing page ----
+    POPUP_SLUGS = ["philips-popup-central-chidlom","ea7-siam-paragon","chanel-vm-campaigns","pralet-emquartier"]
+    psmeta = [m for s in POPUP_SLUGS for m in META if m["slug"] == s]
+    pscards = "".join(
+        f'<a class="work-card reveal" href="project-{m["slug"]}.html">'
+        f'<div class="imgwrap"><img src="{P}assets/img/{m["hero"]}.jpg" alt="{m["title"]}" loading="lazy"></div>'
+        f'<h3>{m["title"]}</h3><div class="meta">{m["meta"]}</div></a>' for m in psmeta)
+    if lang == "en":
+        ps_title = "Pop-Up Store Builder Thailand — Retail Pop-Ups, Kiosks & Brand Campaigns"
+        ps_desc = "Happ Exhibition designs, fabricates and installs pop-up stores, retail kiosks and visual-merchandising campaigns in Thailand's malls — factory pre-built, installed overnight. Philips, EA7 Emporio Armani, Chanel and more. 20+ years."
+        ps_h1 = "Pop-up stores, built in the factory, open overnight."
+        ps_eyebrow = "POP-UP STORES, KIOSKS & CAMPAIGNS"
+        ps_intro1 = "A pop-up lives or dies on speed: the venue confirms late, the campaign date doesn't move, and the mall only lets you build after closing time. Happ Exhibition has been building pop-up stores, retail kiosks and brand campaign installations in Thailand since 2004 — for Philips, EA7 Emporio Armani, Pralet and, season after season, Chanel's visual-merchandising programme across its Thai counters."
+        ps_intro2 = "Everything is fabricated and pre-assembled in our three Pathumthani factories, so the pop-up arrives at the mall as a finished kit: flooring, plinths, counters, lightboxes and props. We install overnight in operating centres like Siam Paragon and Central Chidlom, keep it perfect for the run, and dismantle just as cleanly when the campaign ends — the same discipline we apply to permanent boutiques, compressed into days."
+        ps_sec_eyebrow = "POP-UP & CAMPAIGN PROJECTS"
+        ps_sec_h = "Pop-ups and campaigns we delivered."
+        ps_faq = [
+          ("Who builds pop-up stores in Thailand?",
+           "Happ Exhibition Co., Ltd. — a design-build fabricator founded in 2004 with three factories (11,300 sqm) in Pathumthani near Bangkok. We design, manufacture and install pop-up stores, retail kiosks, event retail zones and visual-merchandising campaigns inside Thailand's major shopping malls, for brands including Philips, EA7 Emporio Armani, Pralet and Chanel."),
+          ("How fast can a pop-up store be built?",
+           "The on-site phase is overnight: the pop-up is fabricated and pre-assembled in our factory, then installed after the mall closes so it trades the next morning. We routinely swap Chanel's seasonal visual-merchandising campaigns across multiple counters in a single night. Overall lead time depends on design complexity and material availability — contact us with your campaign date and we will work backwards from it."),
+          ("Do you handle design as well as production?",
+           "Yes — we are design-build. Our in-house team can take a pop-up from concept and 3D design through shop drawings, mall approval, fabrication, graphics and props to overnight installation, or we can build precisely to your agency's or brand's existing design."),
+          ("Can you install a pop-up inside an operating mall or department store?",
+           "Yes, that is our standard method. We have built pop-ups and campaign installations on trading floors at Siam Paragon, Central Chidlom, EmQuartier and department stores nationwide — moved in through protected logistics after closing and ready before doors open."),
+          ("What happens when the campaign ends?",
+           "We dismantle overnight and hand the floor back to the mall in its original condition. Where the brand plans further activations, fixtures are built so key components can be refurbished and redeployed."),
+        ]
+    else:
+        ps_title = "รับทำร้าน Pop-up — ป๊อปอัพสโตร์ คีออส และแคมเปญแบรนด์ครบวงจร"
+        ps_desc = "รับทำร้าน pop up ครบวงจร: Happ Exhibition ออกแบบ ผลิต ติดตั้งป๊อปอัพสโตร์ คีออส และงานแคมเปญ VM ในห้างทั่วไทย — ผลิตจากโรงงาน ติดตั้งข้ามคืน ผลงาน Philips, EA7 Emporio Armani, Chanel ประสบการณ์ 20+ ปี"
+        ps_h1 = "รับทำร้าน Pop-up ผลิตจากโรงงาน เปิดได้ข้ามคืน"
+        ps_eyebrow = "ร้าน POP-UP คีออส และงานแคมเปญ"
+        ps_intro1 = "งานป๊อปอัพวัดกันที่ความเร็ว: พื้นที่คอนเฟิร์มช้า วันเปิดแคมเปญเลื่อนไม่ได้ และห้างให้เข้าติดตั้งได้เฉพาะหลังปิดเท่านั้น Happ Exhibition รับทำร้าน pop up คีออส และงานติดตั้งแคมเปญแบรนด์ในประเทศไทยมาตั้งแต่ปี 2547 — ให้ Philips, EA7 Emporio Armani, Pralet และงานวิชวลเมอร์เชินไดซิงของ Chanel ที่เราผลิตและเปลี่ยนให้ทุกซีซันทั่วเคาน์เตอร์ในไทย"
+        ps_intro2 = "ทุกชิ้นงานผลิตและประกอบทดลองจากโรงงานของเราสามแห่งที่ปทุมธานี ป๊อปอัพจึงมาถึงห้างเป็นชุดสำเร็จ ทั้งพื้น แท่นดิสเพลย์ เคาน์เตอร์ ไลท์บ็อกซ์ และพร็อพ เราติดตั้งข้ามคืนในห้างที่เปิดให้บริการอย่างสยามพารากอนและเซ็นทรัล ชิดลม ดูแลให้สมบูรณ์ตลอดแคมเปญ และรื้อถอนอย่างเรียบร้อยเมื่อจบงาน — มาตรฐานเดียวกับงานบูติกถาวร แต่บีบเวลาเหลือเพียงไม่กี่วัน"
+        ps_sec_eyebrow = "ผลงานป๊อปอัพและแคมเปญ"
+        ps_sec_h = "ป๊อปอัพและแคมเปญที่เราส่งมอบ"
+        ps_faq = [
+          ("ใครรับทำร้าน pop up ในประเทศไทย?",
+           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านป๊อปอัพ คีออส โซนอีเวนต์รีเทล และงานแคมเปญ VM ในห้างชั้นนำทั่วไทย ให้แบรนด์อย่าง Philips, EA7 Emporio Armani, Pralet และ Chanel"),
+          ("ทำร้านป๊อปอัพเร็วแค่ไหน?",
+           "ขั้นตอนหน้างานคือข้ามคืน: ป๊อปอัพผลิตและประกอบทดลองจากโรงงาน แล้วติดตั้งหลังห้างปิดเพื่อให้เปิดขายได้เช้าวันรุ่งขึ้น เราเปลี่ยนแคมเปญ VM ของ Chanel หลายเคาน์เตอร์พร้อมกันในคืนเดียวเป็นประจำ ส่วนระยะเวลารวมขึ้นกับความซับซ้อนของแบบและวัสดุ — แจ้งวันเปิดแคมเปญมาได้เลย เราวางแผนย้อนกลับให้"),
+          ("รับออกแบบด้วยหรือรับผลิตอย่างเดียว?",
+           "เราเป็นดีไซน์-บิลด์ ทีมในบริษัทดูแลได้ตั้งแต่คอนเซปต์ แบบ 3D, shop drawing, การขออนุมัติห้าง การผลิต กราฟิก พร็อพ จนถึงติดตั้งข้ามคืน หรือจะผลิตตามแบบของเอเจนซีหรือแบรนด์ที่มีอยู่แล้วก็ได้"),
+          ("ติดตั้งป๊อปอัพในห้างที่เปิดให้บริการได้หรือไม่?",
+           "ได้ นี่คือวิธีมาตรฐานของเรา เราเคยติดตั้งป๊อปอัพและงานแคมเปญบนพื้นที่ขายจริงที่สยามพารากอน เซ็นทรัล ชิดลม เอ็มควอเทียร์ และห้างสรรพสินค้าทั่วประเทศ — ขนย้ายด้วยระบบป้องกันหลังห้างปิด พร้อมก่อนห้างเปิด"),
+          ("จบแคมเปญแล้วเป็นอย่างไรต่อ?",
+           "เรารื้อถอนข้ามคืนและส่งคืนพื้นที่ให้ห้างในสภาพเดิม หากแบรนด์มีแผนจัดงานต่อเนื่อง เราออกแบบชิ้นงานให้ส่วนประกอบหลักนำกลับมาปรับปรุงและใช้ซ้ำได้"),
+        ]
+    ps_faq_html = "".join(f"<details{' open' if i==0 else ''}><summary>{q}</summary><p>{a}</p></details>" for i,(q,a) in enumerate(ps_faq))
+    ps_ld = '<script type="application/ld+json">' + json.dumps(
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in ps_faq]},
+        ensure_ascii=False) + '</script>'
+    htmlp = head(L, lang, P, "popup-stores.html", ps_title, ps_desc, "assets/img/works/philips-popup-central-chidlom/popup-counter.jpg", ps_ld) \
+          + header_html(L, lang, P, "popup-stores.html") + f"""
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{ps_eyebrow}</span>
+      <h1 class="display-l">{ps_h1}</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:24px">
+    <div class="container article-col" style="margin:0">
+      <p class="body-l" style="color:var(--text-secondary);margin-bottom:20px">{ps_intro1}</p>
+      <p class="body-l" style="color:var(--text-secondary)">{ps_intro2}</p>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-subtle)">
+    <div class="container">
+      <div class="section-header reveal"><div><span class="eyebrow">{ps_sec_eyebrow}</span><h2>{ps_sec_h}</h2></div>
+      <a class="link-brand" href="works.html">{L['all_works']} →</a></div>
+      <div class="news-grid">{pscards}</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-col"><h2 style="margin-bottom:40px">{L['faq_h']}</h2><div class="accordion">{ps_faq_html}</div></div>
+  </section>
+</main>
+{cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
+    write(lang, "popup-stores.html", htmlp)
+
     # ---- news ----
     feat = ARTICLES[0]
     cards = "".join(
@@ -1520,7 +1604,7 @@ def build_all(lang):
 
 # ==================== SEO FILES ====================
 def build_seo():
-    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html","cosmetic-counters.html","mall-shops.html"] \
+    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html","cosmetic-counters.html","mall-shops.html","popup-stores.html"] \
         + [f"project-{p['slug']}.html" for p in PROJECTS] \
         + [f"project-{p['slug']}.html" for p in NEWP] \
         + [f"project-{g['slug']}.html" for g in GROUPS] \
@@ -1556,6 +1640,11 @@ shop-drawing approvals, fabricate in our own factories, and install overnight
 so stores open on schedule. Clients include Pop Mart, Sunnies Studios,
 Paul Smith, Panpuri and Another Story.
 Dedicated page: {BASE}/mall-shops.html
+
+We also build POP-UP STORES, retail kiosks and visual-merchandising
+campaigns: factory pre-built and installed overnight in operating malls,
+for Philips, EA7 Emporio Armani, Pralet and Chanel's seasonal VM programme.
+Dedicated page: {BASE}/popup-stores.html
 
 Design-build fabricator in Pathumthani, Thailand (Bangkok metro), founded 2004.
 We design, fabricate and install: luxury retail stores and beauty counters,
