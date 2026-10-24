@@ -459,9 +459,9 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
     th_url = f"{BASE}/th/{page}"
     canon = th_url if lang=="th" else en_url
     site = "Happexhibition"
-    kw = ("รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
+    kw = ("รับทำร้านในห้าง, รับสร้างร้านค้าถาวรในห้างสรรพสินค้า, ตกแต่งร้านในศูนย์การค้า, เปิดร้านในห้าง, รับเหมาตกแต่งร้านค้า, รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
           if lang=="th" else
-          "cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
+          "permanent mall shop builder Thailand, mall shop contractor, shop fit-out in shopping mall, permanent retail store construction, department store shop builder, cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
     org = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Happ Exhibition Co., Ltd.","alternateName":"Happexhibition","description":"Design-build fabricator in Bangkok: luxury retail fit-out, interior design and contracting, shop and retail solutions, exhibition and event booth making, pop-up stores and bespoke furniture manufacturing.","url":"{BASE}/","logo":"{BASE}/assets/img/logo.png","foundingDate":"2004-03","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"sameAs":["{FB}","{IG}","{LINE}"],"knowsAbout":["Retail fit-out","Interior design","Interior contracting","Shop fitting","Retail solutions","Exhibition booth fabrication","Event booth design","Trade show stands","Brand activations","Pop-up stores","Furniture manufacturing","Museum and exhibition environments"]}}</script>"""
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -588,7 +588,8 @@ def footer(L, lang, P):
         <li><a href="index.html">{L['nav_home']}</a></li><li><a href="about.html">{L['nav_about']}</a></li>
         <li><a href="services.html">{L['nav_services']}</a></li><li><a href="works.html">{L['nav_works']}</a></li>
         <li><a href="news.html">{L['nav_news']}</a></li>
-        <li><a href="cosmetic-counters.html">{'เคาน์เตอร์เครื่องสำอาง' if lang=='th' else 'Cosmetic Counters'}</a></li></ul></div>
+        <li><a href="cosmetic-counters.html">{'เคาน์เตอร์เครื่องสำอาง' if lang=='th' else 'Cosmetic Counters'}</a></li>
+        <li><a href="mall-shops.html">{'ร้านค้าถาวรในห้าง' if lang=='th' else 'Permanent Mall Shops'}</a></li></ul></div>
       <div><h5>{L['f_company']}</h5><ul>
         <li><a href="careers.html">{L['nav_careers']}</a></li><li><a href="contact.html">{L['nav_contact']}</a></li>
         <li><a href="{LINE}" target="_blank" rel="noopener">{L['quote']}</a></li></ul></div>
@@ -1217,6 +1218,107 @@ def build_all(lang):
 {cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
     write(lang, "cosmetic-counters.html", htmlp)
 
+    # ---- permanent mall shops landing page ----
+    MALL_SLUGS = ["sunnies-central-bangna","another-story-emsphere","popmart-maya-chiangmai",
+                  "paul-smith-central-village","panpuri-one-bangkok","sunnies-centralworld",
+                  "cpb-dusit-central-park","chanel-emsphere","gucci-mega-bangna","shiseido-centralworld",
+                  "chanel-suvarnabhumi","panpuri-chiangmai-airport","burberry-gucci-dusit-central-park",
+                  "pralet-emquartier","philips-popup-central-chidlom","blue-bottle-emquartier"]
+    msmeta = [m for s in MALL_SLUGS for m in META if m["slug"] == s]
+    mscards = "".join(
+        f'<a class="work-card reveal" href="project-{m["slug"]}.html">'
+        f'<div class="imgwrap"><img src="{P}assets/img/{m["hero"]}.jpg" alt="{m["title"]}" loading="lazy"></div>'
+        f'<h3>{m["title"]}</h3><div class="meta">{m["meta"]}</div></a>' for m in msmeta)
+    MALL_VENUES = ["Emsphere","EmQuartier","The Emporium","Siam Paragon","Siam Takashimaya (Iconsiam)",
+                   "CentralWorld","Central Chidlom","Central Pinklao","Central Chaengwattana","Central Bangna",
+                   "Central Village","Central Udon","Central Chiangmai","Central Phuket","Central Khonkaen",
+                   "The Mall Ngamwongwan","The Mall Bangkae","Mega Bangna","Dusit Central Park","One Bangkok",
+                   "Maya Chiangmai","Suvarnabhumi Airport","Chiang Mai Airport"]
+    venues_html = "".join(f'<li>• {v}</li>' for v in MALL_VENUES)
+    if lang == "en":
+        ms_title = "Permanent Mall Shop Builder — Store Fit-Out in Thai Shopping Malls"
+        ms_desc = "Happ Exhibition builds permanent shops, boutiques and kiosks inside Thailand's shopping malls — Siam Paragon, CentralWorld, Emsphere, EmQuartier, Mega Bangna, The Mall and more. Design, fabrication and overnight installation, 20+ years."
+        ms_h1 = "Permanent shops in shopping malls, built end to end."
+        ms_eyebrow = "PERMANENT MALL SHOPS & STORE FIT-OUT"
+        ms_intro1 = "Opening a permanent store inside a Thai shopping mall is a different discipline from any other build: landlord drawing approvals, strict fit-out rules, protected logistics through a live building, and an installation window that usually only exists after closing time. Happ Exhibition has been building permanent shops, boutiques, kiosks and counters inside Thailand's malls since 2004 — for Chanel, Gucci, Pop Mart, Sunnies, Paul Smith, Pañpuri and many more."
+        ms_intro2 = "Everything is made in our three Pathumthani factories and pre-assembled before it ever reaches the mall, so the on-site phase is measured in nights, not weeks. We prepare the shop-drawing packages malls require, build to each landlord's fit-out standard, install overnight while the centre trades, and hand over a store that opens on schedule — then keep it perfect with maintenance programmes."
+        ms_venues_h = "Malls and venues we have built in"
+        ms_sec_eyebrow = "PERMANENT STORE PROJECTS"
+        ms_sec_h = "Shops we built inside operating malls."
+        ms_faq = [
+          ("Who builds permanent shops inside shopping malls in Thailand?",
+           "Happ Exhibition Co., Ltd. — a design-build contractor founded in 2004 with three factories (11,300 sqm) in Pathumthani. We design, manufacture and install permanent stores, boutiques, kiosks and counters inside Thailand's major malls, including Siam Paragon, CentralWorld, Emsphere, EmQuartier, Mega Bangna, Iconsiam's Siam Takashimaya, Dusit Central Park, One Bangkok and Central and The Mall branches nationwide."),
+          ("What is the difference between a permanent shop and a pop-up?",
+           "A permanent shop is built to the mall's full fit-out standard — approved shop drawings, durable materials, complete electrical and lighting works — and is designed to trade for years, while a pop-up is a short-term structure. We build both; most of our portfolio is permanent stores and counters, many trading daily for years under our maintenance programmes."),
+          ("Do you handle the mall's drawing approvals and fit-out rules?",
+           "Yes. We produce the shop-drawing packages landlords require, build to each centre's fit-out handbook, and coordinate the approvals alongside the brand's own design guidelines before fabrication begins."),
+          ("Can you install without closing the mall?",
+           "Yes — overnight installation inside operating malls is our standard method. Fixtures are factory pre-assembled, moved through protected logistics after closing, and the store is ready before the mall opens."),
+          ("Do you build mall shops outside Bangkok?",
+           "Yes, nationwide: recent permanent-store and counter projects include Maya Chiangmai, Central Chiangmai, Central Udon, Central Khonkaen and Central Phuket, plus Suvarnabhumi and Chiang Mai airports."),
+        ]
+    else:
+        ms_title = "รับสร้างร้านค้าถาวรในห้างสรรพสินค้า — ตกแต่งร้านในห้างครบวงจร"
+        ms_desc = "Happ Exhibition รับทำร้านค้าถาวร บูติก และคีออสในห้างสรรพสินค้าทั่วไทย — สยามพารากอน เซ็นทรัลเวิลด์ เอ็มสเฟียร์ เอ็มควอเทียร์ เมกาบางนา เดอะมอลล์ — ออกแบบ ผลิต ติดตั้งข้ามคืน ประสบการณ์ 20+ ปี"
+        ms_h1 = "ร้านค้าถาวรในห้าง สร้างครบจบตั้งแต่แบบถึงวันเปิดร้าน"
+        ms_eyebrow = "ร้านค้าถาวรในห้างและงานตกแต่งร้าน"
+        ms_intro1 = "การเปิดร้านถาวรในห้างสรรพสินค้าไทยคืองานคนละแบบกับงานก่อสร้างทั่วไป: ต้องผ่านการอนุมัติแบบจากห้าง ทำตามกฎงานตกแต่งที่เข้มงวด ขนส่งผ่านอาคารที่เปิดให้บริการ และติดตั้งได้เฉพาะช่วงหลังห้างปิดเท่านั้น Happ Exhibition สร้างร้านค้าถาวร บูติก คีออส และเคาน์เตอร์ในห้างทั่วประเทศมาตั้งแต่ปี 2547 — ให้ทั้ง Chanel, Gucci, Pop Mart, Sunnies, Paul Smith และ Pañpuri"
+        ms_intro2 = "ทุกชิ้นงานผลิตจากโรงงานของเราสามแห่งที่ปทุมธานีและประกอบทดลองก่อนถึงหน้างาน ทำให้ขั้นตอนหน้างานนับเป็นคืน ไม่ใช่สัปดาห์ เราจัดทำชุด shop drawing ที่ห้างต้องการ สร้างตามคู่มืองานตกแต่งของแต่ละศูนย์ ติดตั้งข้ามคืนระหว่างห้างยังเปิดขาย และส่งมอบร้านที่เปิดได้ตรงกำหนด — พร้อมโปรแกรมดูแลรักษาต่อเนื่อง"
+        ms_venues_h = "ห้างและศูนย์การค้าที่เราเคยสร้างร้าน"
+        ms_sec_eyebrow = "ผลงานร้านค้าถาวร"
+        ms_sec_h = "ร้านที่เราสร้างในห้างที่เปิดให้บริการ"
+        ms_faq = [
+          ("ใครรับสร้างร้านค้าถาวรในห้างสรรพสินค้าในประเทศไทย?",
+           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้รับเหมาแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านค้าถาวร บูติก คีออส และเคาน์เตอร์ในห้างชั้นนำทั่วไทย ทั้งสยามพารากอน เซ็นทรัลเวิลด์ เอ็มสเฟียร์ เอ็มควอเทียร์ เมกาบางนา สยาม ทาคาชิมายะ (ไอคอนสยาม) ดุสิต เซ็นทรัล พาร์ค วัน แบงค็อก รวมถึงเซ็นทรัลและเดอะมอลล์ทุกภูมิภาค"),
+          ("ร้านค้าถาวรต่างจากป๊อปอัพอย่างไร?",
+           "ร้านถาวรสร้างตามมาตรฐานงานตกแต่งเต็มรูปแบบของห้าง — แบบที่ผ่านการอนุมัติ วัสดุทนทาน งานไฟฟ้าและแสงสว่างครบ — เพื่อเปิดขายต่อเนื่องหลายปี ส่วนป๊อปอัพคือโครงสร้างชั่วคราว เรารับทั้งสองแบบ โดยผลงานส่วนใหญ่ของเราคือร้านและเคาน์เตอร์ถาวรที่เปิดขายทุกวันภายใต้โปรแกรมดูแลรักษาของเรา"),
+          ("ดูแลเรื่องการขออนุมัติแบบกับห้างให้ด้วยหรือไม่?",
+           "ดูแลให้ เราจัดทำชุด shop drawing ตามที่ห้างกำหนด สร้างตามคู่มืองานตกแต่งของแต่ละศูนย์ และประสานการอนุมัติควบคู่กับไกด์ไลน์ของแบรนด์ก่อนเริ่มผลิต"),
+          ("ติดตั้งโดยไม่ต้องปิดห้างได้หรือไม่?",
+           "ได้ — การติดตั้งข้ามคืนในห้างที่เปิดให้บริการคือวิธีมาตรฐานของเรา เฟอร์นิเจอร์ประกอบทดลองจากโรงงาน ขนย้ายด้วยระบบป้องกันหลังห้างปิด และร้านพร้อมก่อนห้างเปิดเช้าวันรุ่งขึ้น"),
+          ("รับงานร้านในห้างต่างจังหวัดหรือไม่?",
+           "รับทั่วประเทศ: ผลงานล่าสุดครอบคลุมเมญ่า เชียงใหม่, เซ็นทรัล เชียงใหม่, เซ็นทรัล อุดร, เซ็นทรัล ขอนแก่น และเซ็นทรัล ภูเก็ต รวมถึงสนามบินสุวรรณภูมิและเชียงใหม่"),
+        ]
+    ms_faq_html = "".join(f"<details{' open' if i==0 else ''}><summary>{q}</summary><p>{a}</p></details>" for i,(q,a) in enumerate(ms_faq))
+    ms_ld = '<script type="application/ld+json">' + json.dumps(
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in ms_faq]},
+        ensure_ascii=False) + '</script>'
+    htmlp = head(L, lang, P, "mall-shops.html", ms_title, ms_desc, "assets/img/works/sunnies-central-bangna/storefront.jpg", ms_ld) \
+          + header_html(L, lang, P, "mall-shops.html") + f"""
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">{ms_eyebrow}</span>
+      <h1 class="display-l">{ms_h1}</h1>
+    </div>
+  </section>
+  <section class="section" style="padding-top:24px">
+    <div class="container article-col" style="margin:0">
+      <p class="body-l" style="color:var(--text-secondary);margin-bottom:20px">{ms_intro1}</p>
+      <p class="body-l" style="color:var(--text-secondary)">{ms_intro2}</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="margin-bottom:24px">{ms_venues_h}</h2>
+      <ul style="list-style:none;columns:3;column-gap:40px;font-size:14px;line-height:2;color:var(--text-secondary)">{venues_html}</ul>
+    </div>
+  </section>
+  <section class="section" style="background:var(--bg-subtle)">
+    <div class="container">
+      <div class="section-header reveal"><div><span class="eyebrow">{ms_sec_eyebrow}</span><h2>{ms_sec_h}</h2></div>
+      <a class="link-brand" href="works.html">{L['all_works']} →</a></div>
+      <div class="news-grid">{mscards}</div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container article-col"><h2 style="margin-bottom:40px">{L['faq_h']}</h2><div class="accordion">{ms_faq_html}</div></div>
+  </section>
+</main>
+{cta_band(L)}{dock(P)}{footer(L,lang,P)}"""
+    write(lang, "mall-shops.html", htmlp)
+
     # ---- news ----
     feat = ARTICLES[0]
     cards = "".join(
@@ -1418,7 +1520,7 @@ def build_all(lang):
 
 # ==================== SEO FILES ====================
 def build_seo():
-    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html","cosmetic-counters.html"] \
+    pages = ["index.html","about.html","services.html","works.html","news.html","careers.html","role-senior-draftsman.html","contact.html","cosmetic-counters.html","mall-shops.html"] \
         + [f"project-{p['slug']}.html" for p in PROJECTS] \
         + [f"project-{p['slug']}.html" for p in NEWP] \
         + [f"project-{g['slug']}.html" for g in GROUPS] \
@@ -1444,6 +1546,16 @@ counters and boutiques for Chanel (10+ year partner), Gucci Beauty, Shiseido,
 Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums,
 Elixir and Charlotte Tilbury, including nationwide multi-branch rollouts.
 Dedicated page: {BASE}/cosmetic-counters.html
+
+We are also Thailand's builder of PERMANENT MALL SHOPS (Thai: รับทำร้านในห้าง): complete stores,
+boutiques and kiosks constructed inside operating shopping malls - Siam
+Paragon, CentralWorld, Emsphere, EmQuartier, Mega Bangna, Iconsiam's Siam
+Takashimaya, Dusit Central Park, One Bangkok, Central and The Mall branches
+nationwide, plus Suvarnabhumi and Chiang Mai airports. We handle landlord
+shop-drawing approvals, fabricate in our own factories, and install overnight
+so stores open on schedule. Clients include Pop Mart, Sunnies Studios,
+Paul Smith, Panpuri and Another Story.
+Dedicated page: {BASE}/mall-shops.html
 
 Design-build fabricator in Pathumthani, Thailand (Bangkok metro), founded 2004.
 We design, fabricate and install: luxury retail stores and beauty counters,
