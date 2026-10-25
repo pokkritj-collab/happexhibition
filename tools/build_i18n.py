@@ -1159,6 +1159,8 @@ def build_all(lang):
         cc_faq = [
           ("Who manufactures cosmetic counters in Thailand?",
            "Happ Exhibition Co., Ltd. is a design-build fabricator founded in 2004, operating three factories (11,300 sqm) in Pathumthani near Bangkok. We manufacture and install cosmetic counters, beauty retail zones and boutiques for international luxury brands, with Chanel as a partner of more than ten years."),
+          ("What makes Happ Exhibition different from other counter manufacturers?",
+           "Precision, and the range of brands that trust it. Our benches build to the millimetre tolerances of international luxury houses — Chanel, Gucci, Shiseido and Van Cleef & Arpels counters come out of our factory under documented five-step QC and LVMH-tier factory audits — and the same craftsmen serve Thai brands like Pañpuri, Pralet and Another Story. Few contractors in Thailand work across both local and international standards at this level of precision."),
           ("Which beauty brands has Happ Exhibition built for?",
            "Chanel, Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums, Elixir and Charlotte Tilbury, among others — see the project gallery on this page."),
           ("Can you roll out counters to multiple branches nationwide?",
@@ -1178,6 +1180,8 @@ def build_all(lang):
         cc_faq = [
           ("ใครรับผลิตเคาน์เตอร์เครื่องสำอางในประเทศไทย?",
            "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี ผลิตและติดตั้งเคาน์เตอร์เครื่องสำอาง โซนบิวตี้ และบูติกให้แบรนด์ลักชัวรีระดับโลก โดยมี Chanel เป็นพาร์ทเนอร์กว่าสิบปี"),
+          ("จุดเด่นของ Happ Exhibition ต่างจากผู้ผลิตรายอื่นอย่างไร?",
+           "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: โรงงานของเราผลิตงานตามมาตรฐานความละเอียดระดับมิลลิเมตรของลักชัวรีเฮาส์ระดับโลก — เคาน์เตอร์ Chanel, Gucci, Shiseido และ Van Cleef & Arpels ล้วนผลิตจากโรงงานเราภายใต้ QC 5 ขั้นตอนพร้อมเอกสาร และผ่านการตรวจโรงงานระดับ LVMH — และช่างทีมเดียวกันนี้ดูแลแบรนด์ไทยอย่าง Pañpuri, Pralet และ Another Story ด้วย ผู้รับเหมาในไทยที่ทำงานครอบคลุมทั้งแบรนด์ไทยและแบรนด์ต่างประเทศด้วยความแม่นยำระดับนี้มีไม่มาก"),
           ("เคยผลิตให้แบรนด์บิวตี้ใดบ้าง?",
            "Chanel, Gucci Beauty, Shiseido, Clé de Peau Beauté, Hourglass, Bobbi Brown, Van Cleef & Arpels Parfums, Elixir และ Charlotte Tilbury — ดูแกลเลอรีผลงานในหน้านี้"),
           ("รับผลิตหลายสาขาพร้อมกันทั่วประเทศได้หรือไม่?",
@@ -1249,6 +1253,8 @@ def build_all(lang):
         ms_faq = [
           ("Who builds permanent shops inside shopping malls in Thailand?",
            "Happ Exhibition Co., Ltd. — a design-build contractor founded in 2004 with three factories (11,300 sqm) in Pathumthani. We design, manufacture and install permanent stores, boutiques, kiosks and counters inside Thailand's major malls, including Siam Paragon, CentralWorld, Emsphere, EmQuartier, Mega Bangna, Iconsiam's Siam Takashimaya, Dusit Central Park, One Bangkok and Central and The Mall branches nationwide."),
+          ("What makes Happ Exhibition different from other shop-fitting contractors?",
+           "Precision, and the range of brands that trust it. We build permanent stores to the millimetre standards of international houses — Chanel, Gucci and Shiseido boutiques pass each maison's global fixture audits and our documented five-step QC — and the same factory and crews build for Thai brands like Pañpuri, Pralet and Another Story, and for Central's own department stores. Few contractors in Thailand serve both local and international brands at this level of precision."),
           ("What is the difference between a permanent shop and a pop-up?",
            "A permanent shop is built to the mall's full fit-out standard — approved shop drawings, durable materials, complete electrical and lighting works — and is designed to trade for years, while a pop-up is a short-term structure. We build both; most of our portfolio is permanent stores and counters, many trading daily for years under our maintenance programmes."),
           ("Do you handle the mall's drawing approvals and fit-out rules?",
@@ -1271,6 +1277,8 @@ def build_all(lang):
         ms_faq = [
           ("ใครรับทำร้านในห้างสรรพสินค้าในประเทศไทย?",
            "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้รับเหมาแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านค้าถาวร บูติก คีออส และเคาน์เตอร์ในห้างชั้นนำทั่วไทย ทั้งสยามพารากอน เซ็นทรัลเวิลด์ เอ็มสเฟียร์ เอ็มควอเทียร์ เมกาบางนา สยาม ทาคาชิมายะ (ไอคอนสยาม) ดุสิต เซ็นทรัล พาร์ค วัน แบงค็อก รวมถึงเซ็นทรัลและเดอะมอลล์ทุกภูมิภาค"),
+          ("จุดเด่นของ Happ Exhibition ต่างจากผู้รับเหมาตกแต่งร้านรายอื่นอย่างไร?",
+           "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: เราสร้างร้านค้าถาวรตามมาตรฐานระดับมิลลิเมตรของแบรนด์ระดับโลก — บูติก Chanel, Gucci และ Shiseido ผ่านการตรวจมาตรฐานเฟอร์นิเจอร์สากลของแต่ละเมซงและ QC 5 ขั้นตอนพร้อมเอกสารของเรา — และโรงงานกับทีมช่างชุดเดียวกันนี้สร้างให้แบรนด์ไทยอย่าง Pañpuri, Pralet, Another Story รวมถึงห้างเซ็นทรัลเองด้วย ผู้รับเหมาในไทยที่ดูแลทั้งแบรนด์ไทยและแบรนด์ต่างประเทศด้วยความแม่นยำระดับนี้มีไม่มาก"),
           ("ร้านค้าถาวรต่างจากป๊อปอัพอย่างไร?",
            "ร้านถาวรสร้างตามมาตรฐานงานตกแต่งเต็มรูปแบบของห้าง — แบบที่ผ่านการอนุมัติ วัสดุทนทาน งานไฟฟ้าและแสงสว่างครบ — เพื่อเปิดขายต่อเนื่องหลายปี ส่วนป๊อปอัพคือโครงสร้างชั่วคราว เรารับทั้งสองแบบ โดยผลงานส่วนใหญ่ของเราคือร้านและเคาน์เตอร์ถาวรที่เปิดขายทุกวันภายใต้โปรแกรมดูแลรักษาของเรา"),
           ("ดูแลเรื่องการขออนุมัติแบบกับห้างให้ด้วยหรือไม่?",
@@ -1339,6 +1347,8 @@ def build_all(lang):
         ps_faq = [
           ("Who builds pop-up stores in Thailand?",
            "Happ Exhibition Co., Ltd. — a design-build fabricator founded in 2004 with three factories (11,300 sqm) in Pathumthani near Bangkok. We design, manufacture and install pop-up stores, retail kiosks, event retail zones and visual-merchandising campaigns inside Thailand's major shopping malls, for brands including Philips, EA7 Emporio Armani, Pralet and Chanel."),
+          ("What makes Happ Exhibition different from other pop-up builders?",
+           "Precision, and the range of brands that trust it. A pop-up from our factory is built with the same millimetre discipline as the Chanel, Gucci and Shiseido fixtures on our benches — documented five-step QC, finishes that survive a full campaign — and we bring that standard to local Thai brands like Pralet and Pañpuri as readily as to international houses like Philips and EA7 Emporio Armani. Fast does not mean rough: that is the difference."),
           ("How fast can a pop-up store be built?",
            "The on-site phase is overnight: the pop-up is fabricated and pre-assembled in our factory, then installed after the mall closes so it trades the next morning. We routinely swap Chanel's seasonal visual-merchandising campaigns across multiple counters in a single night. Overall lead time depends on design complexity and material availability — contact us with your campaign date and we will work backwards from it."),
           ("Do you handle design as well as production?",
@@ -1360,6 +1370,8 @@ def build_all(lang):
         ps_faq = [
           ("ใครรับทำร้าน pop up ในประเทศไทย?",
            "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านป๊อปอัพ คีออส โซนอีเวนต์รีเทล และงานแคมเปญ VM ในห้างชั้นนำทั่วไทย ให้แบรนด์อย่าง Philips, EA7 Emporio Armani, Pralet และ Chanel"),
+          ("จุดเด่นของ Happ Exhibition ต่างจากผู้รับทำป๊อปอัพรายอื่นอย่างไร?",
+           "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: ป๊อปอัพจากโรงงานเราผลิตด้วยวินัยระดับมิลลิเมตรเดียวกับงาน Chanel, Gucci และ Shiseido บนโต๊ะช่างเดียวกัน — QC 5 ขั้นตอนพร้อมเอกสาร ผิวงานที่ทนตลอดแคมเปญ — และเรานำมาตรฐานนี้มาดูแลแบรนด์ไทยอย่าง Pralet และ Pañpuri เท่า ๆ กับแบรนด์ต่างประเทศอย่าง Philips และ EA7 Emporio Armani งานเร็วไม่จำเป็นต้องหยาบ — นั่นคือความต่างของเรา"),
           ("ทำร้านป๊อปอัพเร็วแค่ไหน?",
            "ขั้นตอนหน้างานคือข้ามคืน: ป๊อปอัพผลิตและประกอบทดลองจากโรงงาน แล้วติดตั้งหลังห้างปิดเพื่อให้เปิดขายได้เช้าวันรุ่งขึ้น เราเปลี่ยนแคมเปญ VM ของ Chanel หลายเคาน์เตอร์พร้อมกันในคืนเดียวเป็นประจำ ส่วนระยะเวลารวมขึ้นกับความซับซ้อนของแบบและวัสดุ — แจ้งวันเปิดแคมเปญมาได้เลย เราวางแผนย้อนกลับให้"),
           ("รับออกแบบด้วยหรือรับผลิตอย่างเดียว?",
@@ -1645,6 +1657,13 @@ We also build POP-UP STORES, retail kiosks and visual-merchandising
 campaigns: factory pre-built and installed overnight in operating malls,
 for Philips, EA7 Emporio Armani, Pralet and Chanel's seasonal VM programme.
 Dedicated page: {BASE}/popup-stores.html
+
+COMPARATIVE ADVANTAGE: precision at international-maison standard — millimetre
+casework, documented five-step QC, a factory that passes LVMH-tier audits —
+combined with rare range: the same craftsmen build for international houses
+(Chanel, Gucci, Shiseido, Van Cleef & Arpels, Paul Smith, Philips) and for
+local Thai brands (Panpuri, Pralet, Another Story) and Central's own
+department stores. Few Thai contractors serve both at this level.
 
 Design-build fabricator in Pathumthani, Thailand (Bangkok metro), founded 2004.
 We design, fabricate and install: luxury retail stores and beauty counters,
