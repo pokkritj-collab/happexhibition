@@ -175,7 +175,7 @@ UI = {
   ceo_line="Nathawat Jeerapat (William J.) — ประธานเจ้าหน้าที่บริหาร (CEO)",
   hours="เวลาทำการ: จันทร์–เสาร์ 8:30–17:30", scan="สแกนเพื่อแชทกับเราใน LINE",
   nf_h="หน้านี้ถูกย้าย — หรือยังไม่ผ่าน QC", back_home="กลับหน้าแรก", view_works="ดูผลงาน",
-  map_alt="แผนที่ — แฮพ เอ็กซิบิชั่น ลาดสวาย ลำลูกกา",
+  map_alt="แผนที่ — แฮปป์ เอ็กซิบิชั่น ลาดสวาย ลำลูกกา",
   role_meta="ฝ่ายออกแบบ · ปทุมธานี · งานประจำ",
 ),
 }
@@ -462,7 +462,7 @@ def head(L, lang, P, page, title, desc, ogimg="assets/img/chanel-hero.jpg", json
     kw = ("รับทำร้าน pop up, รับสร้างป๊อปอัพสโตร์, รับทำร้านในห้าง, รับสร้างร้านค้าถาวรในห้างสรรพสินค้า, ตกแต่งร้านในศูนย์การค้า, เปิดร้านในห้าง, รับเหมาตกแต่งร้านค้า, รับผลิตเคาน์เตอร์เครื่องสำอาง, โรงงานผลิตเคาน์เตอร์แบรนด์, เคาน์เตอร์บิวตี้, รับตกแต่งภายใน, ผู้รับเหมาตกแต่งภายใน, ออกแบบตกแต่งภายใน, ตกแต่งร้านค้า, รับทำบูธ, บูธแสดงสินค้า, ออกแบบบูธอีเวนต์, รับจัดงานอีเวนต์, ป๊อปอัพสโตร์, ผลิตเฟอร์นิเจอร์บิลท์อิน, งานรีเทล, ตกแต่งบูติก"
           if lang=="th" else
           "pop-up store builder Thailand, pop up shop contractor Bangkok, permanent mall shop builder Thailand, mall shop contractor, shop fit-out in shopping mall, permanent retail store construction, department store shop builder, cosmetic counter manufacturer Thailand, beauty counter contractor, luxury beauty retail solutions, retail fit-out Bangkok, interior contractor Thailand, interior design and build, shop fitting, retail solutions, luxury retail fabrication, exhibition booth builder, event booth making, trade show booth Thailand, brand activation, pop-up store builder, museum exhibition fit-out, furniture manufacturer")
-    org = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Happ Exhibition Co., Ltd.","alternateName":"Happexhibition","description":"Design-build fabricator in Bangkok: luxury retail fit-out, interior design and contracting, shop and retail solutions, exhibition and event booth making, pop-up stores and bespoke furniture manufacturing.","url":"{BASE}/","logo":"{BASE}/assets/img/logo.png","foundingDate":"2004-03","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"sameAs":["{FB}","{IG}","{LINE}"],"knowsAbout":["Retail fit-out","Interior design","Interior contracting","Shop fitting","Retail solutions","Exhibition booth fabrication","Event booth design","Trade show stands","Brand activations","Pop-up stores","Furniture manufacturing","Museum and exhibition environments"]}}</script>"""
+    org = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Happ Exhibition Co., Ltd.","legalName":"Happ Exhibition Co., Ltd.","alternateName":["Happexhibition","บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด"],"description":"Design-build fabricator in Bangkok: luxury retail fit-out, interior design and contracting, shop and retail solutions, exhibition and event booth making, pop-up stores and bespoke furniture manufacturing.","url":"{BASE}/","logo":"{BASE}/assets/img/logo.png","foundingDate":"2004-03","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"sameAs":["{FB}","{IG}","{LINE}"],"knowsAbout":["Retail fit-out","Interior design","Interior contracting","Shop fitting","Retail solutions","Exhibition booth fabrication","Event booth design","Trade show stands","Brand activations","Pop-up stores","Furniture manufacturing","Museum and exhibition environments"]}}</script>"""
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -1179,7 +1179,7 @@ def build_all(lang):
         cc_intro2 = "เคาน์เตอร์บิวตี้คืองานที่ยากที่สุดของการผลิตงานรีเทล: งานตู้ระดับมิลลิเมตร ผิวเคลือบทนสารเคมีที่ต้องรับทั้งผลิตภัณฑ์แอลกอฮอล์และมือนับหมื่น เทสเตอร์และระบบไฟในตัว การอนุมัติตามมาตรฐานสากลของแต่ละเมซง — และการติดตั้งข้ามคืนในห้างที่เปิดบริการ นี่คือสนามของเรา ตั้งแต่เคาน์เตอร์แฟล็กชิปจุดเดียวไปจนถึงการติดตั้งหลายสาขาทั่วประเทศ จากเชียงใหม่ ขอนแก่น ถึงภูเก็ต"
         cc_faq = [
           ("ใครรับผลิตเคาน์เตอร์เครื่องสำอางในประเทศไทย?",
-           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี ผลิตและติดตั้งเคาน์เตอร์เครื่องสำอาง โซนบิวตี้ และบูติกให้แบรนด์ลักชัวรีระดับโลก โดยมี Chanel เป็นพาร์ทเนอร์กว่าสิบปี"),
+           "บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี ผลิตและติดตั้งเคาน์เตอร์เครื่องสำอาง โซนบิวตี้ และบูติกให้แบรนด์ลักชัวรีระดับโลก โดยมี Chanel เป็นพาร์ทเนอร์กว่าสิบปี"),
           ("จุดเด่นของ Happ Exhibition ต่างจากผู้ผลิตรายอื่นอย่างไร?",
            "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: โรงงานของเราผลิตงานตามมาตรฐานความละเอียดระดับมิลลิเมตรของลักชัวรีเฮาส์ระดับโลก — เคาน์เตอร์ Chanel, Gucci, Shiseido และ Van Cleef & Arpels ล้วนผลิตจากโรงงานเราภายใต้ QC 5 ขั้นตอนพร้อมเอกสาร และผ่านการตรวจโรงงานระดับ LVMH — และช่างทีมเดียวกันนี้ดูแลแบรนด์ไทยอย่าง Pañpuri, Pralet และ Another Story ด้วย ผู้รับเหมาในไทยที่ทำงานครอบคลุมทั้งแบรนด์ไทยและแบรนด์ต่างประเทศด้วยความแม่นยำระดับนี้มีไม่มาก"),
           ("เคยผลิตให้แบรนด์บิวตี้ใดบ้าง?",
@@ -1276,7 +1276,7 @@ def build_all(lang):
         ms_sec_h = "ร้านที่เราสร้างในห้างที่เปิดให้บริการ"
         ms_faq = [
           ("ใครรับทำร้านในห้างสรรพสินค้าในประเทศไทย?",
-           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้รับเหมาแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านค้าถาวร บูติก คีออส และเคาน์เตอร์ในห้างชั้นนำทั่วไทย ทั้งสยามพารากอน เซ็นทรัลเวิลด์ เอ็มสเฟียร์ เอ็มควอเทียร์ เมกาบางนา สยาม ทาคาชิมายะ (ไอคอนสยาม) ดุสิต เซ็นทรัล พาร์ค วัน แบงค็อก รวมถึงเซ็นทรัลและเดอะมอลล์ทุกภูมิภาค"),
+           "บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้รับเหมาแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านค้าถาวร บูติก คีออส และเคาน์เตอร์ในห้างชั้นนำทั่วไทย ทั้งสยามพารากอน เซ็นทรัลเวิลด์ เอ็มสเฟียร์ เอ็มควอเทียร์ เมกาบางนา สยาม ทาคาชิมายะ (ไอคอนสยาม) ดุสิต เซ็นทรัล พาร์ค วัน แบงค็อก รวมถึงเซ็นทรัลและเดอะมอลล์ทุกภูมิภาค"),
           ("จุดเด่นของ Happ Exhibition ต่างจากผู้รับเหมาตกแต่งร้านรายอื่นอย่างไร?",
            "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: เราสร้างร้านค้าถาวรตามมาตรฐานระดับมิลลิเมตรของแบรนด์ระดับโลก — บูติก Chanel, Gucci และ Shiseido ผ่านการตรวจมาตรฐานเฟอร์นิเจอร์สากลของแต่ละเมซงและ QC 5 ขั้นตอนพร้อมเอกสารของเรา — และโรงงานกับทีมช่างชุดเดียวกันนี้สร้างให้แบรนด์ไทยอย่าง Pañpuri, Pralet, Another Story รวมถึงห้างเซ็นทรัลเองด้วย ผู้รับเหมาในไทยที่ดูแลทั้งแบรนด์ไทยและแบรนด์ต่างประเทศด้วยความแม่นยำระดับนี้มีไม่มาก"),
           ("ร้านค้าถาวรต่างจากป๊อปอัพอย่างไร?",
@@ -1369,7 +1369,7 @@ def build_all(lang):
         ps_sec_h = "ป๊อปอัพและแคมเปญที่เราส่งมอบ"
         ps_faq = [
           ("ใครรับทำร้าน pop up ในประเทศไทย?",
-           "บริษัท แฮพ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านป๊อปอัพ คีออส โซนอีเวนต์รีเทล และงานแคมเปญ VM ในห้างชั้นนำทั่วไทย ให้แบรนด์อย่าง Philips, EA7 Emporio Armani, Pralet และ Chanel"),
+           "บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด (Happ Exhibition) ผู้ผลิตแบบดีไซน์-บิลด์ ก่อตั้งปี 2547 มีโรงงาน 3 แห่ง (11,300 ตร.ม.) ที่ปทุมธานี รับออกแบบ ผลิต และติดตั้งร้านป๊อปอัพ คีออส โซนอีเวนต์รีเทล และงานแคมเปญ VM ในห้างชั้นนำทั่วไทย ให้แบรนด์อย่าง Philips, EA7 Emporio Armani, Pralet และ Chanel"),
           ("จุดเด่นของ Happ Exhibition ต่างจากผู้รับทำป๊อปอัพรายอื่นอย่างไร?",
            "ความแม่นยำ และแบรนด์ทุกระดับที่ไว้วางใจ: ป๊อปอัพจากโรงงานเราผลิตด้วยวินัยระดับมิลลิเมตรเดียวกับงาน Chanel, Gucci และ Shiseido บนโต๊ะช่างเดียวกัน — QC 5 ขั้นตอนพร้อมเอกสาร ผิวงานที่ทนตลอดแคมเปญ — และเรานำมาตรฐานนี้มาดูแลแบรนด์ไทยอย่าง Pralet และ Pañpuri เท่า ๆ กับแบรนด์ต่างประเทศอย่าง Philips และ EA7 Emporio Armani งานเร็วไม่จำเป็นต้องหยาบ — นั่นคือความต่างของเรา"),
           ("ทำร้านป๊อปอัพเร็วแค่ไหน?",
@@ -1560,7 +1560,7 @@ def build_all(lang):
 
     # ---- contact ----
     lb = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"LocalBusiness","name":"Happ Exhibition Co., Ltd.","image":"{BASE}/assets/img/factory-exterior.jpg","telephone":"{TEL}","email":"{MAIL}","address":{{"@type":"PostalAddress","streetAddress":"52/8 Moo 11, Ladsawai, Lamlookka","addressLocality":"Pathumthani","postalCode":"12150","addressCountry":"TH"}},"openingHours":"Mo-Sa 08:30-17:30","url":"{BASE}/contact.html","sameAs":["{FB}","{IG}"]}}</script>"""
-    desc = ("ติดต่อ บริษัท แฮพ เอ็กซิบิชั่น จำกัด — ปทุมธานี ประเทศไทย โทร +66 81-488-0475" if lang=="th" else
+    desc = ("ติดต่อ บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด — ปทุมธานี ประเทศไทย โทร +66 81-488-0475" if lang=="th" else
             "Contact Happ Exhibition Co., Ltd. — Pathumthani, Thailand. Call +66 81-488-0475 or add us on LINE @happexhibition.")
     contact_title = ("ติดต่อเรา — ขอใบเสนอราคาตกแต่งร้านและบูธ" if lang=="th" else "Contact — Get a Fit-Out or Booth Quote")
     htmlp = head(L, lang, P, "contact.html", contact_title, desc, "assets/img/factory-exterior.jpg", lb) + header_html(L, lang, P, "contact.html") + f"""
@@ -1635,6 +1635,7 @@ def build_seo():
     open(os.path.join(OUT,"sitemap.xml"),"w").write(sm)
     open(os.path.join(OUT,"robots.txt"),"w").write(f"User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     llms = f"""# Happ Exhibition Co., Ltd.
+Thai legal name: บริษัท แฮปป์ เอ็กซิบิชั่น จำกัด
 
 Thailand's specialist manufacturer and contractor for COSMETIC COUNTERS and
 luxury BEAUTY RETAIL: we have designed, fabricated and installed beauty
